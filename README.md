@@ -21,5 +21,5 @@ Breve descripción de los integrantes del equipo:
 - Mateo Ferrando:
 - Joaquin Andreone:
 
--Ailen Cury:
+- Ailen Cury:
     Soy Diseñadora Multimedial, ¿Qué nos diferencia de los diseñadores gráficos? Principalmente que tenemos un conocimiento básico de la programación y en maquetado de sitios web, además de que trabajamos con UX, modelados de elementos 3D, animaciones 2D (Motion Graphics) y edición tanto de audio como de video junto a sus respectivos efectos especiales en caso de tenerlos. Soy de la mentalidad de que en un lindo ambiente de trabajo se logran mejores resultados y de que si a la hora de hacer una "critica", no tengo nada constructivo para decir no digo nada.
