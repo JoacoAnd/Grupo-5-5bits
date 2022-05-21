@@ -24,7 +24,7 @@ Escribir 5 sitios similares:
 
 Breve descripción de los integrantes del equipo:
 - Julio Tuozzo:
-    Soy Lic. en Sistemas con amplia experiencia. Cobol, Basic, Clipper, Genexus, Power Builder, Access, HTML, PHP, Javascript, JQuery, MySQL, Oracle, Tableau, son las tecnologías con las que he tenido que trabajar en estos treinta y cinco años. En el trabajo no doy el pescado, trato de enseñar a pescar.
+    Soy Lic. en Sistemas con amplia experiencia. Cobol, Basic, Clipper, Genexus, Power Builder, Access, HTML, PHP, Javascript, JQuery, MySQL, Oracle, Tableau, son las tecnologías con las que he tenido que trabajar en estos treinta y cinco años. En el trabajo trato de no dar el pescado, si no de enseñar a pescar.
 
 - Virginia Messina:
 - Mateo Ferrando:
