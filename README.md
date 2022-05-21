@@ -10,10 +10,17 @@ Descripción del público al que apunta el sitio.:
 
 Escribir 5 sitios similares: 
 - https://www.dafiti.com.ar/
+
 - https://www.rapsodia.com.ar/
+
 - https://www.kevingston.com/
+    Está dedicado especialmente a indumentaria de hombre y mujer, de manera equilibrada.
+
 - https://ropavintagekilos.com/
+    Ropa al por mayor y por kilo. Una forma novedosa de comercializar indumentaria.
+
 - https://www.inesroman.es/
+
 
 Breve descripción de los integrantes del equipo:
 - Julio Tuozzo:
