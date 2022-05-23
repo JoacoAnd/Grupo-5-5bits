@@ -31,7 +31,7 @@ Breve descripción de los integrantes del equipo:
     No tengo experiencia en programación. Para mí es totalmente un desafío. Espero poder adquirir los conocimientos y aprender de cada uno de los integrantes del equipo.
     
 - Mateo Ferrando:
-- Joaquin Andreone: Estoy en el CBC para la carrera de Ciencias de la computacion. Me gusta Marx, Messi y los discos que no tienen una imagen de la banda como portada.
+- Joaquin Andreone: Estoy en el CBC para la carrera de Ciencias de la computacion. Me gusta la musica, la literatura, Messi y los discos que no tienen una imagen de la banda como portada. Me apasiona la programacion: crear, diseñar y darle funcionalidad a cosas mediante letras y comandos, algo asi como leer o escribir un libro.
 
 - Ailen Cury:
     Soy Diseñadora Multimedial, ¿Qué nos diferencia de los diseñadores gráficos? Principalmente que tenemos un conocimiento básico de la programación y en maquetado de sitios web, además de que trabajamos con UX, modelados de elementos 3D, animaciones 2D (Motion Graphics) y edición tanto de audio como de video junto a sus respectivos efectos especiales en caso de tenerlos. Soy de la mentalidad de que en un lindo ambiente de trabajo se logran mejores resultados y de que si a la hora de hacer una "critica", no tengo nada constructivo para decir no digo nada.
