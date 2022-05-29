@@ -10,8 +10,10 @@ Descripción del público al que apunta el sitio.:
 
 Escribir 5 sitios similares: 
 - https://www.dafiti.com.ar/
+    Posee un target muy amplio pero mantiene una estetica y estructura clara que hace facil su navegación ademas que es facil de buscar la prenda que queres.
 
 - https://www.rapsodia.com.ar/
+    Posee mucha carga de imagenes y videos, pero la web es fluida y no tarda en cargar, hace que mostrar los productos sea rapido y sencillo para el cliente.
 
 - https://www.kevingston.com/
     Está dedicado especialmente a indumentaria de hombre y mujer, de manera equilibrada.
@@ -20,6 +22,7 @@ Escribir 5 sitios similares:
     Ropa al por mayor y por kilo. Una forma novedosa de comercializar indumentaria.
 
 - https://www.inesroman.es/
+    Es ropa más clasica, la web se ve fina y sutil en la carga de contenido.
 
 
 Breve descripción de los integrantes del equipo:
