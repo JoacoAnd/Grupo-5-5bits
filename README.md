@@ -35,6 +35,7 @@ Breve descripción de los integrantes del equipo:
     Durante el colegio secundario nos dieron una breve introducción a la programación enseñandonos algo de C++.
     Me copa la idea de programar y quiero poder complementar lo visto en el curso con la carrera que estoy estudiando.
     
+    
 - Joaquin Andreone: Estoy en el CBC para la carrera de Ciencias de la computacion. Me gusta la musica, la literatura, Messi y los discos que no tienen una imagen de la banda como portada. Me apasiona la programacion: crear, diseñar y darle funcionalidad a cosas mediante letras y comandos, algo asi como leer o escribir un libro.
 
 - Ailen Cury:
