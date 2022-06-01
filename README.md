@@ -29,9 +29,8 @@ Breve descripción de los integrantes del equipo:
 - Julio Tuozzo:
     Soy Lic. en Sistemas con amplia experiencia. Cobol, Basic, Clipper, Genexus, Power Builder, Access, HTML, PHP, Javascript, JQuery, MySQL, Oracle, Tableau, son las tecnologías con las que he tenido que trabajar en estos treinta y cinco años. En el trabajo trato de no dar el pescado, si no de enseñar a pescar.
 
-- Virginia Messina: 
-    Soy Técnica en Administración de Servicios de Salud. Hace 25 aÑos que trabajo en el área de liquidación de honorarios y gastos sanatoriales.
-    No tengo experiencia en programación. Para mí es totalmente un desafío. Espero poder adquirir los conocimientos y aprender de cada uno de los integrantes del equipo.
+- Alexis Vasquez: 
+    Soy Venezolano y tengo 25 años, actualmente estoy de entrada al mundo de la programación, me gustaría seguir aprendiendo un monton más. Quisiera para mas adelante estudiar Ingenieria en Software. En estos momentos, recién logré entrar a una empresa de Software con el puesto Customer Success donde sé que me aportará muchas cosas para seguir creciendo como profesional. Me gusta mucho los deportes.
     
 - Mateo Ferrando:
     Soy estudiante de la Lic. en Administración en la Universidad de Buenos Aires y trabajo de manera part-time en una oficina en Recoleta.
