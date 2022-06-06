@@ -1,6 +1,6 @@
 - Comenzar a hacer:
 Asignar en Trello en con ícono para cada uno, cada una de las tareas.
-En Github cada uno trabaja en un branch propio y en una reunión final se evalúa, se valida el código final y se unifica.
+Trabajar en un único branch de manera sincronizada.
 
 - Hacer mas:
 Reuniones virtuales.
