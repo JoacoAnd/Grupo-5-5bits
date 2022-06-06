@@ -13,4 +13,3 @@ Dividir las tareas.
 - Hacer menos:
 
 - Dejar de hacer:
-Trabajar todos sobre la rama principal de Github.
