@@ -8,8 +8,8 @@ const puerto = 3000;
 
 // Configuración del servidor
 
-app.use('/', express.static(__dirname + '/public/' ))
-
+app.use('/', express.static(__dirname + '/public/'))
+app.use('/imagenes', express.static(__dirname + '/public/images'))
 
 // Rutas
 
@@ -38,6 +38,6 @@ app.get('/login', (req, res) => {
 
 // Levantar el server
 
-app.listen(puerto, ()=> {
+app.listen(puerto, () => {
     console.log("servidor corriendo en el puerto " + puerto);
 })
