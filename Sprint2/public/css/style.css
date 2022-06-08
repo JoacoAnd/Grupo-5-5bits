@@ -1,0 +1,103 @@
+    /********************
+COLORES
+VERDE OSCURO: #567317
+VERDE CLARO: #86A614
+VERDE SUPER CLARO: #D5D97A
+MARRON CLARO: #BEAC94
+BLANCO: #F2F2F2
+NEGRO: #1C1C1B
+
+TAMAÑOS
+TITULOS: 
+
+******************/
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: roboto;
+    }
+    
+    img#logo {
+        max-width: 5%;
+        margin-left: 25px;
+    }
+    
+    #encabezado {
+        max-width: 100%;
+        background-color: #36480e;
+        display: flex;
+    }
+    
+    li a {
+        color: #f2f2f2;
+        text-decoration: none;
+        font-size: 1.4em;
+    }
+    
+    ul li {
+        margin-right: 15px;
+        display: inline;
+    }
+    
+    ul {
+        margin-right: 250px;
+        margin-top: 20px;
+        width: 100%;
+    }
+    
+    #bannerHome {
+        max-width: 100%;
+        background-color: #beac94;
+        height: 250px;
+    }
+    
+    #promociones {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    #mujerFotoBanner {
+        background-image: url('../images/mujer1.jpg');
+        width: 35%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 750px;
+    }
+    
+    #descuentoBanner {
+        width: 550px;
+        padding: 0 15px;
+        height: 700px;
+    }
+    
+    #descuentoBanner h2 {
+        font-size: 50px;
+        margin: 150px 0 35px 0;
+        font-family: 'Marcellus', serif;
+    }
+    
+    #descuentoBanner h3 {
+        margin-top: 50px;
+        margin-left: 35px;
+        font-size: 80px;
+        font-family: 'Marcellus', serif;
+    }
+    
+    #hombreFotoBanner {
+        background-image: url('../images/hombre1.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 750px;
+        align-items: right;
+    }
+    /**************TABLET******************/
+    
+    @media(min-width:361px) {}
+    /**************DESKTOP******************/
+    
+    @media(min-width:769) {}
