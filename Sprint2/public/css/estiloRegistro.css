@@ -1,0 +1,49 @@
+/* 
+
+Hoja de estilo del formulario de registro
+
+Autor: Julio Tuozzo
+
+*/
+
+#registro {
+    display: flex;
+    background-color: blue;
+}
+
+
+.img-left {
+    background-image: url("/imagenes/3hombre500.jpg");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    width:30%;
+}
+
+.form_registro {
+    background-color:green;
+    width:40%;
+    text-align: center;
+    padding: 20px;
+
+}
+
+#registro h2 {
+    color:white;
+}
+
+
+#apellido,#nombre {
+    width: 100%;
+    display: block;
+    padding: 3px;
+    margin: 3px;
+}
+
+.img-right {
+    background-image: url("/imagenes/2mujer500.jpg");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    width:30%;
+}
