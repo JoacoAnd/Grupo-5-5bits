@@ -110,4 +110,9 @@ Autor: Julio Tuozzo
     .novedades {
         font-size: 1.1em;
         }
+
+
+   @media (min-width: 769px) {
+
+   }
 }
