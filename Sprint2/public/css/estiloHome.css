@@ -1,4 +1,4 @@
-                        /********************
+                                        /********************
 COLORES
 VERDE OSCURO: #567317
 VERDE CLARO: #86A614
@@ -11,288 +11,361 @@ TAMAÑOS
 TITULOS: 
 
 ******************/
-                        /******************************************************************************************************************************CELULAR************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-                        
-                        * {
-                            margin: 0;
-                            padding: 0;
-                            box-sizing: border-box;
-                            font-family: roboto;
-                        }
-                        /*****************CELULAR NAV*************************/
-                        
-                        #encabezado {
-                            width: 100%;
-                            background-color: #36480e;
-                        }
-                        
-                        #logo {
-                            width: 100%;
-                            padding: 0 50px 25px 50px;
-                            margin-right: auto;
-                            margin-top: 10px;
-                        }
-                        
-                        #barraNavUl {
-                            display: none;
-                        }
-                        
-                        .burger-menu {
-                            display: flex;
-                            justify-content: center;
-                        }
-                        
-                        .fa-bars {
-                            background-color: #D5D97A;
-                            padding: 10px;
-                            margin: 20px;
-                            border-radius: 3px;
-                            color: #ebebeb;
-                        }
-                        /*****************CELULAR BANNER*************************/
-                        
-                        #bannerHome {
-                            display: none;
-                        }
-                        /*****************CELULAR PROMOCIONES*************************/
-                        
-                        #promociones {
-                            display: none;
-                        }
-                        /*****************CELULAR DESCUENTOS*************************/
-                        
-                        .iconoDescuento {
-                            font-size: 38px;
-                            padding: 3px;
-                            text-align: right;
-                            color: #567317;
-                        }
-                        
-                        .cajaArticulo {
-                            margin: 15px 10px;
-                            width: 100%;
-                            box-shadow: 10px 12px 26px -2px rgba(0, 0, 0, 0.48);
-                            border-radius: 25px;
-                            padding: 0 0 15px 0;
-                        }
-                        
-                        .cajaArticulo:hover {
-                            box-shadow: 0px -1px 165px 200px #f0f3b798 inset;
-                        }
-                        
-                        .cajaDescripcionProducto {
-                            font-size: 25px;
-                            text-align: center;
-                        }
-                        
-                        .imgOferta {
-                            width: 100%;
-                            border-radius: 25px 25px 0 0;
-                        }
-                        
-                        #descuentosHome {
-                            display: flex;
-                            flex-wrap: wrap;
-                            justify-content: space-around;
-                            width: 100%;
-                        }
-                        /*****************CELULAR METODOS DE PAGO*************************/
-                        /*****************CELULAR FOOTER*************************/
-                        
-                        footer {
-                            background-color: #36480e;
-                        }
-                        /******************************************************************************************************************************TABLET************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-                        
-                        @media(min-width: 361px) {
-                            * {
-                                margin: 0;
-                                padding: 0;
-                                box-sizing: border-box;
-                                font-family: roboto;
-                            }
-                            /*****************TABLET NAV*************************/
-                            #contenedorLogo {
-                                width: 25%;
-                            }
-                            #logo {
-                                width: 100%;
-                            }
-                            #barraNavUl {
-                                display: inline;
-                            }
-                            #barraNav {
-                                display: inline;
-                                margin-left: auto;
-                                margin-right: 25px;
-                                margin-top: 50px
-                            }
-                            li a {
-                                color: #f2f2f2;
-                                text-decoration: none;
-                                font-size: 16px;
-                                text-align: center;
-                            }
-                            ul li {
-                                list-style: none;
-                                display: inline;
-                            }
-                            ul {
-                                margin-top: 20px;
-                                width: 100%;
-                            }
-                            .burger-menu {
-                                display: none;
-                            }
-                            /*****************TABLET BANNER*************************/
-                            #bannerHome {
-                                display: block;
-                                width: 100%;
-                                background-color: #beac94;
-                                height: 150px;
-                            }
-                            /*****************TABLET PROMOCIONES*************************/
-                            #promocionesBanner {
-                                display: block;
-                                width: 100%;
-                                padding: 0 15px;
-                                height: 300px;
-                            }
-                            #promociones {
-                                display: flex;
-                                width: 100%;
-                                justify-content: space-between;
-                            }
-                            #promocionesBanner h2 {
-                                font-size: 50px;
-                                margin: 150px 0 35px 0;
-                                font-family: 'Marcellus', serif;
-                            }
-                            #promocionesBanner h3 {
-                                margin-top: 50px;
-                                margin-left: 35px;
-                                font-size: 80px;
-                                font-family: 'Marcellus', serif;
-                            }
-                            #mujerFotoBanner {
-                                background-image: url('../images/mujer1.jpg');
-                                width: 35%;
-                                background-position: center;
-                                background-repeat: no-repeat;
-                                background-size: cover;
-                            }
-                            #hombreFotoBanner {
-                                background-image: url('../images/hombre1.jpg');
-                                background-position: center;
-                                background-repeat: no-repeat;
-                                background-size: cover;
-                                align-items: right;
-                                width: 35%;
-                            }
-                            /*****************TABLET DESCUENTOS*************************/
-                            #descuentosHome {
-                                width: 90%;
-                                margin: 0 auto 0 auto;
-                            }
-                            .cajaArticulo {
-                                margin: 15px 10px;
-                                width: 50%;
-                                box-shadow: 10px 12px 26px -2px rgba(0, 0, 0, 0.48);
-                                border-radius: 25px;
-                                padding: 0 0 15px 0;
-                            }
-                            .cajaArticulo:hover {
-                                box-shadow: 0px -1px 165px 200px #f0f3b798 inset;
-                            }
-                            .imgOferta {
-                                width: 50%;
-                                border-radius: 25px 25px 0 0;
-                            }
-                            /*****************TABLET METODOS DE PAGO*************************/
-                            /*****************TABLET FOOTER*************************/
-                        }
-                        /******************************************************************************************************************************DESKTOP************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-                        
-                        @media(min-width: 769px) {
-                            * {
-                                margin: 0;
-                                padding: 0;
-                                box-sizing: border-box;
-                                font-family: roboto;
-                            }
-                            /*****************DESKTOP NAV*************************/
-                            #barraNavUl {
-                                display: inline;
-                            }
-                            #barraNav {
-                                display: inline;
-                                margin-left: auto;
-                                margin-right: 25px;
-                                margin-top: 50px
-                            }
-                            li a {
-                                color: #f2f2f2;
-                                text-decoration: none;
-                                font-size: 1.4em;
-                            }
-                            ul li {
-                                margin-right: 15px;
-                                display: inline;
-                            }
-                            ul {
-                                margin-right: 250px;
-                                margin-top: 20px;
-                                width: 100%;
-                            }
-                            .burger-menu {
-                                display: none;
-                            }
-                            /*****************DESKTOP BANNER*************************/
-                            #bannerHome {
-                                display: block;
-                                max-width: 100%;
-                                background-color: #beac94;
-                                height: 250px;
-                            }
-                            /*****************DESKTOP PROMOCIONES*************************/
-                            #promocionesBanner {
-                                width: 100%;
-                                margin-right: auto;
-                                margin-left: auto;
-                                height: 300px;
-                            }
-                            #promociones {
-                                display: flex;
-                                width: 100%;
-                                justify-content: space-between;
-                            }
-                            #promocionesBanner h2 {
-                                font-size: 50px;
-                                margin: 150px 0 35px 0;
-                                font-family: 'Marcellus', serif;
-                            }
-                            #promocionesBanner h3 {
-                                margin-top: 50px;
-                                margin-left: 35px;
-                                font-size: 80px;
-                                font-family: 'Marcellus', serif;
-                            }
-                            #promocionesBanner h2 {
-                                font-size: 50px;
-                                margin: 150px 0 35px 0;
-                                font-family: 'Marcellus', serif;
-                            }
-                            #promocionesBanner h3 {
-                                margin-top: 50px;
-                                margin-left: 35px;
-                                font-size: 80px;
-                                font-family: 'Marcellus', serif;
-                            }
-                            /*****************DESKTOP DESCUENTOS*************************/
-                            #descuentosHome {
-                                width: 90%;
-                                margin: 0 auto 0 auto;
-                            }
-                            /*****************DESKTOP METODOS DE PAGO*************************/
-                            /*****************DESKTOP FOOTER*************************/
-                        }
+                                        /******************************************************************************************************************************CELULAR************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+                                        
+                                        * {
+                                            margin: 0;
+                                            padding: 0;
+                                            box-sizing: border-box;
+                                            font-family: roboto;
+                                        }
+                                        /*****************CELULAR NAV*************************/
+                                        
+                                        header {
+                                            display: flex;
+                                        }
+                                        
+                                        #encabezado {
+                                            width: 100%;
+                                            background-color: #36480e;
+                                            padding: 10px 0;
+                                        }
+                                        
+                                        #contenedorLogo {
+                                            margin: 0 auto;
+                                            width: 20%;
+                                        }
+                                        
+                                        #logo {
+                                            width: 100%;
+                                            padding: 0 50px;
+                                            margin-top: 10px;
+                                            margin: 0 auto;
+                                        }
+                                        
+                                        #barraNavUl {
+                                            display: none;
+                                        }
+                                        
+                                        .burger-menu {
+                                            display: flex;
+                                            justify-content: center;
+                                        }
+                                        
+                                        .fa-bars {
+                                            background-color: #D5D97A;
+                                            padding: 10px;
+                                            margin: 20px;
+                                            border-radius: 3px;
+                                            color: #ebebeb;
+                                        }
+                                        /*****************CELULAR BANNER*************************/
+                                        
+                                        #bannerHome {
+                                            display: none;
+                                        }
+                                        /*****************CELULAR PROMOCIONES*************************/
+                                        
+                                        #promociones {
+                                            display: none;
+                                        }
+                                        /*****************CELULAR DESCUENTOS*************************/
+                                        
+                                        .iconoDescuento {
+                                            font-size: 38px;
+                                            padding: 3px;
+                                            text-align: right;
+                                            color: #567317;
+                                        }
+                                        
+                                        .cajaArticulo {
+                                            margin: 15px 10px;
+                                            width: 100%;
+                                            box-shadow: 10px 12px 26px -2px rgba(0, 0, 0, 0.48);
+                                            border-radius: 25px;
+                                            padding: 0 0 15px 0;
+                                        }
+                                        
+                                        .cajaArticulo:hover {
+                                            box-shadow: 0px -1px 165px 200px #f0f3b798 inset;
+                                        }
+                                        
+                                        .cajaDescripcionProducto {
+                                            font-size: 25px;
+                                            text-align: center;
+                                        }
+                                        
+                                        .imgOferta {
+                                            width: 100%;
+                                            border-radius: 25px 25px 0 0;
+                                        }
+                                        
+                                        #descuentosHome {
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            justify-content: space-around;
+                                            width: 100%;
+                                        }
+                                        /*****************CELULAR METODOS DE PAGO*************************/
+                                        /*****************CELULAR FOOTER*************************/
+                                        
+                                        footer {
+                                            background-color: #36480e;
+                                            color: white;
+                                            font-size: 8px;
+                                            text-align: center;
+                                            padding: 15px 0;
+                                            margin-bottom: 0;
+                                        }
+                                        
+                                        #navFooter {
+                                            margin-bottom: 15px;
+                                        }
+                                        
+                                        #navFooter ul {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+                                            justify-content: center;
+                                        }
+                                        
+                                        #navFooter ul li {
+                                            margin: 0 5px;
+                                            list-style: none;
+                                            width: 100%;
+                                        }
+                                        
+                                        #navFooter ul li a {
+                                            color: #F2F2F2;
+                                            text-decoration: none;
+                                            font-size: 9px;
+                                        }
+                                        
+                                        #redesFooter {
+                                            margin-bottom: 15px;
+                                        }
+                                        
+                                        #redesFooter ul {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+                                            justify-content: center;
+                                            flex-wrap: wrap;
+                                        }
+                                        
+                                        #redesFooter ul li {
+                                            margin: 10px 15px;
+                                            list-style: none;
+                                        }
+                                        
+                                        #redesFooter ul li a {
+                                            color: #F2F2F2;
+                                            text-decoration: none;
+                                            font-size: 9px;
+                                            margin: 10px 5px;
+                                        }
+                                        /******************************************************************************************************************************TABLET************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+                                        
+                                        @media(min-width: 361px) {
+                                            * {
+                                                margin: 0;
+                                                padding: 0;
+                                                box-sizing: border-box;
+                                                font-family: roboto;
+                                            }
+                                            /*****************TABLET NAV*************************/
+                                            #encabezado {
+                                                display: flex;
+                                                align-items: center;
+                                            }
+                                            #contenedorLogo {
+                                                width: 20%;
+                                            }
+                                            #logo {
+                                                width: 100%;
+                                                padding: 0;
+                                            }
+                                            #barraNavUl {
+                                                display: inline;
+                                            }
+                                            #barraNav {
+                                                margin-left: auto;
+                                                margin-right: 15px;
+                                            }
+                                            li a {
+                                                color: #f2f2f2;
+                                                text-decoration: none;
+                                                font-size: 14px;
+                                                text-align: center;
+                                            }
+                                            ul li {
+                                                list-style: none;
+                                                display: inline;
+                                                margin: 0 15px;
+                                            }
+                                            ul {
+                                                width: 100%;
+                                            }
+                                            .burger-menu {
+                                                display: none;
+                                            }
+                                            /*****************TABLET BANNER*************************/
+                                            #bannerHome {
+                                                display: block;
+                                                width: 100%;
+                                                background-color: #beac94;
+                                                height: 150px;
+                                            }
+                                            /*****************TABLET PROMOCIONES*************************/
+                                            #promocionesBanner {
+                                                display: block;
+                                                width: 100%;
+                                                padding: 0 15px;
+                                                height: 300px;
+                                            }
+                                            #promociones {
+                                                display: flex;
+                                                width: 100%;
+                                                justify-content: space-between;
+                                            }
+                                            #promocionesBanner h2 {
+                                                font-size: 50px;
+                                                margin: 150px 0 35px 0;
+                                                font-family: 'Marcellus', serif;
+                                            }
+                                            #promocionesBanner h3 {
+                                                margin-top: 50px;
+                                                margin-left: 35px;
+                                                font-size: 80px;
+                                                font-family: 'Marcellus', serif;
+                                            }
+                                            #mujerFotoBanner {
+                                                background-image: url('../images/mujer1.jpg');
+                                                width: 35%;
+                                                background-position: center;
+                                                background-repeat: no-repeat;
+                                                background-size: cover;
+                                            }
+                                            #hombreFotoBanner {
+                                                background-image: url('../images/hombre1.jpg');
+                                                background-position: center;
+                                                background-repeat: no-repeat;
+                                                background-size: cover;
+                                                align-items: right;
+                                                width: 35%;
+                                            }
+                                            /*****************TABLET DESCUENTOS*************************/
+                                            #descuentosHome {
+                                                width: 90%;
+                                                margin: 0 auto 0 auto;
+                                            }
+                                            .cajaArticulo {
+                                                margin: 15px 10px;
+                                                width: 50%;
+                                                box-shadow: 10px 12px 26px -2px rgba(0, 0, 0, 0.48);
+                                                border-radius: 25px;
+                                                padding: 0 0 15px 0;
+                                            }
+                                            .cajaArticulo:hover {
+                                                box-shadow: 0px -1px 165px 200px #f0f3b798 inset;
+                                            }
+                                            .imgOferta {
+                                                width: 50%;
+                                                border-radius: 25px 25px 0 0;
+                                            }
+                                            /*****************TABLET METODOS DE PAGO*************************/
+                                            /*****************TABLET FOOTER*************************/
+                                            #navFooter ul li a {
+                                                font-size: 12px;
+                                            }
+                                            #redesFooter ul li a {
+                                                font-size: 12px;
+                                            }
+                                        }
+                                        /******************************************************************************************************************************DESKTOP************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+                                        
+                                        @media(min-width: 769px) {
+                                            * {
+                                                margin: 0;
+                                                padding: 0;
+                                                box-sizing: border-box;
+                                                font-family: roboto;
+                                            }
+                                            /*****************DESKTOP NAV*************************/
+                                            #encabezado {
+                                                display: flex;
+                                                align-items: center;
+                                            }
+                                            #logo {
+                                                width: 50%;
+                                            }
+                                            #barraNavUl {
+                                                display: inline;
+                                            }
+                                            #barraNav {
+                                                margin-left: auto;
+                                                margin-right: 25px;
+                                            }
+                                            li a {
+                                                color: #f2f2f2;
+                                                text-decoration: none;
+                                                font-size: 1.4em;
+                                            }
+                                            ul li {
+                                                display: inline;
+                                            }
+                                            ul {
+                                                width: 100%;
+                                            }
+                                            .burger-menu {
+                                                display: none;
+                                            }
+                                            /*****************DESKTOP BANNER*************************/
+                                            #bannerHome {
+                                                display: block;
+                                                max-width: 100%;
+                                                background-color: #beac94;
+                                                height: 250px;
+                                            }
+                                            /*****************DESKTOP PROMOCIONES*************************/
+                                            #promocionesBanner {
+                                                width: 100%;
+                                                margin-right: auto;
+                                                margin-left: auto;
+                                                height: 300px;
+                                            }
+                                            #promociones {
+                                                display: flex;
+                                                width: 100%;
+                                                justify-content: space-between;
+                                            }
+                                            #promocionesBanner h2 {
+                                                font-size: 50px;
+                                                margin: 150px 0 35px 0;
+                                                font-family: 'Marcellus', serif;
+                                            }
+                                            #promocionesBanner h3 {
+                                                margin-top: 50px;
+                                                margin-left: 35px;
+                                                font-size: 80px;
+                                                font-family: 'Marcellus', serif;
+                                            }
+                                            #promocionesBanner h2 {
+                                                font-size: 50px;
+                                                margin: 150px 0 35px 0;
+                                                font-family: 'Marcellus', serif;
+                                            }
+                                            #promocionesBanner h3 {
+                                                margin-top: 50px;
+                                                margin-left: 35px;
+                                                font-size: 80px;
+                                                font-family: 'Marcellus', serif;
+                                            }
+                                            /*****************DESKTOP DESCUENTOS*************************/
+                                            #descuentosHome {
+                                                width: 90%;
+                                                margin: 0 auto 0 auto;
+                                            }
+                                            /*****************DESKTOP METODOS DE PAGO*************************/
+                                            /*****************DESKTOP FOOTER*************************/
+                                        }
