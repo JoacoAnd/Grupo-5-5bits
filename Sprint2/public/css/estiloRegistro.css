@@ -8,7 +8,6 @@ Autor: Julio Tuozzo
 
 #registro {
     display: flex;
-    background-color: blue;
 }
 
 
@@ -17,27 +16,7 @@ Autor: Julio Tuozzo
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
-    width:30%;
-}
-
-.form_registro {
-    background-color:green;
-    width:40%;
-    text-align: center;
-    padding: 20px;
-
-}
-
-#registro h2 {
-    color:white;
-}
-
-
-#apellido,#nombre {
-    width: 100%;
-    display: block;
-    padding: 3px;
-    margin: 3px;
+    width:25%;
 }
 
 .img-right {
@@ -45,5 +24,49 @@ Autor: Julio Tuozzo
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
-    width:30%;
+    width:25%;
+}
+
+.form_registro {
+    background-color: #86A614; 
+    width:50%;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+#registro h2 {
+    color:white;
+    font-weight: normal;
+}
+
+.inputs input {
+    width: 80%;
+    display: block;
+    padding: 3px;
+    margin-top: 15px;
+    border-radius:5px;
+    border: none;
+    color:#567317;
+    font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.novedades {
+    padding-top: 20px;
+    color:white;
+
+    }
+
+/* Estilo para Tablet */
+
+@media(min-width: 361px) {
+
+}
+
+/* Estilo para desktop */
+
+@media(min-width: 769px) {
+
 }
