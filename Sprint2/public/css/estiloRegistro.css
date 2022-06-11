@@ -22,7 +22,7 @@ Autor: Julio Tuozzo
 
 .img-right {
     background-image: url("/imagenes/2mujer500.jpg");
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat; 
     background-size: cover;
     width:25%;
