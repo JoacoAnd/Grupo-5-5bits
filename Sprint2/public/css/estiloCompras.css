@@ -1,0 +1,209 @@
+*{margin: 0;
+  padding: 0;}
+  
+  /* CELULAR */
+  header {
+    display: flex;
+}
+
+#encabezado {
+    width: 100%;
+    background-color: #36480e;
+    padding: 10px 0;
+}
+
+#contenedorLogo {
+    margin: 0 auto;
+    width: 20%;
+}
+
+#logo {
+    width: 100%;
+    padding: 0 50px;
+    margin-top: 10px;
+    margin: 0 auto;
+}
+
+#barraNavUl {
+    display: none;
+}
+
+.burger-menu {
+    display: flex;
+    justify-content: center;
+}
+
+.fa-bars {
+    background-color: #D5D97A;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 3px;
+    color: #ebebeb;
+}
+
+/*****************CELULAR FOOTER*************************/
+        
+footer {
+    background-color: #36480e;
+    color: white;
+    font-size: 8px;
+    text-align: center;
+    padding: 15px 0;
+    margin-bottom: 0;
+}
+
+#navFooter {
+    margin-bottom: 15px;
+}
+
+#navFooter ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+#navFooter ul li {
+    margin: 0 5px;
+    list-style: none;
+    width: 100%;
+}
+
+#navFooter ul li a {
+    color: #F2F2F2;
+    text-decoration: none;
+    font-size: 9px;
+}
+
+#redesFooter {
+    margin-bottom: 15px;
+}
+
+#redesFooter ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#redesFooter ul li {
+    margin: 10px 15px;
+    list-style: none;
+}
+
+#redesFooter ul li a {
+    color: #F2F2F2;
+    text-decoration: none;
+    font-size: 9px;
+    margin: 10px 5px;
+}
+
+/****************************************************************
+**************************************************************TABLET******
+***************************************************************************
+***************************************************************************
+**************************************************************************
+***************************************************************************
+**************************************************************************
+**************************************************************************
+**************************************************************************
+************************************************************************/
+@media(min-width: 361px) {
+#encabezado {
+    display: flex;
+    align-items: center;
+}
+#contenedorLogo {
+    width: 40%;
+}
+#logo {
+    width: 50%
+}
+#barraNavUl {
+    display: inline;
+}
+#barraNav {
+    margin-left: auto;
+    margin-right: 10px;
+}
+li a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
+ul li {
+    list-style: none;
+    display: inline;
+    margin: 0 10px;
+    display: inline;
+}
+ul {
+    width: 100%;
+}
+#barraNav i {
+    font-size: 1em;
+}
+.burger-menu {
+    display: none;
+}
+
+/*****************TABLET FOOTER*************************/
+#navFooter ul li a {
+    font-size: 12px;
+}
+#redesFooter ul li a {
+    font-size: 12px;
+}
+#redesFooter i {
+    font-size: 1.7em;
+}
+}
+
+
+
+
+/**************************************************************************
+****************************************************DESKTOP***************
+*************************************************************************
+*************************************************************************
+*************************************************************************
+*************************************************************************
+*************************************************************************
+*************************************************************************
+*************************************************************************
+**************************************************************************/
+        
+@media(min-width: 769px) {
+
+    /*****************DESKTOP NAV*************************/
+    #encabezado {
+        display: flex;
+        align-items: center;
+    }
+    #contenedorLogo {
+        width: 20%;
+    }
+    #logo {
+        width: 50%;
+    }
+    #barraNav {
+        margin-right: 25px;
+    }
+    li a {
+        font-size: 16px;
+    }
+
+/*****************DESKTOP FOOTER*************************/
+#navFooter ul li a {
+    font-size: 18px;
+}
+#redesFooter ul li a {
+    font-size: 18px;
+}
+#redesFooter i {
+    font-size: 2em;
+}
+
+}
