@@ -1,0 +1,209 @@
+/* ------LOGIN------- */
+/* ------------------ */
+
+/* Main */
+main{
+    max-width: 100vw;
+    position: relative;
+}
+
+/* Logo */
+
+.divlogo{
+    width: 100%;
+}
+
+.logologin{
+    width: 25%;
+}
+
+/* Form */
+
+.formlogin{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.h2login{
+    font-size: 30px;
+    margin-bottom: 8%;
+    color: #beac94;
+    font-weight: 600;
+    text-shadow: 1px 1px black;
+    padding-bottom: 5%;
+    border-bottom: solid 1px grey;
+}
+
+/* Inputs */
+
+.inputlogin{
+    border: none;
+    border-bottom: 2px solid #86A614;
+    width: 80%;
+    height: 40px;
+    margin-bottom: 10%;
+    padding-left: 8px;
+    font-size: 20px;
+    transition: border-bottom 200ms;
+}
+
+.inputlogin:focus{
+    outline: none;
+    border-bottom: 2px solid #D5D979;
+}
+
+/* Olvide mi contrasena */
+
+.olvidemicontrasenia{
+    display: block;
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 5%;
+    font-weight: 600;
+}
+
+.olvidemicontrasenia:link, 
+.olvidemicontrasenia:visited{
+    color: #567317;
+}
+
+.olvidemicontrasenia:hover{
+    color:#86A614;
+}
+
+.olvidemicontrasenia:active{
+    color: #D5D979;
+}
+
+/* Boton ingresar */
+
+.botoningresarlogin{
+    margin-top: 5%;
+    width: 70%;
+    height: 50px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    background-color: #567317;
+    color: white;
+    border-radius: 10px ;
+    transition: all 100ms;
+}
+
+.botoningresarlogin:hover{
+    cursor: pointer;
+    background-color: #86A614;
+    color: #f2f2f2;
+}
+
+/* Registrate! */
+
+.registrate{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.registratelogin{
+    margin-top: 8%;
+    font-size: 22px;
+}
+
+.botonregistratelogin{
+    min-width: 200px;
+    margin-top: 6%;
+    margin-bottom: 10%;
+    border: none;
+    width: 45%;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: #A9A9A9;
+    transition: all 200ms;
+}
+
+.botonregistratelogin:hover{
+    background-color: #beac94;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* Ocultar imagenes*/
+.imagen1login,
+.imagen2login{
+    display: none;
+}
+
+/* ------------------------------------------------- */
+
+/* Media queries */
+
+/* Tablet */
+@media(min-width: 361px) {
+    /* Logo a la izquierda */
+    .divlogo{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+/* Desktop */
+@media(min-width: 1000px) {
+    
+    /* Main */
+    main{
+        display: flex;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    /* Desaparecer logo */
+    .divlogo{
+        display: none;
+    }
+
+    /* Secciones */
+    
+    /* Imagen 1: mujer */
+    .imagen1login{
+        display: flex;
+        width: 33%;
+        max-width: 33%;
+        justify-content: flex-start;
+    }
+
+    .imagen1login .imagen1{
+        width: 90%;
+    }
+
+    /* Login */
+
+    .seccionlogin{
+        height: fit-content;
+        width: 33%;
+        align-self: center;
+        border-left: solid 1px #86A614;
+        border-right: solid 1px #86A614;
+    }
+
+    /* Imagen 2: hombre */
+    .imagen2login{
+        display: flex;
+        width: 34%;
+        justify-content: right;
+    }    
+
+    .imagen2login .imagen2{
+        width: 90%;
+    }
+
+    /* Boton */
+
+    .botonregistratelogin{
+        min-width: 0;
+    }
+}
