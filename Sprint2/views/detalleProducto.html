@@ -1,56 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="css/prodDetalleStyle.css">
-    <title>Detalle del producto</title>
-</head>
-<body>
-    <header>
-        <div class="contenedor">
-            <div class="contenido">
-                <i class="fas fa-bars"></i>
-                <a href="#"><img src="imagenes/logo.png" alt="logo"></a>
-            </div>
-            <div class="contenido">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-user"></i>
-                <i class="fas fa-shopping-bag"></i>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/estiloHome.css">
+    <link rel="stylesheet" href="css/estiloDetalleProducto.css" />
+    <title>PRODUCTO</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+
+    <header id="encabezado">
+      <div id="contenedorLogo">
+        <img
+          src="imagenes/logo2056x1806.png"
+          alt="Logo de la To.quio indumetnaria"
+          id="logo"
+        />
+      </div>
+      <nav id="barraNav">
+        <ul id="barraNavUl">
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">Nosotros</a>
+          </li>
+          <li>
+            <a href="/views/home.html">Tienda</a>
+          </li>
+          <li>
+            <a href="">FAQ</a>
+          </li>
+          <li>
+            <a href="">Contacto</a>
+          </li>
+          <li>
+            <a href="/views/home.html"> <i class="fas fa-shopping-bag"></i></a>
+          </li>
+        </ul>
+        <div class="burger-menu">
+          <i class="fas fa-bars"></i>
         </div>
+      </nav>
     </header>
 
+    <!-- MAIN -->
+
     <div class="main">
-        <div class="descrip">
-           <img src="images/1mujer500.jpg" alt="imagen-mujer">
+      <div class="imagen">
+        <img src="images/1mujer500.jpg" alt="imagen-mujer" />
+      </div>
+      <div class="descrip">
+        <div class="content-descrip">
+          <h2>NOMBRE DEL PRODUCTO</h2>
+          <p>$ 69.900</p>
+          <p> <strong>New in</strong></p>
         </div>
-        <div class="descrip">
-            <img src="images/2mujer500.jpg" alt="imagen2-mujer">
+        <div class="content-descrip">
+          <p>COLOR: NEGRO</p>
+          <i class="fas fa-circle"></i>
+          <p>TALLES:</p>
+          <button class="botones">S</button>
+          <button class="botones">M</button>
+          <button class="botones">L</button>
         </div>
-        <div class="descrip">
-            <div class="conten-descrip">
-            <h2> Falda Fetina New Cuero</h2>
-            <p>$ 69.900</p>
-            <p>New in</p>
-            </div>
-            <div class="conten-descrip">
-                <p>COLOR: NEGRO</p>
-                <i class="fas fa-circle"></i>
-                <p>TALLE</p>
-                <a href="#">GUÍA DE TALLES</a>
-            </div>
-            <div class="conten-descrip">
-                <button type="button">COMPRAR</button>
-            </div>
-            <div class="conten-descrip"></div>
-                <h4>DETALLE DEL PRODUCTO:</h4>
-                <p>Falda de cuero midi, con elástico en la parte trasera. Cintura delantera con apliques. Una prenda super iconica de esta temporada</p>
-                <h4>Referencia Modelo</h4>
-                <p>La modelo esta usando Talle: S Altura: 1,76 mts // Contorno de busto: 80 cm //Contorno de cintura: 63 cm // Contorno de Cadera: 91 cm</p>
+        <div class="content-descrip">
+          <button type="submit" class="boton">COMPRAR</button>
+          <i class="fas fa-shopping-cart"></i>
         </div>
+        <div class="content-descrip">
+          <h4>Detalle del producto:</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi facere, dolorem aspernatur voluptas ratione at quae sed ducimus consequuntur a nihil, repudiandae 
+          </p>
+        </div>
+      </div>
     </div>
-</body>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div id="navFooter ">
+        <nav>
+          <ul>
+            <li>
+              <a href=" ">Home</a>
+            </li>
+            <li>
+              <a href=" ">Nosotros</a>
+            </li>
+            <li>
+              <a href="/views/home.html ">Tienda</a>
+            </li>
+            <li>
+              <a href=" ">FAQ</a>
+            </li>
+            <li>
+              <a href=" ">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div id="redesFooter ">
+        <ul>
+          <li><i class="fab fa-instagram"></i> <a href=" ">To.quioOK</a></li>
+          <li>
+            <i class="fab fa-twitter"></i>
+            <a href=" ">To.quio - Indumentaria</a>
+          </li>
+          <li><i class="fab fa-facebook-f"></i> <a href=" ">To.quio</a></li>
+          <li>
+            <i class="fab fa-whatsapp"></i> <a href=" ">(911)-12445858</a>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href=" ">to.quio@indumentaria.com</a>
+          </li>
+        </ul>
+      </div>
+      <p>Copyright grupo5bits. - 2022</p>
+    </footer>
+  </body>
 </html>
