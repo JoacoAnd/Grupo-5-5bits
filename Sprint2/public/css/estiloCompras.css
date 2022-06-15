@@ -40,6 +40,69 @@
     border-radius: 3px;
     color: #ebebeb;
 }
+/***********************************************************/
+#carritoDeCompras{
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fef9f38a;
+}
+
+#carritoDeCompras a{
+    text-align: center;
+}
+.productoCarrito{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px;
+    border-bottom: 2px solid #41431ea5;
+    
+}
+.productoCarrito h4{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    
+}
+.contadorCarrito{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.contadorCarrito i{
+    margin: 5px 10px;
+}
+
+#carritoTotal{
+ display: flex;
+flex-wrap: wrap;
+justify-content: space-around ;
+align-items: center;
+margin-bottom: 25px;
+}
+#carritoTotal h3{
+width: 50%;
+text-align: center;
+}
+.precioTotalCarrito{
+width: 20%;
+text-align: center;
+}
+.precioTotalCarrito h4{
+    font-size: 12px;
+    text-align: left;
+}
+button{
+    width: 50%;
+    border-radius: 5px;
+    color: black;
+    background-color: #D5D97A;
+    text-align: center;
+}
+button:hover{
+    background-color: #787e11;
+    color: white;
+}
 
 /*****************CELULAR FOOTER*************************/
         
@@ -148,6 +211,17 @@ ul {
 .burger-menu {
     display: none;
 }
+/*********************************************/
+
+#carritoTotal{
+flex-wrap: nowrap;
+width: 60%;
+align-items: center;
+}
+.precioTotalCarrito {
+    text-align: center;
+}
+
 
 /*****************TABLET FOOTER*************************/
 #navFooter ul li a {
@@ -195,6 +269,11 @@ ul {
         font-size: 16px;
     }
 
+    /*********************************************************/
+    .productoCarrito{       
+        flex-wrap: nowrap;      
+        
+    }
 /*****************DESKTOP FOOTER*************************/
 #navFooter ul li a {
     font-size: 18px;
