@@ -1,3 +1,5 @@
+Retrospectiva del sprint 1:
+
 - Comenzar a hacer:
 Asignar en Trello en con ícono para cada uno, cada una de las tareas.
 Trabajar en un único branch de manera sincronizada.
