@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/************** PHONE ************/
+
+body {
+    background-color: #bebebe;
+}
+
+.imagen{
+    height: auto;
+    overflow: hidden;
+}
+
+.imagen img {
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.descrip {
+    margin-left: 10px;
+}
+
+.content-descrip {
+    margin-bottom: 15px;
+}
+
+.content-descrip a {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+.botones {
+    border-radius:10px;
+    border: none;
+    width: 90px;
+    height: 20px;
+}
+
+.botones:hover {
+    background-color: #36480e;
+    color: white;
+}
+
+.boton {
+    width: 75px;
+    height: 20px;
+    border-radius:5px;
+    border: none;
+}
+
+.boton:hover{
+    background-color: #36480e;
+    color: white;
+}
+
+/*********** TABLETS & LARGER PHONES ************/
+
+@media(min-width: 480px) {
+    .content-descrip {
+        font-size: 18px;
+        margin-top: 4px;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    .imagen img {
+        width: 100%;
+        height: 600px;
+    }
+
+    .botones {
+        border-radius:10px;
+        border: none;
+        width: 150px;
+        height: 20px;
+    }
+    
+    .botones:hover {
+        background-color: #36480e;
+        color: white;
+    }
+}
+
+/*********** LAPTOPS & LARGER TABLETS ************/
+
+@media(min-width: 720px) {
+    body{
+        overflow-y: hidden;
+    }
+
+    .main {
+        display: flex;
+        width: 100%;
+        height: auto;
+        
+    }
+
+    .imagen {
+        width: 50%;
+        /* height: auto; */
+    }
+
+    .imagen img {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+
+    .descrip {
+        width: 50%;
+        /* height: auto; */
+    }
+
+    .content-descrip {
+        margin-bottom: 45px;
+    }
+
+    .botones {
+        border-radius:10px;
+        border: none;
+        width: 115px;
+        height: 20px;
+    }
+
+    .boton {
+        width: 110px;
+        height: 20px;
+        border-radius:5px;
+        border: none;
+        font-size: 15px;
+    }
+
+}
