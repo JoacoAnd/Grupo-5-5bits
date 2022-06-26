@@ -9,9 +9,14 @@ const rutasRegister = require('./src/routes/register.js');
 const rutasLogin = require('./src/routes/login.js');
 const rutasCarrito = require('./src/routes/carrito.js');
 
-// Configuración del servidor
+// Configuración plantillas
 
+app.use('/', express.static(__dirname + '/public/'));
+app.use('/imagenes', express.static(__dirname + '/public/images'))
 app.set('view engine', 'ejs')
+
+
+// Configuración del servidor
 
 app.use('/', rutasMain);
 app.use('/productos', rutasProductos);
@@ -19,11 +24,6 @@ app.use('/register', rutasRegister);
 app.use('/login', rutasLogin);
 app.use('/carrito', rutasCarrito);
 
-
-// app.use('/', express.static(__dirname + '/public/'))
-// app.use('/imagenes', express.static(__dirname + '/public/images'))
-
-// // Rutas
 
 // Levantar el server
 
