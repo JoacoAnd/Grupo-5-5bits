@@ -5,7 +5,6 @@ const express = require('express');
 const app = express();
 const puerto = 3000;
 
-
 // Configuración del servidor
 
 app.use('/', express.static(__dirname + '/public/'))

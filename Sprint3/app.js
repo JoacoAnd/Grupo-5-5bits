@@ -10,10 +10,17 @@ const rutasLogin = require('./src/routes/login.js');
 const rutasCarrito = require('./src/routes/carrito.js');
 
 // Configuración plantillas
-
-app.use('/', express.static(__dirname + '/public/'));
-app.use('/imagenes', express.static(__dirname + '/public/images'))
 app.set('view engine', 'ejs')
+    //app.use('/', express.static(__dirname + '/public/'));
+app.use('/imagenes', express.static(__dirname + '/public/images'))
+app.use(express.static('public'))
+app.get('/', (req, res) => {
+    res.render('home')
+    res.render('carritoCompras')
+    res.render('detalleProducto')
+    res.render('login')
+    res.render('registro')
+})
 
 
 // Configuración del servidor
@@ -30,4 +37,3 @@ app.use('/carrito', rutasCarrito);
 app.listen(puerto, () => {
     console.log("servidor corriendo en el puerto " + puerto);
 })
-
