@@ -14,50 +14,55 @@ Autor: Julio Tuozzo
 .img-left {
     background-image: url("/imagenes/3hombre500.jpg");
     background-position: center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
-    width:25%;
+    width: 25%;
     display: none;
 }
 
 .img-right {
     background-image: url("/imagenes/2mujer500.jpg");
     background-position: top;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover;
-    width:25%;
+    width: 25%;
     display: none;
 }
 
 .form_registro {
-    background-color: #86A614; 
+    background-color: #f2f2f2;
     text-align: center;
     padding: 20px;
     font-size: 1.2em;
 }
 
 #registro h2 {
-    color:#F2F2F2;
+    color: black;
     font-weight: normal;
 }
 
+.inputs input:focus {
+    outline: unset;
+}
+
 .inputs input {
-    width: 100%;
-    display: block;
+    width: 80%;
+    display: inline-block;
+    margin: auto;
     padding: 3px;
-    margin-top: 13px;
-    border-radius:5px;
+    padding-left: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
     border: none;
     color: #1C1C1B;
-    font-size: 1em;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 20px;
+    height: 40px;
 }
 
 .novedades {
     padding-top: 30px;
-    color:#F2F2F2;
-    }
+    color: black;
+}
 
 #novedades {
     height: 20px;
@@ -65,22 +70,21 @@ Autor: Julio Tuozzo
 }
 
 .enviar {
-    background-color: #36480E;
+    background-color: #567317;
     padding: 10px;
     margin-top: 30px;
-    color:#F2F2F2;
+    color: #F2F2F2;
     font-size: 1.1em;
-    cursor:pointer;
-    transition: all 0.3s ease-out;
-    border-radius:10px;
+    cursor: pointer;
+    transition: all 150ms;
+    border-radius: 10px;
     border: none;
     width: 130px;
 }
 
-.enviar:hover
-	{color:#567317;
-	 background: #D5D97A;
-	}
+.enviar:hover {
+    background: #86a614;
+}
 
 /* Estilo para Tablet */
 
@@ -99,7 +103,7 @@ Autor: Julio Tuozzo
     }
 
     .form_registro {
-        width:50%;
+        width: 50%;
     }
 
     .inputs input {
@@ -109,10 +113,13 @@ Autor: Julio Tuozzo
 
     .novedades {
         font-size: 1.1em;
-        }
+    }
+}
 
-
-   @media (min-width: 769px) {
-
-   }
+@media (min-width: 1300px) {
+    .inputs input{
+        width: 70%;
+        height: 50px;
+        font-size: 25px;
+    }
 }

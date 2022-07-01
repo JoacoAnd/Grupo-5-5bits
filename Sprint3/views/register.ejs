@@ -1,21 +1,25 @@
-<%- include ( './partials/head'); %>
-    <%- include ( './partials/header'); %>
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
         <main>
             <div id="registro">
                 <div class="img-left">
                 </div>
                 <form class="form_registro" method="post" action="/register">
-                    <h2>Me quiero registrar</h2>
+                    <h2>Registrate</h2>
                     <div class="inputs">
-                        <input type="text" name="apellido" id="apellido" minlength="3" required placeholder="Apellido/s" />
-                        <input type="text" name="nombre" id="nombre" minlength="3" required placeholder="Nombres/s" />
+                        <input type="text" name="nombre" id="nombre" minlength="3" required placeholder="Nombre" />
+                        <input type="text" name="apellido" id="apellido" minlength="3" required
+                            placeholder="Apellido/s" />
                         <input type="email" name="e-mail" id="e-mail" minlength="10" required placeholder="E-mail" />
-                        <input type="password" name="clave" id="clave" minlength="8" required placeholder="Contraseña" />
-                        <input type="password" name="re-clave" id="re-clave" minlength="8" required placeholder="Re ingrese contraseña" />
+                        <input type="password" name="clave" id="clave" minlength="8" required
+                            placeholder="Contraseña" />
+                        <input type="password" name="re-clave" id="re-clave" minlength="8" required
+                            placeholder="Confirmar contraseña" />
                     </div>
 
                     <div class="novedades">
-                        <label for="novedades"><input type="checkbox" name="novedades" id="novedades" /> Deseo recibir ofertas y novedades en mi e-mail </label>
+                        <label for="novedades"><input type="checkbox" name="novedades" id="novedades" /> Deseo recibir
+                            ofertas y novedades en mi e-mail </label>
                     </div>
 
                     <button class="enviar">Enviar</button>
@@ -27,4 +31,4 @@
 
         </main>
 
-        <%- include ( './partials/footer.ejs'); %>
+        <%- include ( './partials/footer.ejs' ); %>

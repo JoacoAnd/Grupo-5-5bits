@@ -1,31 +1,29 @@
-<%- include ( './partials/head'); %>
-    <%- include ( './partials/header'); %>
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
         <main>
-            <section class="imagen1login">
-                <img src="imagenes/1mujer500.jpg" alt="imagenhombre500" class="imagen1">
-            </section>
-            <section class="seccionlogin">
-                <div class="divlogo">
-                    <img src="/imagenes/logo2056x1806.png" alt="FotoLogo" class="logologin">
+            <div id="login">
+                <div class="img-left">
                 </div>
-                <form class="formlogin" action="" method="post">
-                    <h2 class="h2login">LOGIN</h2>
-                    <div class="usuariologin">
-                        <input type="text" class="inputlogin usuario" name="usuariologin" placeholder="Email o usuario">
+                <form class="form_login" method="post" action="/">
+                    <h2>Login</h2>
+                    <div class="inputs">
+                        <input type="text" name="usuariologin" id="usuariologin" minlength="3" required placeholder="Usuario" />
+                        <input type="password" name="contrasenialogin" id="contrasenialogin" minlength="8" required
+                            placeholder="Contraseña" />
                     </div>
-                    <div class="passwordlogin">
-                        <input type="password" class="inputlogin pass" name="passwordlogin" placeholder="Contraseña">
+
+                    <a class="olvidemicontrasenia" href="">Olvide mi contraseña</a>
+
+                    <button class="enviar">Entrar</button>
+                    <div class="registrate">
+                        <h2 class="registratelogin">No tienes un usuario?</h2>
+                        <button class="botonregistratelogin" type="button">REGISTRATE!</button>
                     </div>
-                    <label for=""><a class="olvidemicontrasenia" href="">Olvide mi contraseña</a></label>
-                    <button class="botoningresarlogin" type="submit">INGRESAR</button>
                 </form>
-                <div class="registrate">
-                    <h2 class="registratelogin">No tienes un usuario?</h2>
-                    <button class="botonregistratelogin" type="submit">REGISTRATE!</button>
+                <div class="img-right">
                 </div>
-            </section>
-            <section class="imagen2login">
-                <img src="imagenes/1hombre500.jpg" alt="imagenhombre500" class="imagen2">
-            </section>
+            </div>
+
         </main>
-        <%- include ( './partials/footer.ejs'); %>
+
+        <%- include ( './partials/footer.ejs' ); %>
