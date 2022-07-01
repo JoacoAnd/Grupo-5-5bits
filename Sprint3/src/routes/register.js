@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const usuarioController = require('../controllers/usuarioController');
 
-
-// router.get('/registro', (req, res) => {
-//     res.sendFile(__dirname + '/views/registro.html')
-// })
+router.get('/', usuarioController.register);
 
 module.exports = router;

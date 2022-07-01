@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const usuarioController = require('../controllers/usuarioController');
 
-
-// router.get('/login', (req, res) => {
-//     res.sendFile(__dirname + '/views/login.html')
-// })
+router.get('/', usuarioController.login);
 
 module.exports = router;

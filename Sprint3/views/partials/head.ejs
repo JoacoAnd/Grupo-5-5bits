@@ -12,8 +12,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto&display=swap" rel="stylesheet">
     <!--ESTILOS PROPIOS-->
-    <link rel="stylesheet" href="css/estiloHome.css">
-    <title>Home</title>
+    <% if (titulo == 'HOME') { %>
+        <link rel="stylesheet" href="css/estiloHome.css">
+        <title>Home</title>
+    <% } else { %>
+        <link rel="stylesheet" href="css/estiloHome.css">
+        <link rel="stylesheet" href="css/<%= css %>">
+        <title><%= titulo %></title>
+    <% } %>
+
 </head>
 
 <body>

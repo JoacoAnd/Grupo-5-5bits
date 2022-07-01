@@ -1,9 +1,7 @@
 let express = require('express');
 let router = express.Router();
+const mainController = require('../controllers/mainController');
 
-router.get('/', (req, res) => {
-    // res.sendFile(__dirname + '/views/home.html')
-    // res.render('home', {titulo: 'HOME'});
-})
+router.get('/', mainController.main);
 
 module.exports = router;
