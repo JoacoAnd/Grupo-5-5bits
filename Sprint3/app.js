@@ -18,7 +18,7 @@ app.use(express.static('public'));
 // Configuración del servidor
 
 app.use('/', rutasMain);
-app.use('/productos', rutasProductos);
+app.use('/detalleProducto', rutasProductos);
 app.use('/register', rutasRegister);
 app.use('/login', rutasLogin);
 app.use('/carrito', rutasCarrito);

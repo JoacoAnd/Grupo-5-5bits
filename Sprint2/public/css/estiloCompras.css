@@ -6,13 +6,15 @@ Autor: Mateo Ferrando y Ailen Cury
 
 */
 
-*{margin: 0;
-  padding: 0;
-font-family: Roboto;
-box-sizing: border-box;}
-   
-  /* CELULAR */
-  header {
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    box-sizing: border-box;
+}
+
+/* CELULAR */
+header {
     display: flex;
 }
 
@@ -50,72 +52,82 @@ box-sizing: border-box;}
     border-radius: 3px;
     color: #ebebeb;
 }
+
 /***********************************************************/
-#carritoDeCompras{
+#carritoDeCompras {
     width: 90%;
     margin: 0 auto;
     background-color: #fef9f38a;
 }
 
-#carritoDeCompras a{
+#carritoDeCompras a {
     text-align: center;
 }
-.productoCarrito{
+
+.productoCarrito {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 15px;
     border-bottom: 2px solid #41431ea5;
-    
+
 }
-.productoCarrito h4{
+
+.productoCarrito h4 {
     width: 100%;
     text-align: center;
     margin: 10px 0;
-    
+
 }
-.contadorCarrito{
+
+.contadorCarrito {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
 }
-.contadorCarrito i{
+
+.contadorCarrito i {
     margin: 5px 10px;
 }
 
-#carritoTotal{
- display: flex;
-flex-wrap: wrap;
-justify-content: space-around ;
-align-items: center;
-margin-bottom: 25px;
+#carritoTotal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 25px;
 }
-#carritoTotal h3{
-width: 50%;
-text-align: center;
+
+#carritoTotal h3 {
+    width: 50%;
+    text-align: center;
 }
-.precioTotalCarrito{
-width: 20%;
-text-align: center;
+
+.precioTotalCarrito {
+    width: 20%;
+    text-align: center;
 }
-.precioTotalCarrito h4{
+
+.precioTotalCarrito h4 {
     font-size: 12px;
     text-align: left;
 }
-button{
+
+button {
     width: 50%;
     border-radius: 5px;
     color: black;
     background-color: #D5D97A;
     text-align: center;
 }
-button:hover{
+
+button:hover {
     background-color: #787e11;
     color: white;
 }
 
 /*****************CELULAR FOOTER*************************/
-        
+
 footer {
     background-color: #36480e;
     color: white;
@@ -183,66 +195,79 @@ footer {
 **************************************************************************
 ************************************************************************/
 @media(min-width: 361px) {
-#encabezado {
-    display: flex;
-    align-items: center;
-}
-#contenedorLogo {
-    width: 40%;
-}
-#logo {
-    width: 50%
-}
-#barraNavUl {
-    display: inline;
-}
-#barraNav {
-    margin-left: auto;
-    margin-right: 10px;
-}
-li a {
-    color: #f2f2f2;
-    text-decoration: none;
-    font-size: 14px;
-    text-align: center;
-}
-ul li {
-    list-style: none;
-    display: inline;
-    margin: 0 10px;
-    display: inline;
-}
-ul {
-    width: 100%;
-}
-#barraNav i {
-    font-size: 1em;
-}
-.burger-menu {
-    display: none;
-}
-/*********************************************/
+    #encabezado {
+        display: flex;
+        align-items: center;
+    }
 
-#carritoTotal{
-flex-wrap: nowrap;
-width: 60%;
-align-items: center;
-}
-.precioTotalCarrito {
-    text-align: center;
-}
+    #contenedorLogo {
+        width: 40%;
+    }
+
+    #logo {
+        width: 50%
+    }
+
+    #barraNavUl {
+        display: inline;
+    }
+
+    #barraNav {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    li a {
+        color: #f2f2f2;
+        text-decoration: none;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    ul li {
+        list-style: none;
+        display: inline;
+        margin: 0 10px;
+        display: inline;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    #barraNav i {
+        font-size: 1em;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    /*********************************************/
+
+    #carritoTotal {
+        flex-wrap: nowrap;
+        width: 60%;
+        align-items: center;
+    }
+
+    .precioTotalCarrito {
+        text-align: center;
+    }
 
 
-/*****************TABLET FOOTER*************************/
-#navFooter ul li a {
-    font-size: 12px;
-}
-#redesFooter ul li a {
-    font-size: 12px;
-}
-#redesFooter i {
-    font-size: 1.7em;
-}
+    /*****************TABLET FOOTER*************************/
+    #navFooter ul li a {
+        font-size: 12px;
+    }
+
+    #redesFooter ul li a {
+        font-size: 12px;
+    }
+
+    #redesFooter i {
+        font-size: 1.7em;
+    }
 }
 
 
@@ -258,7 +283,7 @@ align-items: center;
 *************************************************************************
 *************************************************************************
 **************************************************************************/
-        
+
 @media(min-width: 769px) {
 
     /*****************DESKTOP NAV*************************/
@@ -266,33 +291,40 @@ align-items: center;
         display: flex;
         align-items: center;
     }
+
     #contenedorLogo {
         width: 20%;
     }
+
     #logo {
         width: 50%;
     }
+
     #barraNav {
         margin-right: 25px;
     }
+
     li a {
         font-size: 16px;
     }
 
     /*********************************************************/
-    .productoCarrito{       
-        flex-wrap: nowrap;      
-        
+    .productoCarrito {
+        flex-wrap: nowrap;
+
     }
-/*****************DESKTOP FOOTER*************************/
-#navFooter ul li a {
-    font-size: 18px;
-}
-#redesFooter ul li a {
-    font-size: 18px;
-}
-#redesFooter i {
-    font-size: 2em;
-}
+
+    /*****************DESKTOP FOOTER*************************/
+    #navFooter ul li a {
+        font-size: 18px;
+    }
+
+    #redesFooter ul li a {
+        font-size: 18px;
+    }
+
+    #redesFooter i {
+        font-size: 2em;
+    }
 
 }
