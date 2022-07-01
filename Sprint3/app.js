@@ -13,7 +13,7 @@ const rutasCarrito = require('./src/routes/carrito.js');
 app.set('view engine', 'ejs')
     //app.use('/', express.static(__dirname + '/public/'));
 app.use('/imagenes', express.static(__dirname + '/public/images'))
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 // Configuración del servidor
 
