@@ -14,13 +14,7 @@ app.set('view engine', 'ejs')
     //app.use('/', express.static(__dirname + '/public/'));
 app.use('/imagenes', express.static(__dirname + '/public/images'))
 app.use(express.static('public'))
-app.get('/', (req, res) => {
-    res.render('home')
-    res.render('carritoCompras')
-    res.render('detalleProducto')
-    res.render('login')
-    res.render('registro')
-})
+
 
 
 // Configuración del servidor
