@@ -47,7 +47,7 @@ h3 {
 }
 
 .img-left {
-    background-image: url("/imagenes/2mujer500.jpg");
+    background-image: url("/imagenes/mujer1.jpg");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -55,6 +55,14 @@ h3 {
     display: none;
 }
 
+.img-right {
+    background-image: url("/imagenes/hombre1.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25%;
+    display: none;
+}
 /* Estilo para Tablet */
 
 @media(min-width: 769px) {
@@ -62,11 +70,26 @@ h3 {
         display: block;
     }
 
-    .check {
+     .check {
         width:60%;
+        margin: auto;
         }
 
     #precio {
         width: 50%;
+        
+    }
+}
+
+/* Estilo para desktop */
+
+@media(min-width: 1200px) {
+
+    .img-right {
+        display: block;
+    }
+    
+    #imagen {
+        display: inline;
     }
 }
