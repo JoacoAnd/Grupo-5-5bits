@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const puerto = 3000;
 const rutasMain = require('./src/routes/main.js');
-const rutasProductos = require('./src/routes/productos.js');
+const rutasProducto = require('./src/routes/producto.js');
 const rutasRegister = require('./src/routes/register.js');
 const rutasLogin = require('./src/routes/login.js');
 const rutasCarrito = require('./src/routes/carrito.js');
@@ -18,7 +18,7 @@ app.use(express.static('public'));
 // Configuración del servidor
 
 app.use('/', rutasMain);
-app.use('/detalleProducto', rutasProductos);
+app.use('/detalleProducto', rutasProducto);
 app.use('/register', rutasRegister);
 app.use('/login', rutasLogin);
 app.use('/carrito', rutasCarrito);

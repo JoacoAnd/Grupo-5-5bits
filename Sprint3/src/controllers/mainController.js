@@ -11,12 +11,7 @@ let mainController = {
             css: 'estiloCompras.css'
         });
     },
-    productos: (req, res) => {
-        res.render('detalleProducto', {
-            titulo: 'Detalle del Producto',
-            css: 'estiloDetalleProducto.css'
-        });
-    }
+   
 }
 
 module.exports = mainController;
