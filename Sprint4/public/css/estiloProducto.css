@@ -1,0 +1,95 @@
+main {
+    display: flex;
+}
+
+h3 {
+    padding:25px;
+}
+
+#producto {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+
+.inputs input,select, label {
+    width: 80%;
+    display: inline-block;
+    margin: auto;
+    padding: 3px;
+    padding-left: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    color: #1C1C1B;
+    font-size: 20px;
+    height: 40px;
+}
+
+.check {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.guardar {
+    background-color: #567317;
+    padding: 10px;
+    margin-top: 30px;
+    color: #F2F2F2;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 150ms;
+    border-radius: 10px;
+    border: none;
+    width: 130px;
+}
+
+.img-left {
+    background-image: url("/imagenes/mujer1.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25%;
+    display: none;
+}
+
+.img-right {
+    background-image: url("/imagenes/hombre1.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25%;
+    display: none;
+}
+/* Estilo para Tablet */
+
+@media(min-width: 769px) {
+    .img-left {
+        display: block;
+    }
+
+     .check {
+        width:60%;
+        margin: auto;
+        }
+
+    #precio {
+        width: 50%;
+        
+    }
+}
+
+/* Estilo para desktop */
+
+@media(min-width: 1200px) {
+
+    .img-right {
+        display: block;
+    }
+    
+    #imagen {
+        display: inline;
+    }
+}
