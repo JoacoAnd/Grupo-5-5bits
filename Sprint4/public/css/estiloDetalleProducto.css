@@ -99,20 +99,18 @@ p {
 /*********** LAPTOPS & LARGER TABLETS ************/
 
 @media(min-width: 720px) {
-    body{
-        overflow-y: hidden;
-    }
+    /* body{
+        overflow-y: hidden; 
+    }*/
 
     .main {
         display: flex;
-        width: 100%;
+        width: 100%; 
         height: auto;
-        
     }
 
     .imagen {
         width: 50%;
-        /* height: auto; */
     }
 
     .imagen img {

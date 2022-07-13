@@ -4,7 +4,7 @@
         <main>
             <div class="img-left">
             </div>
-            <form method="post" action="/products" id="producto">
+            <form method="post" enctype="multipart/form-data" action="/products" id="producto">
 
                 <h2>Administración de productos</h2>
                 <div class="inputs">
@@ -20,7 +20,7 @@
                 <h3>Talles disponibles:</h3>
                 <div class="check">
                     <% for(let i = 0; i < talles.length ; i++) { %>
-                        <input type="checkbox" value="<%= talles[i] %>" name="<%= talles[i] %>">
+                        <input type="checkbox" value="<%= talles[i] %>" name="talle<%= talles[i] %>">
                         <%= talles[i] %>
                             <% } %>
                 </div>

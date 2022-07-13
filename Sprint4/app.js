@@ -14,11 +14,10 @@ app.use('/css', express.static(__dirname + '/public/css'))
 app.use(express.static('public'));
 
 // Configuración del servidor
-
-app.use('/', rutasMain);
-app.use('/products', rutasProducto);
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use('/', rutasMain);
+app.use('/products', rutasProducto);
 
 // Levantar el server
 

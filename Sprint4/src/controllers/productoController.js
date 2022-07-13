@@ -8,7 +8,7 @@ let productoController = {
     listado: (req, res) => {
         res.render('listadoProductos', {
             titulo: 'Listado de productos',
-            css: 'estiloHome.css',
+            css: 'estiloListado.css',
             productos: dataproductos
         });
     },
@@ -17,29 +17,11 @@ let productoController = {
         let productoEncontrado = dataproductos.find(x => {
             return x.id == req.params.id;
         })
-        let tallesDisponibles = [];
-
-        if (productoEncontrado.talle_s == "S") {
-            tallesDisponibles.push('S');
-        }
-        if (productoEncontrado.talle_m == "S") {
-            tallesDisponibles.push('M');
-        }
-        if (productoEncontrado.talle_l == "S") {
-            tallesDisponibles.push('L');
-        }
-        if (productoEncontrado.talle_xl == "S") {
-            tallesDisponibles.push('XL');
-        }
-        if (productoEncontrado.talle_xl == "S") {
-            tallesDisponibles.push('XL');
-        }
-
+        productoEncontrado.talle;
         res.render('detalleProducto', {
             titulo: 'Detalle del Producto',
             css: 'estiloDetalleProducto.css',
-            producto: productoEncontrado,
-            talles: tallesDisponibles
+            producto: productoEncontrado
         });
     },
 
@@ -53,13 +35,28 @@ let productoController = {
     },
 
     store: (req, res) => {
-        console.log(req.body);
+        let tallesclaves = [req.body.talleS, req.body.talleM, req.body.talleL, req.body.talleXL, req.body.talleXXL];
+        let talles = [];
+        for (let i = 0; i <= tallesclaves.length; i++) {
+            if (tallesclaves[i] != undefined) {
+                talles.push(tallesclaves[i])
+            }
+        }
+
         let productoNuevo = {
-            id: dataproductos.id + 1,
+            id: dataproductos.length + 1,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
-            categoria: req.body.categoria
+            categoria: req.body.categoria,
+            talle: talles,
+            precio: req.body.precio,
+            imagen: req.file.filename
         }
+
+        dataproductos.push(productoNuevo);
+        fs.writeFileSync(pathproductos, JSON.stringify(dataproductos));
+
+        res.redirect('/')
     }
 
 }
