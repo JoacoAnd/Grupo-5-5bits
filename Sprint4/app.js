@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const puerto = 3000;
+const methodOverride = require('method-override');
 const rutasMain = require('./src/routes/main.js');
 const rutasProducto = require('./src/routes/products.js');
 
@@ -12,6 +13,7 @@ app.set('view engine', 'ejs')
 app.use('/imagenes', express.static(__dirname + '/public/images'))
 app.use('/css', express.static(__dirname + '/public/css'))
 app.use(express.static('public'));
+app.use(methodOverride('_method'));
 
 // Configuración del servidor
 app.use(express.urlencoded({extended: false}));

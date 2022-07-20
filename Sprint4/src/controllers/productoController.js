@@ -57,7 +57,50 @@ let productoController = {
         fs.writeFileSync(pathproductos, JSON.stringify(dataproductos));
 
         res.redirect('/')
-    }
+    },
+
+    edit: (req, res) => {
+        let idProduct = req.params.id;
+        let findProduct = dataproductos.find((e) => {
+            return e.id == idProduct;
+        });
+        const categorias = [
+            "Mujeres",
+            "Hombres",
+            "Niños",
+            "Noche",
+            "Casual",
+            "Unisex",
+        ];
+        const talles = ["S", "M", "L", "XL", "XXL"];
+
+        // res.send(JSON.stringify(findProduct));
+        res.render("editarProducto", {
+            titulo: "Editar Producto",
+            css: "estiloProducto.css",
+            categorias: categorias,
+            talles: talles,
+            producto: findProduct,
+        });
+    },
+
+    edited: (req, res) => {
+
+        let tallesEditados = [];
+
+        let editProducto = {
+            id: req.params.id,
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            categoria: req.body.categoria,
+            talles: tallesEditados,
+            precio: req.body.precio,
+            imagen: req.body.imagen
+        }
+
+    },
+
+    delete: (req, res) => {},
 
 }
 
