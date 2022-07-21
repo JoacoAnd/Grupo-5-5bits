@@ -86,18 +86,37 @@ let productoController = {
 
     edited: (req, res) => {
 
+        console.log(req.body);
+
+        let tallesclaves = [req.body.talleS, req.body.talleM, req.body.talleL, req.body.talleXL, req.body.talleXXL];
+        
         let tallesEditados = [];
 
+        for (let i = 0; i <= tallesclaves.length; i++) {
+            if (tallesclaves[i] != undefined) {
+                tallesEditados.push(tallesclaves[i])
+            }
+        }
+
         let editProducto = {
-            id: req.params.id,
+            id: parseInt(req.params.id),
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             categoria: req.body.categoria,
-            talles: tallesEditados,
+            talle: tallesEditados,
             precio: req.body.precio,
             imagen: req.body.imagen
         }
 
+        for (let i = 0; i < dataproductos.length; i++) {
+            if (dataproductos[i].id == editProducto.id) {
+                dataproductos[i] = editProducto;
+                break;
+            }
+        }
+
+        fs.writeFileSync(pathproductos, JSON.stringify(dataproductos));
+        res.redirect('/products/detalle/' + req.params.id);
     },
 
     delete: (req, res) => {},

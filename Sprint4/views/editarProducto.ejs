@@ -21,7 +21,7 @@
                 <h3>Talles disponibles:</h3>
                 <div class="check">
                     <% for(let i = 0; i < talles.length ; i++) { %>
-                        <input type="checkbox" value="<%= talles[i] %>" name="<%= talles[i] %> " 
+                        <input type="checkbox" value="<%= talles[i] %>" name="talle<%= talles[i] %>" 
                         <%= producto.talle.includes(talles[i]) ? 'checked' : '' %> />
                         <%= talles[i] %>
                             <% } %>

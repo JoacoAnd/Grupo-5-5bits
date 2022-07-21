@@ -16,27 +16,27 @@
     },
     {
         "id": 2,
-        "nombre": "Accesorio",
-        "descripcion": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+        "nombre": "Zapatillas",
+        "descripcion": "Zapatillas blancas comodas",
         "categoria": "Niños",
         "talle": [
             "S",
-            "L",
-            "XL",
-            "XXL"
+            "M"
         ],
-        "precio": 28404,
-        "imagen": "genericImage.png"
+        "precio": "11000",
+        "imagen": "aaaa.jpg"
     },
     {
         "id": 3,
-        "nombre": "Zapatos",
-        "descripcion": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+        "nombre": "Zapatillas",
+        "descripcion": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
         "categoria": "Unisex",
         "talle": [
-            "XXL"
+            "S",
+            "M",
+            "L"
         ],
-        "precio": 5586,
+        "precio": "5586",
         "imagen": "genericImage.png"
     },
     {
@@ -86,15 +86,16 @@
     },
     {
         "id": 8,
-        "nombre": "Medias",
-        "descripcion": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+        "nombre": "Medias blancas de seda",
+        "descripcion": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
         "categoria": "Niños",
         "talle": [
+            "S",
             "XL",
             "XXL"
         ],
-        "precio": 2817,
-        "imagen": "genericImage.png"
+        "precio": "2817",
+        "imagen": "aaaa.jpg"
     },
     {
         "id": 9,
