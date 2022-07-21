@@ -86,8 +86,6 @@ let productoController = {
 
     edited: (req, res) => {
 
-        console.log(req.body);
-
         let tallesclaves = [req.body.talleS, req.body.talleM, req.body.talleL, req.body.talleXL, req.body.talleXXL];
         
         let tallesEditados = [];
@@ -119,7 +117,20 @@ let productoController = {
         res.redirect('/products/detalle/' + req.params.id);
     },
 
-    delete: (req, res) => {},
+    delete: (req, res) => {
+
+        for (let i = 0; i < dataproductos.length; i++) {
+            if (dataproductos[i].id == req.params.id) {
+                dataproductos.splice(i, 1);
+                break;
+            }
+        }
+
+        fs.writeFileSync(pathproductos, JSON.stringify(dataproductos));
+
+
+        res.redirect('/products')
+    }
 
 }
 

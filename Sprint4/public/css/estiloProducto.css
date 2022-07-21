@@ -46,6 +46,13 @@ h3 {
     width: 130px;
 }
 
+.deleteboton{
+    display: block;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding-bottom: 20px;
+}
+
 .img-left {
     background-image: url("/imagenes/mujer1.jpg");
     background-position: top;

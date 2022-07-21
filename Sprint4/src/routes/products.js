@@ -36,13 +36,6 @@ router.put('/:id', productoController.edited)
 
 // Borrar producto (accion)
 
-// router.delete('/:id', productoController.delete);
+router.delete('/:id', productoController.delete);
 
 module.exports = router;
-
-/*
-6. /products/:id (PUT)
-Acción de edición (a donde se envía el formulario):
-7. /products/:id (DELETE)
-Acción de borrado
-*/
