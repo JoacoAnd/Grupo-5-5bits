@@ -23,11 +23,14 @@ const uploadFile = multer({storage});
 // Listado productos
 router.get('/', productoController.listado);
 
-// Producto especifico
-router.get('/detalle/:id', productoController.detalleProducto);
-
 // Crear producto
 router.get('/create', productoController.create)
+
+
+// Producto especifico
+router.get('/:id', productoController.detalleProducto);
+
+
 router.post('/', uploadFile.single('imagen') ,productoController.store);
 
 // Editar producto

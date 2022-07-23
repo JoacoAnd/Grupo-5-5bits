@@ -3,6 +3,17 @@ const path = require('path');
 const pathproductos = path.join(__dirname, '../../data/products.json');
 const dataproductos = JSON.parse(fs.readFileSync(pathproductos));
 
+function  generateId() {
+    let allProducts = dataproductos;
+    let lastProduct = allProducts.pop();
+    if (lastProduct) {
+        return lastProduct.id + 1;
+    }
+    return 1;
+};
+
+
+
 let productoController = {
 
     listado: (req, res) => {
@@ -16,8 +27,9 @@ let productoController = {
     detalleProducto: (req, res) => {
         let productoEncontrado = dataproductos.find(x => {
             return x.id == req.params.id;
-        })
-        productoEncontrado.talle;
+        });
+        
+
         res.render('detalleProducto', {
             titulo: 'Detalle del Producto',
             css: 'estiloDetalleProducto.css',
@@ -44,7 +56,7 @@ let productoController = {
         }
 
         let productoNuevo = {
-            id: dataproductos.length + 1,
+            id: generateId(),
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             categoria: req.body.categoria,

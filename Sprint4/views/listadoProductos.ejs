@@ -3,9 +3,9 @@
 
         <main id="listadoproductos">
             <% for ( producto of productos) { %>
-                <a href="/products/detalle/<%= producto.id %>" id="divproductos">
+                <a href="/products/<%= producto.id %>" id="divproductos">
                     <div id="divimagen">
-                        <img src="images/hombre1.jpg" alt="imagen producto" id="imgdivproducto">
+                        <img src="../images/<%= producto.imagen%>" alt="imagen producto" id="imgdivproducto">
                     </div>
                     <h2 id="h2nombreproducto">
                         <%= producto.nombre %>

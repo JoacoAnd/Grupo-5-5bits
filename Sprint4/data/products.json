@@ -24,7 +24,7 @@
             "M"
         ],
         "precio": "11000",
-        "imagen": "aaaa.jpg"
+        "imagen": "3mujer500.jpg"
     },
     {
         "id": 4,
@@ -56,7 +56,7 @@
             "XXL"
         ],
         "precio": 22644,
-        "imagen": "genericImage.png"
+        "imagen": "2hombre500.jpg"
     },
     {
         "id": 7,
@@ -82,7 +82,7 @@
             "XXL"
         ],
         "precio": "2817",
-        "imagen": "aaaa.jpg"
+        "imagen": "1mujer500.jpg"
     },
     {
         "id": 9,
@@ -111,14 +111,14 @@
     },
     {
         "id": 11,
-        "nombre": "Zapatos",
-        "descripcion": "Zapatos color negros elegante-sport",
+        "nombre": "Camisa para ir a laburar",
+        "descripcion": "Biuti camisa para impresionar  a tu jefe",
         "categoria": "Hombres",
         "talle": [
-            "M",
-            "L"
+            "XL",
+            "XXL"
         ],
-        "precio": "12347",
-        "imagen": "img-1657741175182.jpg"
+        "precio": "13000",
+        "imagen": "img-1658605651236.jpg"
     }
 ]
