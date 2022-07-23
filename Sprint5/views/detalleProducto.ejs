@@ -1,0 +1,44 @@
+<%- include ( './partials/head'); %>
+    <%- include ( './partials/header'); %>
+
+        <!-- HEADER -->
+
+
+        <!-- MAIN -->
+
+        <div class="main">
+            <div class="imagen">
+                <img src="../images/<%=producto.imagen%>" alt="imagen-del-producto" />
+            </div>
+            <div class="descrip">
+                <div class="content-descrip">
+                    <h2>
+                        <%= producto.nombre %>
+                    </h2>
+                    <p>$
+                        <%= producto.precio %>
+                    </p>
+                    <p><strong><%= producto.categoria %></strong></p>
+                </div>
+                <div class="content-descrip">
+                    <i class="fas fa-circle"></i>
+                    <p>TALLES:</p>
+                    <% for (talle of producto.talle) { %>
+                    <button class="botones"><%= talle %></button>
+                    <% } %>
+                </div>
+                <div class="content-descrip">
+                    <button type="submit" class="boton">COMPRAR</button>
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="content-descrip">
+                    <h4>Detalle del producto:</h4>
+                    <p>
+                        <%= producto.descripcion %>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <%- include ( './partials/footer.ejs'); %>

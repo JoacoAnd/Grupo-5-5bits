@@ -1,0 +1,29 @@
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
+        <main>
+            <div id="login">
+                <div class="img-left">
+                </div>
+                <form class="form_login" method="post" action="/">
+                    <h2>Login</h2>
+                    <div class="inputs">
+                        <input type="text" name="usuariologin" id="usuariologin" minlength="3" required placeholder="Usuario" />
+                        <input type="password" name="contrasenialogin" id="contrasenialogin" minlength="8" required
+                            placeholder="Contraseña" />
+                    </div>
+
+                    <a class="olvidemicontrasenia" href="">Olvide mi contraseña</a>
+
+                    <button class="enviar">Entrar</button>
+                    <div class="registrate">
+                        <h2 class="registratelogin">No tienes un usuario?</h2>
+                        <button class="botonregistratelogin" type="button">REGISTRATE!</button>
+                    </div>
+                </form>
+                <div class="img-right">
+                </div>
+            </div>
+
+        </main>
+
+        <%- include ( './partials/footer.ejs' ); %>
