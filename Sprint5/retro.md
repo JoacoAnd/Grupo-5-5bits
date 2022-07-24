@@ -58,3 +58,28 @@ Por ahora funciona lo que estamos haciendo.
 
 - Dejar de hacer:
 Llegar tarde a las reuniones virtuales.
+
+
+Retrospectiva del sprint 4:
+
+- Comenzar a hacer:
+La consigna del Sprint 5.
+Asignar las tareas de manera más detallada, desagregando las funciones que va a desarrollar cada uno de los miembros .
+
+- Hacer mas:
+Establecer puntos de control previos a la finalización del sprint, para detectar y corregir desvíos con tiempo. En este sprint se nos amontonó todo sobre el final.
+Reunión weekly obligatoria. Las últimas fueron por sub grupos de tareas asignadas.
+
+- Continuar haciendo:
+Comunicarnos por whatsapp.
+Dividir las tareas.
+Colaborar entre nosotros.
+
+- Hacer menos:
+Desconectarnos por mucho tiempo entre nosotros.
+
+- Dejar de hacer:
+Llegar tarde a las reuniones virtuales.
+
+
+
