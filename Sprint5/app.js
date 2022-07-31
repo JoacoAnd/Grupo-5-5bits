@@ -21,6 +21,17 @@ app.use(express.json());
 app.use('/', rutasMain);
 app.use('/products', rutasProducto);
 
+// Ruta de page not found (404)
+
+app.use((req,res,next) => {
+
+    res.status(404).render('notFound',{
+        titulo: 'Not Found',
+        css: 'estiloNotFound.css'
+    });
+
+});
+
 // Levantar el server
 
 app.listen(puerto, () => {
