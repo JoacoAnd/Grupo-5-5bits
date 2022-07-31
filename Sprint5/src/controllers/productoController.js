@@ -29,12 +29,22 @@ let productoController = {
             return x.id == req.params.id;
         });
         
+        if(productoEncontrado) {
+            res.render('detalleProducto', {
+                titulo: 'Detalle del Producto',
+                css: 'estiloDetalleProducto.css',
+                producto: productoEncontrado
+            });
 
-        res.render('detalleProducto', {
-            titulo: 'Detalle del Producto',
-            css: 'estiloDetalleProducto.css',
-            producto: productoEncontrado
-        });
+            }
+        else {
+            res.render('notFound',{
+                titulo: 'No existe el artículo',
+                css: 'estiloNotFound.css',
+                id: req.params.id
+            });
+        }
+        
     },
 
     create: (req, res) => {

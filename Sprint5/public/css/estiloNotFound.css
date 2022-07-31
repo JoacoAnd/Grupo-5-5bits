@@ -65,6 +65,12 @@
         display: block;
     }
 
+    .ops {
+        width:50%;
+        padding-top: 100px;
+        padding-bottom: 200px;
+    }
+
 }
 
 @media(min-width: 1200px) {
