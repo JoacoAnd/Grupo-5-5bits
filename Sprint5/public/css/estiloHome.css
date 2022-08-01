@@ -100,7 +100,7 @@ header {
 }
 
 .cajaDescripcionProducto .iconoDescuento {
-    font-size: 0.7em;
+    font-size: 0.9em;
     margin: 0 0 0 15px;
     padding: 3px;
     text-align: right;
@@ -223,7 +223,7 @@ footer {
         align-items: center;
     }
     #contenedorLogo {
-        margin: 0 auto;
+        margin-left: 50px;
         width: 10%;
     }
     #logo {
@@ -233,6 +233,7 @@ footer {
     }
     #barraNavUl {
         display: inline;
+        padding: 0;
     }
     #barraNav {
         margin-left: auto;
@@ -312,9 +313,7 @@ footer {
         margin: 15px 5px;
         width: 45%;
     }
-    .cajaDescripcionProducto .iconoDescuento {
-        font-size: 1em;
-    }
+  
     /*****************TABLET METODOS DE PAGO*************************/
     /*****************TABLET FOOTER*************************/
     #navFooter ul li a {
@@ -354,9 +353,7 @@ footer {
         width: 30%;
         margin: 15px 10px;
     }
-    .cajaDescripcionProducto .iconoDescuento {
-        font-size: 1.5em;
-    }
+  
     /*****************DESKTOP METODOS DE PAGO*************************/
     /*****************DESKTOP FOOTER*************************/
     #navFooter ul li a {
