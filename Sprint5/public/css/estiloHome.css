@@ -22,6 +22,14 @@ TITULOS:
     font-family: roboto;
 }
 
+.titulos {
+    font-family: roboto;
+}
+
+.parrafos {
+    font-family: roboto;
+}
+
 
 /*****************CELULAR NAV*************************/
 
@@ -31,7 +39,7 @@ header {
 
 #encabezado {
     width: 100%;
-    background-color: #b1a913;
+    background-color: #fffef5;
     padding: 10px 0;
 }
 
@@ -47,6 +55,10 @@ header {
 
 #barraNavUl {
     display: none;
+}
+
+#barraNavUl li a {
+    color: #86A614;
 }
 
 .burger-menu {
@@ -91,8 +103,6 @@ header {
     width: 88%;
     box-shadow: 10px 12px 26px -2px rgba(0, 0, 0, 0.48);
     border-radius: 25px;
-
-    
 }
 
 .cajaArticulo:hover {
@@ -148,12 +158,14 @@ header {
     margin-bottom: 25px;
     padding: 035px;
 }
-.pagosHome p{
+
+.pagosHome p {
     font-size: 1.2rem;
     width: 81%;
     text-align: center;
     margin: 0 auto;
 }
+
 .pagosHome i {
     color: #86A614;
     font-size: 1.5em;
@@ -300,13 +312,17 @@ footer {
     #promocionesBanner h2 {
         font-size: 50px;
         margin: 55px 0 35px 0;
-        font-family: 'Marcellus', serif;
+        font-family: 'Marcellus', 'Roboto', serif;
     }
     #promocionesBanner h3 {
         margin-top: 100px;
         margin-left: 35px;
         font-size: 80px;
-        font-family: 'Marcellus', serif;
+        font-family: 'Marcellus', 'Roboto', serif;
+    }
+    #promocionesBanner .parrafos {
+        font-family: 'Marcellus', 'Roboto', serif;
+        font-size: 15x;
     }
     /*****************TABLET DESCUENTOS*************************/
     #descuentosHome {
@@ -319,7 +335,6 @@ footer {
         margin: 15px 5px;
         width: 45%;
     }
-  
     /*****************TABLET METODOS DE PAGO*************************/
     /*****************TABLET FOOTER*************************/
     #navFooter ul li a {
@@ -359,7 +374,6 @@ footer {
         width: 30%;
         margin: 15px 10px;
     }
-  
     /*****************DESKTOP METODOS DE PAGO*************************/
     /*****************DESKTOP FOOTER*************************/
     #navFooter ul li a {
