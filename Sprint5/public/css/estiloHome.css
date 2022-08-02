@@ -290,6 +290,14 @@ footer {
         justify-content: space-between;
         margin-bottom: 150px;
     }
+    #banner {
+        background-image: url('../images/Recurso-27.jpg');
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 500px;
+    }
     #promocionesBanner {
         padding: 0 15px;
         width: 50%;
