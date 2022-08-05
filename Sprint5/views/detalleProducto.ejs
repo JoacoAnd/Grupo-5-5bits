@@ -5,7 +5,7 @@
 
 
         <!-- MAIN -->
-
+        <!--
         <div class="main">
             <div class="imagen">
                 <img src="../images/<%=producto.imagen%>" alt="imagen-del-producto" />
@@ -24,8 +24,8 @@
                     <i class="fas fa-circle"></i>
                     <p>TALLES:</p>
                     <% for (talle of producto.talle) { %>
-                    <button class="botones"><%= talle %></button>
-                    <% } %>
+                        <button class="botones"><%= talle %></button>
+                        <% } %>
                 </div>
                 <div class="content-descrip">
                     <button type="submit" class="boton">COMPRAR</button>
@@ -39,6 +39,50 @@
                 </div>
             </div>
         </div>
+        -->
+
+        <div class="main container">
+            <div class="contenedorDetalleProducto">
+                <div class="row  justify-content-center">
+                    <div class="imagen col-5">
+                        <img src="../images/<%=producto.imagen%>" alt="imagen-del-producto" />
+                    </div>
+                    <div class="descripcion col-5">
+                        <div class="datos-producto ">
+                            <h2>
+                                <%= producto.nombre %>
+                            </h2>
+                            <p>$
+                                <%= producto.precio %>
+                            </p>
+                            <p><strong><%= producto.categoria %></strong></p>
+                        </div>
+                        <div class="descripcion">
+                            <h4>Detalle del producto:</h4>
+                            <p class="descripcionProducto">
+                                <%= producto.descripcion %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--AGREGAR FORM PARA MANDAR DATA EN COMPRAR-->
+                <div class="talleProducto row justify-content-center">
+                    <i class="fas fa-circle"></i>
+                    <p>TALLES:</p>
+                    <% for (talle of producto.talle) { %>
+                        <button class="btn boton col-2">
+                        <%= talle %>
+                            </button>
+                        <% } %>
+
+                            <button type="submit" class="btn col-6 botonComprar">COMPRAR</button>
+
+                </div>
+            </div>
+
+
+        </div>
+
 
 
         <%- include ( './partials/footer.ejs'); %>

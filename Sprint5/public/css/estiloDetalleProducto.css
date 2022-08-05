@@ -1,20 +1,52 @@
-*{
+* {
     padding: 0;
     margin: 0;
-    box-sizing: border-box; 
-   
+    box-sizing: border-box;
 }
+
+.contenedorDetalleProducto {
+    max-width: 75%;
+    margin: 25px auto;
+    box-shadow: 13px 10px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.descripcionProducto {
+    font-size: 0.7rem;
+}
+
+.talleProducto {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.boton {
+    border-radius: 12px;
+    background-color: rgb(240, 255, 247);
+    margin: 10px auto;
+}
+
+.botonComprar {
+    border-radius: 12px;
+    background-color: rgb(240, 255, 247);
+    margin: 10px auto;
+}
+
+.botonComprar:hover {
+    background-color: rgb(246, 255, 238);
+    transition-duration: 2s;
+}
+
+.botones {
+    border: none;
+}
+
+.botones:hover {
+    background-color: #36480e;
+    color: white;
+}
+
 
 /************** PHONE ************/
-
-body {
-    background-color: #bebebe;
-}
-
-.imagen{
-    height: auto;
-    overflow: hidden;
-}
 
 .imagen img {
     width: 100%;
@@ -22,10 +54,6 @@ body {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-radius: 5px;
     object-fit: cover;
-}
-
-.descrip {
-    margin-left: 10px;
 }
 
 .content-descrip {
@@ -42,29 +70,16 @@ p {
     margin-bottom: 5px;
 }
 
-.botones {
-    border-radius:10px;
+.boto {
+    border-radius: 5px;
     border: none;
-    width: 90px;
-    height: 20px;
 }
 
-.botones:hover {
+.boton:hover {
     background-color: #36480e;
     color: white;
 }
 
-.boton {
-    width: 75px;
-    height: 20px;
-    border-radius:5px;
-    border: none;
-}
-
-.boton:hover{
-    background-color: #36480e;
-    color: white;
-}
 
 /*********** TABLETS & LARGER PHONES ************/
 
@@ -73,74 +88,37 @@ p {
         font-size: 18px;
         margin-top: 4px;
     }
-
     p {
         margin-bottom: 10px;
     }
-
-   /* .imagen img {
-        width: 100%;
-        height: 600px;
-    }
-*/
     .botones {
-        border-radius:10px;
+        border-radius: 10px;
         border: none;
-        width: 150px;
-        height: 20px;
     }
-    
     .botones:hover {
         background-color: #36480e;
         color: white;
     }
 }
 
+
 /*********** LAPTOPS & LARGER TABLETS ************/
 
 @media(min-width: 720px) {
-    /* body{
-        overflow-y: hidden; 
-    }*/
-
-    .main {
-        display: flex;
-        width: 100%; 
-        height: auto;
-    }
-
-    .imagen {
-        width: 50%;
-    }
-
+    .main {}
+    .imagen {}
     .imagen img {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         border-radius: 5px;
         object-fit: cover;
     }
-
-    .descrip {
-        width: 50%;
-        /* height: auto; */
-    }
-
     .content-descrip {
         margin-bottom: 45px;
     }
-
     .botones {
-        border-radius:10px;
+        border-radius: 10px;
         border: none;
         width: 115px;
         height: 20px;
     }
-
-    .boton {
-        width: 110px;
-        height: 20px;
-        border-radius:5px;
-        border: none;
-        font-size: 15px;
-    }
-
 }
