@@ -39,8 +39,10 @@ header {
 
 #encabezado {
     width: 100%;
-    background-color: #fffef5;
+    background-color: #deeea7;
     padding: 10px 0;
+    box-shadow: -1px 10px 7px -4px rgba(0, 0, 0, 0.53);
+    z-index: 10;
 }
 
 #contenedorLogo {
@@ -148,28 +150,21 @@ header {
 /*****************CELULAR METODOS DE PAGO*************************/
 
 #metodosDePagoHome {
+    margin-top: 100px;
+    width: 100%;
+}
+
+.pagosHome {
+    margin: 50px 0;
+    background-color: white;
+    box-shadow: 10px 10px 30px -2px rgb(0 0 0 / 46%);
     width: 100%;
     padding: 15px;
 }
 
-.pagosHome {
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    padding: 035px;
-}
-
-.pagosHome p {
+.pagosHome div p {
     font-size: 1.2rem;
-    width: 81%;
     text-align: center;
-    margin: 0 auto;
-}
-
-.pagosHome i {
-    color: #86A614;
-    font-size: 1.5em;
-    margin: 15px;
 }
 
 
@@ -281,7 +276,7 @@ footer {
     /*****************TABLET BANNER*************************/
     #bannerHome {
         display: block;
-        margin: 0 0 22px 0;
+        margin: 10px 0 22px 0;
     }
     /*****************TABLET PROMOCIONES*************************/
     #promocionesHome {
