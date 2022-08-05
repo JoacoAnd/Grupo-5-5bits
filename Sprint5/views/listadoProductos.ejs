@@ -1,8 +1,8 @@
 <%- include ( './partials/head' ); %>
     <%- include ( './partials/header' ); %>
 
-        <main id="listadoproductos">
-            <% for ( producto of productos) { %>
+        <!--       <main id="listadoproductos">
+           <% for ( producto of productos) { %>
                 <a href="/products/<%= producto.id %>" id="divproductos">
                     <div id="divimagen">
                         <img src="../images/<%= producto.imagen%>" alt="imagen producto" id="imgdivproducto">
@@ -13,10 +13,38 @@
                     <p id="pdivproducto">
                         <%= producto.categoria %>
                     </p>
-                    <p id="pdivproducto">$<%= producto.precio %>
+                    <p id="pdivproducto">$
+                        <%= producto.precio %>
                     </p>
                 </a>
                 <% } %>
-        </main>
+        </main>-->
+        <main class="container productosContenedor">
+            <div id="tienda" class="row justify-content-around">
 
+                <% for ( producto of productos) { %>
+
+                    <a href="/products/<%= producto.id %>" id="producto" class="col-md-3 col-sm-12 text-center">
+
+                    
+                        <img src="../images/<%= producto.imagen%>" alt="imagen producto" id="imgProducto" >
+                        
+                        <div>
+                            <h4 id="tituloProducto">
+                                <%= producto.nombre %>
+                            </h4>
+                            <p id="categoriaProducto">
+                                <%= producto.categoria %>
+                            </p>
+                            <p id="precioProducto">$
+                                <%= producto.precio %>
+                            </p>
+                        </div>
+                  
+
+                </a>
+                    <% } %>
+
+            </div>
+        </main>
         <%- include ( './partials/footer.ejs' ); %>

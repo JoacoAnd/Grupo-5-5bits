@@ -3,7 +3,7 @@ main {
 }
 
 h3 {
-    padding:25px;
+    padding: 25px;
 }
 
 #producto {
@@ -13,8 +13,9 @@ h3 {
     font-size: 1.2em;
 }
 
-
-.inputs input,select, label {
+.inputs input,
+select,
+label {
     width: 80%;
     display: inline-block;
     margin: auto;
@@ -29,7 +30,7 @@ h3 {
 }
 
 .check {
-    display:flex;
+    display: flex;
     justify-content: space-evenly;
 }
 
@@ -46,7 +47,7 @@ h3 {
     width: 130px;
 }
 
-.deleteboton{
+.deleteboton {
     display: block;
     text-align: center;
     background-color: #f2f2f2;
@@ -70,32 +71,30 @@ h3 {
     width: 25%;
     display: none;
 }
+
+
 /* Estilo para Tablet */
 
 @media(min-width: 769px) {
     .img-left {
         display: block;
     }
-
-     .check {
-        width:60%;
+    .check {
+        width: 60%;
         margin: auto;
-        }
-
+    }
     #precio {
         width: 50%;
-        
     }
 }
+
 
 /* Estilo para desktop */
 
 @media(min-width: 1200px) {
-
     .img-right {
         display: block;
     }
-    
     #imagen {
         display: inline;
     }
