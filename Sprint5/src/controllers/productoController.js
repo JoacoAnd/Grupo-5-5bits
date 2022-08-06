@@ -136,7 +136,7 @@ let productoController = {
         }
 
         fs.writeFileSync(pathproductos, JSON.stringify(dataproductos));
-        res.redirect('/products/detalle/' + req.params.id);
+        res.redirect('/products/' + req.params.id);
     },
 
     delete: (req, res) => {

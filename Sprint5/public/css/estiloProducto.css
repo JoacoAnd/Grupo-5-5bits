@@ -72,7 +72,9 @@ label {
     display: none;
 }
 
-
+.imagenProducto {
+    width:40%;
+}
 /* Estilo para Tablet */
 
 @media(min-width: 769px) {
