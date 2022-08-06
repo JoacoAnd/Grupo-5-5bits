@@ -81,7 +81,7 @@
             "XL",
             "XXL"
         ],
-        "precio": "2817",
+        "precio": "2800",
         "imagen": "ops2.jpg"
     },
     {
@@ -99,26 +99,14 @@
     {
         "id": 10,
         "nombre": "Medias",
-        "descripcion": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.",
+        "descripcion": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.In congue. Etiam justo. Etiam pretium iaculis justo.In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.Phasellus in felis. Donec semper sapien a libero. Nam dui.",
         "categoria": "Casual",
         "talle": [
             "S",
             "L",
             "XXL"
         ],
-        "precio": 24204,
-        "imagen": "genericImage.png"
-    },
-    {
-        "id": 11,
-        "nombre": "Camisa para ir a laburar",
-        "descripcion": "Biuti camisa para impresionar  a tu jefe",
-        "categoria": "Hombres",
-        "talle": [
-            "XL",
-            "XXL"
-        ],
-        "precio": "13000",
-        "imagen": "img-1658605651236.jpg"
+        "precio": "24204",
+        "imagen": "img-1659823761886.jpg"
     }
 ]

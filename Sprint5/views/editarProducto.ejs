@@ -5,7 +5,7 @@
             <div class="img-left">
             </div>
             <div class="formulariosedit">
-                <form method="post" action="/products/<%= producto.id %>?_method=PUT" id="producto">
+                <form method="post" action="/products/<%= producto.id %>?_method=PUT" id="producto" enctype="multipart/form-data" >
 
                     <h2>Administración de productos</h2>
                     <div class="inputs">
@@ -38,6 +38,9 @@
                         <label for="imagen">Imagen del producto:</label> 
                         <img class="imagenProducto" src="/imagenes/<%=producto.imagen%>" >
                         <input type="file" name="imagen" id="imagen" <% if(typeof producto.imagen =='undefined') {%> required <%}%>/>
+                        <% if(typeof producto.imagen !='undefined') {%> 
+                            <input type="hidden" name="imagenOriginal" value="<%= producto.imagen %>" >
+                        <%}%>
                     </div>
 
                     <button class="guardar">Guardar</button>

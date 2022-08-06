@@ -35,7 +35,7 @@ router.post('/', uploadFile.single('imagen') ,productoController.store);
 
 // Editar producto
 router.get('/:id/edit', productoController.edit);
-router.put('/:id', productoController.edited)
+router.put('/:id', uploadFile.single('imagen') , productoController.edited)
 
 // Borrar producto (accion)
 

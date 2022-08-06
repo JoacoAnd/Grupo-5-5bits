@@ -118,6 +118,15 @@ let productoController = {
             }
         }
 
+        if(req.file) {
+            var imagen = req.file.filename;
+        }
+        else {
+            var imagen = req.body.imagenOriginal;   
+        }
+        
+       
+
         let editProducto = {
             id: parseInt(req.params.id),
             nombre: req.body.nombre,
@@ -125,7 +134,7 @@ let productoController = {
             categoria: req.body.categoria,
             talle: tallesEditados,
             precio: req.body.precio,
-            imagen: req.body.imagen
+            imagen: imagen
         }
 
         for (let i = 0; i < dataproductos.length; i++) {
