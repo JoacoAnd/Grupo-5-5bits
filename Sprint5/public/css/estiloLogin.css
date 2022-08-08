@@ -65,13 +65,13 @@ Autor: Joaquin Andreone
     visibility: hidden;
  }
 
-.olvidemicontrasenia {
-    display: block;
-    text-align: center;
+.recordarmediv {
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 18px;
-    color: #567317;
-    margin: 20px;
-    font-weight: 600;
+    text-align: left;
+    margin-left: 15%;
+    position: relative;
 }
 
 .enviar {
@@ -92,7 +92,7 @@ Autor: Joaquin Andreone
 }
 
 .registratelogin{
-    margin-top: 8%;
+    margin-top: 6%;
     font-size: 22px;
 }
 
