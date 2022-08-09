@@ -6,12 +6,20 @@ const puerto = 3000;
 const methodOverride = require('method-override');
 const rutasMain = require('./src/routes/main.js');
 const rutasProducto = require('./src/routes/products.js');
+const session = require('express-session');
+const userLogged = require('./src/middlewares/userloggedMiddleware');
 
 // Configuración plantillas
-app.set('view engine', 'ejs')
+
+app.use(session(
+    {secret: 'Secreto',
+    resave: false,
+    saveUninitialized: false}));
+app.use(userLogged);
+app.set('view engine', 'ejs');
     //app.use('/', express.static(__dirname + '/public/'));
-app.use('/imagenes', express.static(__dirname + '/public/images'))
-app.use('/css', express.static(__dirname + '/public/css'))
+app.use('/imagenes', express.static(__dirname + '/public/images'));
+app.use('/css', express.static(__dirname + '/public/css'));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 

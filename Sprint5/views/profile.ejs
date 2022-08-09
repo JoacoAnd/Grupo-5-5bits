@@ -1,0 +1,9 @@
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
+
+    <main>
+        <% if (locals.userLogged) { %>
+            <p> <%= locals.userLogged.nombre %> </p>
+        <% } %>
+    </main>
+        <%- include ( './partials/footer.ejs' ); %>
