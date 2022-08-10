@@ -25,6 +25,11 @@ let usuarioController = {
                     }
 
                     req.session.login = usuarioLogeado;
+
+                    if (req.body.recordarme) {
+                        res.cookie('userEmail', req.body.usuariologin, {maxAge: 1000 * 60 * 60 * 24});
+                    }
+
                     res.redirect('/');
                 }
             }
@@ -52,6 +57,12 @@ let usuarioController = {
             titulo: 'Perfil',
             css: 'estiloHome.css'
         })
+    },
+
+    logout: (req, res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        res.redirect('/');
     }
 }
 

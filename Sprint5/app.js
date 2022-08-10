@@ -8,6 +8,8 @@ const rutasMain = require('./src/routes/main.js');
 const rutasProducto = require('./src/routes/products.js');
 const session = require('express-session');
 const userLogged = require('./src/middlewares/userloggedMiddleware');
+const cookies = require('cookie-parser');
+
 
 // Configuración plantillas
 
@@ -15,6 +17,7 @@ app.use(session(
     {secret: 'Secreto',
     resave: false,
     saveUninitialized: false}));
+app.use(cookies());
 app.use(userLogged);
 app.set('view engine', 'ejs');
     //app.use('/', express.static(__dirname + '/public/'));

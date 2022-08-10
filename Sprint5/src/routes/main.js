@@ -21,6 +21,8 @@ router.get('/perfil', authMiddleware, usuarioController.profile);
 // Obtenemos carrito de compra
 router.get('/carrito', mainController.carrito);
 
+// Logout
+router.get('/logout', usuarioController.logout);
 
 
 module.exports = router;
