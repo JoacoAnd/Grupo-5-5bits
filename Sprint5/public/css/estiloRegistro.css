@@ -59,6 +59,23 @@ Autor: Julio Tuozzo
     height: 40px;
 }
 
+#userprofilephotos {
+    display: none;
+}
+
+.userp {
+    cursor: pointer;
+}
+
+.divfotoperfil {
+    margin: auto;
+    text-align:center;
+        padding:3%;
+        border:thin solid black;
+        margin-top: 20px;
+        width: 80%;
+}
+
 .novedades {
     padding-top: 30px;
     color: black;

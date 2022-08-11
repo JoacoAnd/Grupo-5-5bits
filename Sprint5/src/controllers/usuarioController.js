@@ -52,6 +52,23 @@ let usuarioController = {
         });
     },
 
+    registerProcess: (req, res) => {
+        let passwordEncriptada = bcrypt.hashSync(req.body.clave, 10);
+        let usuarioNuevo = {
+            id: userData.length+1,
+            userNombre: req.body.nombre,
+            userApellido:   req.body.apellido,
+            userEmail: req.body.email,
+            userContraseña: passwordEncriptada,
+            userAvatar: req.file.filename,
+        }
+
+        userData.push(usuarioNuevo);
+        fs.writeFileSync(userDataPath, JSON.stringify(userData));
+
+        res.redirect('/login');
+    },
+
     profile: (req, res) =>{
         res.render('profile', {
             titulo: 'Perfil',
