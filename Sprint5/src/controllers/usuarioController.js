@@ -30,7 +30,7 @@ let usuarioController = {
                         res.cookie('userEmail', req.body.usuariologin, {maxAge: 1000 * 60 * 60 * 24});
                     }
 
-                    res.redirect('/');
+                    return res.redirect('/');
                 }
             }
         };
@@ -54,13 +54,21 @@ let usuarioController = {
 
     registerProcess: (req, res) => {
         let passwordEncriptada = bcrypt.hashSync(req.body.clave, 10);
+        
+        if(req.file)
+            {var userAvatar = req.file.filename
+            }
+        else
+            {var userAvatar = "generic_avatar.jpg";
+            }
+        
         let usuarioNuevo = {
             id: userData.length+1,
             userNombre: req.body.nombre,
             userApellido:   req.body.apellido,
             userEmail: req.body.email,
             userContraseña: passwordEncriptada,
-            userAvatar: req.file.filename,
+            userAvatar: userAvatar,
         }
 
         userData.push(usuarioNuevo);
@@ -70,9 +78,10 @@ let usuarioController = {
     },
 
     profile: (req, res) =>{
-        res.render('profile', {
+
+      res.render('profile', {
             titulo: 'Perfil',
-            css: 'estiloHome.css'
+            css: 'estiloProfile.css'
         })
     },
 

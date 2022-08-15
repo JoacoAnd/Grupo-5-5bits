@@ -2,8 +2,21 @@
     <%- include ( './partials/header' ); %>
 
     <main>
+        <div id="profile">        
         <% if (locals.userLogged) { %>
-            <p> <%= locals.userLogged.nombre %> </p>
-        <% } %>
+            
+            <img src="imagenes/usersProfilePhotos/<%= locals.userLogged.avatar %>" class="avatar">
+            
+            
+            <div id="data">
+                <p> Nombre: <%= locals.userLogged.nombre %> </p>
+                <p> Apellido: <%= locals.userLogged.apellido %> </p>
+                <p> E-mail: <%= locals.userLogged.email %> </p>
+            </div>
+        <% } else {%>
+            <h1>Ud. no debiera estar en esta vista sin estar logueado. Algo anda mal.</h1>
+        <%}%>
+            
+        </div>
     </main>
         <%- include ( './partials/footer.ejs' ); %>
