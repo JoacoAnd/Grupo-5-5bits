@@ -1,0 +1,41 @@
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
+        <main>
+            <div id="registro">
+                <div class="img-left">
+                </div>
+                <form class="form_registro" method="post" action="/register" enctype="multipart/form-data">
+                    <h2>Registrate</h2>
+                    <div class="inputs">
+                        <input type="text" name="nombre" id="nombre" minlength="3" required placeholder="Nombre" />
+                        <input type="text" name="apellido" id="apellido" minlength="3" required
+                            placeholder="Apellido/s" />
+                        <input type="email" name="email" id="e-mail" minlength="10" required placeholder="E-mail" />
+                        <input type="password" name="clave" id="clave" minlength="8" required
+                            placeholder="Contraseña" />
+                        <input type="password" name="re-clave" id="re-clave" minlength="8" required
+                            placeholder="Confirmar contraseña" />
+                        <div class="divfotoperfil">
+                            <label for="userprofilephotos" class="userp">
+                            Subir foto de perfil
+                            <i class="fas fa-camera"></i>
+                        <input type="file" name="userprofilephotos" accept="image/png, image/jpeg" id="userprofilephotos">
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="novedades">
+                        <label for="novedades"><input type="checkbox" name="novedades" id="novedades" /> Deseo recibir
+                            ofertas y novedades en mi e-mail </label>
+                    </div>
+
+                    <button class="enviar">Enviar</button>
+
+                </form>
+                <div class="img-right">
+                </div>
+            </div>
+
+        </main>
+
+        <%- include ( './partials/footer.ejs' ); %>

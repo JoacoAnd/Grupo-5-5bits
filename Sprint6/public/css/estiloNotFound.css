@@ -1,0 +1,89 @@
+
+#NotFound {
+    display: flex;
+    background-color:#86A614;
+
+}
+
+.ops {
+    width:100%;
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+
+
+.img-left {
+    background-image: url("/imagenes/ops1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25%;
+    display: none;
+}
+
+.img-right {
+    background-image: url("/imagenes/ops2.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25%;
+    display: none;
+}
+
+
+/* Estilo para Tablet */
+
+@media(min-width: 400px) {
+    .img-right {
+        display: block;
+    }
+
+    .ops {
+        width:75%;
+        padding-top: 100px;
+        padding-bottom: 200px;
+    }
+
+    .ops h1{
+        font-size: 50px;
+        padding-bottom: 50px;
+    }
+
+    .ops h2{
+        font-size: 40px;
+        padding-bottom: 50px;
+    }
+}
+
+/* Estilo para desktop */
+
+@media(min-width: 769px) {
+
+    .img-left {
+        display: block;
+    }
+
+    .ops {
+        width:50%;
+        padding-top: 100px;
+        padding-bottom: 200px;
+    }
+
+}
+
+@media(min-width: 1200px) {
+
+    .ops h1{
+        font-size: 70px;
+        padding-bottom: 50px;
+    }
+
+    .ops h2{
+        font-size: 50px;
+        padding-bottom: 50px;
+    }
+
+}
+
