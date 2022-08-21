@@ -1,4 +1,4 @@
-Retrospectiva del sprint 1:
+## Retrospectiva del sprint 1:
 
 - Comenzar a hacer:
 Asignar en Trello en con ícono para cada uno, cada una de las tareas.
@@ -17,7 +17,7 @@ Dividir las tareas.
 - Dejar de hacer:
 
 
-Retrospectiva del Sprint 2:
+## Retrospectiva del Sprint 2:
 
 - Comenzar a hacer:
 Mantener de forma natural actualizado el git (siempre realizar un git pull previo a empezar a trabajar).
@@ -37,7 +37,7 @@ Avisar cuando unos se encuentra demorado para pedir ayuda a sus compañeros en s
 - Dejar de hacer:
 
 
-Retrospectiva del sprint 3:
+## Retrospectiva del sprint 3:
 
 - Comenzar a hacer:
 La consigna del Sprint 4.
@@ -60,7 +60,7 @@ Por ahora funciona lo que estamos haciendo.
 Llegar tarde a las reuniones virtuales.
 
 
-Retrospectiva del sprint 4:
+## Retrospectiva del sprint 4:
 
 - Comenzar a hacer:
 La consigna del Sprint 5.
@@ -82,4 +82,22 @@ Desconectarnos por mucho tiempo entre nosotros.
 Llegar tarde a las reuniones virtuales.
 
 
+## Retrospectiva del Sprint 5:
+
+- Comenzar a hacer:
+Las consignas del sprint 6.
+Pendientes del sprint 5.
+
+- Hacer más:
+Buscar info por fuera del material de las clases.
+
+- Continuar haciendo:
+Reuniones semanales.
+Puntos de control dentro del sprint.
+Colaborar entre todo el equipo.
+
+- Hacer menos:
+Respetar las weekly programadas.
+
+- Dejar de hacer:
 
