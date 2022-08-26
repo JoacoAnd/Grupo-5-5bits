@@ -2,8 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const pathproductos = path.join(__dirname, '../../data/products.json');
 const dataproductos = JSON.parse(fs.readFileSync(pathproductos));
+const db = require('../../database/models/index')
 
-function  generateId() {
+function generateId() {
     let allProducts = dataproductos;
     let lastProduct = allProducts.pop();
     if (lastProduct) {
@@ -28,35 +29,53 @@ let productoController = {
         let productoEncontrado = dataproductos.find(x => {
             return x.id == req.params.id;
         });
-        
-        if(productoEncontrado) {
+
+        if (productoEncontrado) {
             res.render('detalleProducto', {
                 titulo: 'Detalle del Producto',
                 css: 'estiloDetalleProducto.css',
                 producto: productoEncontrado
             });
 
-            }
+        }
         else {
-            res.render('notFound',{
+            res.render('notFound', {
                 titulo: 'No existe el artículo',
                 css: 'estiloNotFound.css',
                 id: req.params.id
             });
         }
-        
+
     },
 
     create: (req, res) => {
-        res.render('create', {
-            titulo: 'Crear producto',
-            css: 'estiloProducto.css',
-            categorias: ['Mujeres', 'Hombres', 'Niños', 'Noche', 'Casual', 'Unisex'],
-            talles: ['S', 'M', 'L', 'XL', 'XXL']
-        });
+
+        db.Talle.findAll()
+        .then(talles =>{
+            db.Categoria.findAll()
+            .then(categorias =>{
+                res.render('create', {
+                    titulo: 'Crear producto',
+                    css: 'estiloProducto.css',
+                    categorias: categorias,
+                    talles: talles
+                });
+            })
+        })
     },
 
     store: (req, res) => {
+        
+        db.Producto.create({
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            categoria: req.body.categoria,
+            precio: req.body.precio,
+            imagen: req.file.filename
+        });
+
+        /* Codigo viejo
+        
         let tallesclaves = [req.body.talleS, req.body.talleM, req.body.talleL, req.body.talleXL, req.body.talleXXL];
         let talles = [];
         for (let i = 0; i <= tallesclaves.length; i++) {
@@ -65,20 +84,10 @@ let productoController = {
             }
         }
 
-        let productoNuevo = {
-            id: generateId(),
-            nombre: req.body.nombre,
-            descripcion: req.body.descripcion,
-            categoria: req.body.categoria,
-            talle: talles,
-            precio: req.body.precio,
-            imagen: req.file.filename
-        }
-
         dataproductos.push(productoNuevo);
         fs.writeFileSync(pathproductos, JSON.stringify(dataproductos));
 
-        res.redirect('/')
+        res.redirect('/')*/
     },
 
     edit: (req, res) => {
@@ -109,7 +118,7 @@ let productoController = {
     edited: (req, res) => {
 
         let tallesclaves = [req.body.talleS, req.body.talleM, req.body.talleL, req.body.talleXL, req.body.talleXXL];
-        
+
         let tallesEditados = [];
 
         for (let i = 0; i <= tallesclaves.length; i++) {
@@ -118,14 +127,14 @@ let productoController = {
             }
         }
 
-        if(req.file) {
+        if (req.file) {
             var imagen = req.file.filename;
         }
         else {
-            var imagen = req.body.imagenOriginal;   
+            var imagen = req.body.imagenOriginal;
         }
-        
-       
+
+
 
         let editProducto = {
             id: parseInt(req.params.id),

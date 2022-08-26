@@ -22,14 +22,11 @@ module.exports = (sequelize, dataTypes) => {
         precio: {
             type: dataTypes.DECIMAL(12,2),
             allowNull: false
-        }
+        },
         imagen: {
             type: dataTypes.STRING,
             allowNull: false
         }
-
-        
-        
     };
     let config = {
         timestamps: false,
@@ -47,7 +44,8 @@ module.exports = (sequelize, dataTypes) => {
 
         Producto.belongsToMany(
             models.Talle, 
-            {as: 'talles',
+            {
+            as: 'talles',
             through: 'producto_talle',
             foreignKey: 'producto_id',
             otherKey: 'talle_id',

@@ -1,35 +1,35 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Talle'; 
+    let alias = 'Talle';
     let cols = {
-        id: {
+        id_talle: {
             type: dataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
-        
+
         talle: {
             type: dataTypes.STRING(5),
             allowNull: false
-        }        
-        
+        }
+
     };
     let config = {
         timestamps: false,
         tableName: 'talles',
-        freezeTableName:true
+        freezeTableName: true
     }
-    const Categoria = sequelize.define(alias,cols,config);
+    const Talle = sequelize.define(alias, cols, config);
 
-    
-    Categoria.associate = models => {
-        
+    Talle.associate = models => {
+
         Talle.belongsToMany(
-            models.Producto, 
-            {as: 'productoss',
-            through: 'producto_talle',
-            foreignKey: 'talle_id',
-            otherKey: 'producto_id',
-            timestamps: false
+            models.Producto,
+            {
+                as: 'productos',
+                through: 'producto_talle',
+                foreignKey: 'talle_id',
+                otherKey: 'producto_id',
+                timestamps: false
             }
         )
 
