@@ -5,3 +5,13 @@
 - Armado el SQL CREATEs
 - Pendiente verificar el SQL CREATEs con los modelos.
 
+28/08/22
+
+Quedan pendientes las siguientes tareas:
+-Queda generar diagrama con tabla pivot
+-Corregir modelos a la estructura nueva
+-Quedan los CRUD 
+
+Tareas ya realizadas:
+-La base de datos ya se encuentra creada y subida
+-Se genero las conexiones de forma exitosa de la base de datos
