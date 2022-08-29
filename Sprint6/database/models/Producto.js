@@ -1,22 +1,18 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Producto'; 
     let cols = {
-        id: {
+        id_producto: {
             type: dataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
         
         nombre: {
-            type: dataTypes.STRING(120),
+            type: dataTypes.STRING(255),
             allowNull: false
         },
         descripcion: {
             type: dataTypes.TEXT,
-            allowNull: false
-        },
-        categoria_id: {
-            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
         precio: {
@@ -27,6 +23,12 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         }
+
+        fk_id_categoria: {
+            type: dataTypes.INTEGER.UNSIGNED,
+            allowNull: false
+        },
+
     };
     let config = {
         timestamps: false,
@@ -39,7 +41,7 @@ module.exports = (sequelize, dataTypes) => {
     Producto.associate = models => {
         Producto.belongsTo(models.Categoria, {
             as: 'categoria',
-            foreignKey: 'categoria_id'
+            foreignKey: 'fk_id_categoria'
         });
 
         Producto.belongsToMany(
@@ -47,8 +49,8 @@ module.exports = (sequelize, dataTypes) => {
             {
             as: 'talles',
             through: 'producto_talle',
-            foreignKey: 'producto_id',
-            otherKey: 'talle_id',
+            foreignKey: 'fk_id_producto',
+            otherKey: 'fk_id_talle',
             timestamps: false
             }
         )
