@@ -3,49 +3,13 @@
 
         <!-- HEADER -->
 
-
         <!-- MAIN -->
-        <!--
-        <div class="main">
-            <div class="imagen">
-                <img src="../images/<%=producto.imagen%>" alt="imagen-del-producto" />
-            </div>
-            <div class="descrip">
-                <div class="content-descrip">
-                    <h2>
-                        <%= producto.nombre %>
-                    </h2>
-                    <p>$
-                        <%= producto.precio %>
-                    </p>
-                    <p><strong><%= producto.categoria %></strong></p>
-                </div>
-                <div class="content-descrip">
-                    <i class="fas fa-circle"></i>
-                    <p>TALLES:</p>
-                    <% for (talle of producto.talle) { %>
-                        <button class="botones"><%= talle %></button>
-                        <% } %>
-                </div>
-                <div class="content-descrip">
-                    <button type="submit" class="boton">COMPRAR</button>
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
-                <div class="content-descrip">
-                    <h4>Detalle del producto:</h4>
-                    <p>
-                        <%= producto.descripcion %>
-                    </p>
-                </div>
-            </div>
-        </div>
-        -->
-
+        
         <div class="main container">
             <div class="contenedorDetalleProducto">
                 <div class="row  justify-content-center">
                     <div class="imagen col-5">
-                        <img src="../images/<%=producto.imagen%>" alt="imagen-del-producto" />
+                        <img src="/images/<%=producto.imagen%>" alt="imagen-del-producto" />
                     </div>
                     <div class="descripcion col-5">
                         <div class="datos-producto ">
@@ -55,7 +19,7 @@
                             <p>$
                                 <%= producto.precio %>
                             </p>
-                            <p><strong><%= producto.categoria %></strong></p>
+                            <p><strong><%= producto.categoria.categoria %></strong></p>
                         </div>
                         <div class="descripcion">
                             <h4>Detalle del producto:</h4>
@@ -69,9 +33,9 @@
                 <div class="talleProducto row justify-content-center">
                     <i class="fas fa-circle"></i>
                     <p>TALLES:</p>
-                    <% for (talle of producto.talle) { %>
+                    <% for (talle of talles) { %>
                         <button class="btn boton col-2">
-                        <%= talle %>
+                        <%= talle.talle %>
                             </button>
                         <% } %>
 

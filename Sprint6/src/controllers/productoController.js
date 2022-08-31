@@ -26,68 +26,63 @@ let productoController = {
     },
 
     detalleProducto: (req, res) => {
-        let productoEncontrado = dataproductos.find(x => {
-            return x.id == req.params.id;
-        });
+        let detalleID = req.params.id;
 
-        if (productoEncontrado) {
-            res.render('detalleProducto', {
-                titulo: 'Detalle del Producto',
-                css: 'estiloDetalleProducto.css',
-                producto: productoEncontrado
-            });
-
-        }
-        else {
-            res.render('notFound', {
-                titulo: 'No existe el artículo',
-                css: 'estiloNotFound.css',
-                id: req.params.id
-            });
-        }
-
+        db.Producto.findByPk(detalleID, {
+            include: [{ association: "categoria" }, { association: "talles" }]
+        })
+            .then((productoEncontrado) => {
+                res.render('detalleProducto', {
+                    titulo: 'Detalle del Producto',
+                    css: 'estiloDetalleProducto.css',
+                    producto: productoEncontrado,
+                    talles: productoEncontrado.talles
+                });
+            })
+            .catch(() => {
+                res.render('notFound', {
+                    titulo: 'No existe el artículo',
+                    css: 'estiloNotFound.css',
+                    id: req.params.id
+                });
+            })
     },
 
     create: (req, res) => {
-
         db.Talle.findAll()
-        .then(talles =>{
-            db.Categoria.findAll()
-            .then(categorias =>{
-                res.render('create', {
-                    titulo: 'Crear producto',
-                    css: 'estiloProducto.css',
-                    categorias: categorias,
-                    talles: talles
-                });
+            .then(talles => {
+                db.Categoria.findAll()
+                    .then(categorias => {
+                        res.render('create', {
+                            titulo: 'Crear producto',
+                            css: 'estiloProducto.css',
+                            categorias: categorias,
+                            talles: talles
+                        });
+                    })
             })
-        })
     },
 
     store: (req, res) => {
-        
+
+        let talles = req.body.talles;
+
         db.Producto.create({
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
-            categoria: req.body.categoria,
+            fk_id_categoria: req.body.categoria,
             precio: req.body.precio,
             imagen: req.file.filename
-        });
-
-        /* Codigo viejo
-        
-        let tallesclaves = [req.body.talleS, req.body.talleM, req.body.talleL, req.body.talleXL, req.body.talleXXL];
-        let talles = [];
-        for (let i = 0; i <= tallesclaves.length; i++) {
-            if (tallesclaves[i] != undefined) {
-                talles.push(tallesclaves[i])
+        }).then((producto) => {
+            for (let i = 0; i < talles.length; i++) {
+                db.ProductoTalle.create({
+                    fk_id_producto: producto.id_producto,
+                    fk_id_talle: talles[i]
+                })
             }
-        }
 
-        dataproductos.push(productoNuevo);
-        fs.writeFileSync(pathproductos, JSON.stringify(dataproductos));
-
-        res.redirect('/')*/
+            res.redirect('/products')
+        });
     },
 
     edit: (req, res) => {
