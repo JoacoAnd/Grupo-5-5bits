@@ -87,40 +87,32 @@ let productoController = {
 
     edit: (req, res) => {
         let idProduct = req.params.id;
-        let findProduct = dataproductos.find((e) => {
-            return e.id == idProduct;
-        });
-        const categorias = [
-            "Mujeres",
-            "Hombres",
-            "Niños",
-            "Noche",
-            "Casual",
-            "Unisex",
-        ];
-        const talles = ["S", "M", "L", "XL", "XXL"];
 
-        // res.send(JSON.stringify(findProduct));
-        res.render("editarProducto", {
-            titulo: "Editar Producto",
-            css: "estiloProducto.css",
-            categorias: categorias,
-            talles: talles,
-            producto: findProduct,
-        });
+        db.Producto.findByPk(idProduct, {
+            include: [{ association: "categoria" }, { association: "talles" }]
+        }).then((producto) => {
+            let tallesDelProducto = producto.talles.map(element => {
+                return element.id_talle
+            });
+            db.Categoria.findAll()
+                .then((categorias) => {
+                    db.Talle.findAll()
+                        .then(talles => {
+                            res.render("editarProducto", {
+                                titulo: "Editar Producto",
+                                css: "estiloProducto.css",
+                                producto: producto,
+                                categorias: categorias,
+                                talles: talles,
+                                tallesDelProducto: tallesDelProducto
+                            })
+                        })
+                })
+        }
+        )
     },
 
     edited: (req, res) => {
-
-        let tallesclaves = [req.body.talleS, req.body.talleM, req.body.talleL, req.body.talleXL, req.body.talleXXL];
-
-        let tallesEditados = [];
-
-        for (let i = 0; i <= tallesclaves.length; i++) {
-            if (tallesclaves[i] != undefined) {
-                tallesEditados.push(tallesclaves[i])
-            }
-        }
 
         if (req.file) {
             var imagen = req.file.filename;
@@ -129,27 +121,21 @@ let productoController = {
             var imagen = req.body.imagenOriginal;
         }
 
+        let talles = req.body.talles;
 
-
-        let editProducto = {
-            id: parseInt(req.params.id),
+        db.Producto.update({
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
-            categoria: req.body.categoria,
-            talle: tallesEditados,
+            fk_id_categoria: req.body.categoria,
             precio: req.body.precio,
             imagen: imagen
-        }
-
-        for (let i = 0; i < dataproductos.length; i++) {
-            if (dataproductos[i].id == editProducto.id) {
-                dataproductos[i] = editProducto;
-                break;
+        }, {
+            where: {
+                id_producto: req.params.id
             }
-        }
+        })
 
-        fs.writeFileSync(pathproductos, JSON.stringify(dataproductos));
-        res.redirect('/products/' + req.params.id);
+        res.redirect('/products/' + req.params.id)
     },
 
     delete: (req, res) => {
