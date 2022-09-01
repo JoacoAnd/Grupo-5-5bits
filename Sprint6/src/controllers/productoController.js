@@ -2,27 +2,40 @@ const fs = require('fs');
 const path = require('path');
 const pathproductos = path.join(__dirname, '../../data/products.json');
 const dataproductos = JSON.parse(fs.readFileSync(pathproductos));
-const db = require('../../database/models/index')
-
-function generateId() {
-    let allProducts = dataproductos;
-    let lastProduct = allProducts.pop();
-    if (lastProduct) {
-        return lastProduct.id + 1;
-    }
-    return 1;
-};
-
-
+const db = require('../../database/models/index');
+const Op = db.Sequelize.Op;
 
 let productoController = {
 
     listado: (req, res) => {
-        res.render('listadoProductos', {
-            titulo: 'Listado de productos',
-            css: 'estiloListado.css',
-            productos: dataproductos
-        });
+        
+        let buscar = req.query.buscar;
+        
+        if (buscar != "" && buscar != undefined) {
+            db.Producto.findAll({
+                include: [{ association: "categoria" }],
+                where: {nombre: {
+                    [Op.like]: `%${buscar}%`
+                }}
+            })  
+                .then((productos) => {
+                    res.render('listadoProductos', {
+                        titulo: 'Listado de productos',
+                        css: 'estiloListado.css',
+                        productos: productos
+                    });
+                })
+        } else {
+            db.Producto.findAll({
+                include: [{ association: "categoria" }]})  
+                .then((productos) => {
+                    res.render('listadoProductos', {
+                        titulo: 'Listado de productos',
+                        css: 'estiloListado.css',
+                        productos: productos
+                    });
+                })
+        }
     },
 
     detalleProducto: (req, res) => {
@@ -153,17 +166,17 @@ let productoController = {
 
     delete: (req, res) => {
 
-        for (let i = 0; i < dataproductos.length; i++) {
-            if (dataproductos[i].id == req.params.id) {
-                dataproductos.splice(i, 1);
-                break;
+        db.Producto.destroy({
+            where: {id_producto: req.params.id}
+        })
+
+        db.ProductoTalle.destroy({
+            where: {
+                fk_id_producto: req.params.id
             }
-        }
+        });
 
-        fs.writeFileSync(pathproductos, JSON.stringify(dataproductos));
-
-
-        res.redirect('/products')
+        res.redirect('/products');
     }
 
 }
