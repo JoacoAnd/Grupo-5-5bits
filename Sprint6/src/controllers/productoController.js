@@ -135,6 +135,19 @@ let productoController = {
             }
         })
 
+        db.ProductoTalle.destroy({
+            where: {
+                fk_id_producto: req.params.id
+            }
+        });
+
+        for (let i = 0; i < talles.length; i++) {
+            db.ProductoTalle.create({
+                fk_id_producto: req.params.id,
+                fk_id_talle: talles[i]
+            })
+        }
+
         res.redirect('/products/' + req.params.id)
     },
 
