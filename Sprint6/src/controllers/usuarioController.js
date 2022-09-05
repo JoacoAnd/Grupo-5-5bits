@@ -85,6 +85,13 @@ let usuarioController = {
         })
     },
 
+    editprofile: (req, res)=>{
+        res.render('editarPerfil', {
+            titulo: 'Editar perfil',
+            css: 'estiloRegistro.css'
+        });
+    },
+
     logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
