@@ -13,20 +13,22 @@ let usuarioController = {
   },
 
   loginprocess: (req, res) => {
-    db.Usuario.findAll().then((usuarios) => {
-      for (let i = 0; i < usuarios.length; i++) {
-        if (usuarios[i] == req.body.usuariologin) {
+    db.Usuario.findOne({
+        where: {
+            userEmail: req.body.usuariologin
+        }
+    }).then((usuario) => {
           if (
             bcrypt.compareSync(
               req.body.contrasenialogin,
-              usuarios[i].userPassword
+              usuario.userPassword
             )
           ) {
             let usuarioLogeado = {
-              nombre: usuarios[i].userNombre,
-              apellido: usuarios[i].userApellido,
-              email: usuarios[i].userEmail,
-              avatar: usuarios[i].userAvatar,
+              nombre: usuario.userNombre,
+              apellido: usuario.userApellido,
+              email: usuario.userEmail,
+              avatar: usuario.userAvatar,
             };
 
             req.session.login = usuarioLogeado;
@@ -38,12 +40,8 @@ let usuarioController = {
             }
 
             return res.redirect("/");
-          } 
-        }
-      }
-    });
-    
-    let info = req.body.usuariologin;
+          } else {
+            let info = req.body.usuariologin;
 
         res.render('login', {
             error: 'Clave o Email incorrecto',
@@ -51,7 +49,11 @@ let usuarioController = {
             titulo: 'Login',
             css: 'estiloLogin.css'
         })
-  },
+  
+          } 
+        }
+);
+},
 
   register: (req, res) => {
     res.render("register", {
