@@ -96,6 +96,10 @@ let usuarioController = {
     });
   },
 
+  editedprofile: (req,res) => {
+    db.Usario.update({},{})
+  },
+
   logout: (req, res) => {
     res.clearCookie("userEmail");
     req.session.destroy();
