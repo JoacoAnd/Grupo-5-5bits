@@ -4,8 +4,10 @@
         <main class="container productosContenedor">
 
             <form action="/products" method="get">
-                <input type="text", name="buscar", class="buscar">
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <div id="buscadorlistado">
+                    <input type="text", name="buscar", id="input-buscador">
+                    <button type="submit" id="button-buscador"><i class="fas fa-search"></i></button>
+                </div>
             </form>
 
             <div id="tienda" class="row justify-content-around">
