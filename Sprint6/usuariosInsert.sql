@@ -1,4 +1,4 @@
-INSERT INTO usuarios (id_usuarios, userNombre, userApellido, userEmail, userPassword, userAvatar) VALUES 
+INSERT INTO usuarios (id_usuario, userNombre, userApellido, userEmail, userPassword, userAvatar) VALUES 
 (NULL, 'Juan', 'Perez', 'juan.perez@hotmail.com', MD5('hola'), 'generic_avatar.jpg'),
 (NULL, 'María', 'Doroz', 'mdoroz_1@gmail.com', MD5('ahola'), 'generic_avatar.jpg'),
 (NULL, 'Pedro José', 'Fernández', 'pfer@gmail.com', MD5('ehola'), 'generic_avatar.jpg'),
