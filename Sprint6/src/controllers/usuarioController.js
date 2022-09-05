@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const userDataPath = path.join(__dirname, '../../data/userData.json');
-const userData = JSON.parse(fs.readFileSync(userDataPath));
+const db = require('../../database/models/index');
+const Op = db.Sequelize.Op;
 const bcrypt = require('bcryptjs');
 
 let usuarioController = {
@@ -63,7 +63,6 @@ let usuarioController = {
             }
         
         let usuarioNuevo = {
-            id: userData.length+1,
             userNombre: req.body.nombre,
             userApellido:   req.body.apellido,
             userEmail: req.body.email,
@@ -71,8 +70,7 @@ let usuarioController = {
             userAvatar: userAvatar,
         }
 
-        userData.push(usuarioNuevo);
-        fs.writeFileSync(userDataPath, JSON.stringify(userData));
+        db.Usuario.create(usuarioNuevo);
 
         res.redirect('/login');
     },
