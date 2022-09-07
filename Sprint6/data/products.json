@@ -3,7 +3,7 @@
         "id": 1,
         "nombre": "Zapatillas",
         "descripcion": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.",
-        "categoria": "Niños",
+        "categoria": "Infantes",
         "talle": [
             "S",
             "M",
@@ -18,7 +18,7 @@
         "id": 2,
         "nombre": "Zapatillas",
         "descripcion": "Zapatillas blancas comodas",
-        "categoria": "Niños",
+        "categoria": "Infantes",
         "talle": [
             "S",
             "M"
@@ -75,7 +75,7 @@
         "id": 8,
         "nombre": "Medias blancas de seda",
         "descripcion": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
-        "categoria": "Niños",
+        "categoria": "Infantes",
         "talle": [
             "S",
             "XL",
