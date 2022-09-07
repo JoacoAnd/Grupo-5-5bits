@@ -87,6 +87,38 @@
     padding-top: 5px;
 }
 
+/* Buscador de productos */
+
+#buscadorlistado{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    margin-bottom: 3em;
+    max-width: 200px;
+}
+
+#input-buscador{
+    width: 85%;
+    outline: none;
+    padding: 0.3em;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1C1C1B;
+    border-radius: 0;
+    border: #1C1C1B 1px solid;
+    
+}
+
+#button-buscador{
+    width: 15%;
+    background: none;
+    background-color: #1c1c1b15;
+    border-radius: 0;
+    border: #1C1C1B 1px solid;
+    border-left: none;
+}
 
 /* Media query: TABLET */
 
@@ -95,5 +127,10 @@
     #listadoproductos {
         display: flex;
         flex-wrap: wrap;
+    }
+
+    /* Buscador */
+    #buscadorlistado{
+        max-width: 300px;
     }
 }

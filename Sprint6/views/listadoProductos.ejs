@@ -1,30 +1,20 @@
 <%- include ( './partials/head' ); %>
     <%- include ( './partials/header' ); %>
 
-        <!--       <main id="listadoproductos">
-           <% for ( producto of productos) { %>
-                <a href="/products/<%= producto.id %>" id="divproductos">
-                    <div id="divimagen">
-                        <img src="../images/<%= producto.imagen%>" alt="imagen producto" id="imgdivproducto">
-                    </div>
-                    <h2 id="h2nombreproducto">
-                        <%= producto.nombre %>
-                    </h2>
-                    <p id="pdivproducto">
-                        <%= producto.categoria %>
-                    </p>
-                    <p id="pdivproducto">$
-                        <%= producto.precio %>
-                    </p>
-                </a>
-                <% } %>
-        </main>-->
         <main class="container productosContenedor">
+
+            <form action="/products" method="get">
+                <div id="buscadorlistado">
+                    <input type="text", name="buscar", id="input-buscador">
+                    <button type="submit" id="button-buscador"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+
             <div id="tienda" class="row justify-content-around">
 
-                <% for ( producto of productos) { %>
+                <% for ( let producto of productos) { %>
 
-                    <a href="/products/<%= producto.id %>" id="producto" class="col-md-3 col-sm-12 text-center">
+                    <a href="/products/<%= producto.id_producto %>" id="producto" class="col-md-3 col-sm-12 text-center">
 
                     
                         <img src="../images/<%= producto.imagen%>" alt="imagen producto" id="imgProducto" >
@@ -34,7 +24,7 @@
                                 <%= producto.nombre %>
                             </h4>
                             <p id="categoriaProducto">
-                                <%= producto.categoria %>
+                                <%= producto.categoria.categoria %>
                             </p>
                             <p id="precioProducto">$
                                 <%= producto.precio %>

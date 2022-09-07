@@ -33,7 +33,8 @@ router.post('/login', usuarioController.loginprocess);
 
 // Profile
 router.get('/perfil', authMiddleware, usuarioController.profile);
-
+router.get('/perfil/editar/:id', usuarioController.editprofile);
+router.put('/perfil/editar/:id', usuarioController.editedprofile);
 // Obtenemos carrito de compra
 router.get('/carrito', mainController.carrito);
 

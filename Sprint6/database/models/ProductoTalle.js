@@ -1,29 +1,29 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'ProductoTalle'; 
     let cols = {
-        id: {
+        id_producto_talle: {
             type: dataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
         
-        producto_id: {
+        fk_id_producto: {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false,
 
             references: {
                 model: 'Producto',
-                key: 'id'
+                key: 'id_prducto'
             }
         },
         
-        talle_id: {
+        fk_id_talle: {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false,
 
             references: {
                 model: 'Talle',
-                key: 'id'
+                key: 'id_talle'
             }
         }
         
@@ -40,12 +40,12 @@ module.exports = (sequelize, dataTypes) => {
     ProductoTalle.associate = models => {
         ProductoTalle.belongsTo(models.Producto, {
             as: 'productos',
-            foreignKey: 'producto_id'
+            foreignKey: 'fk_id_producto'
         });
 
         ProductoTalle.belongsTo(models.Talle, {
             as: 'talles',
-            foreignKey: 'talle_id'
+            foreignKey: 'fk_id_talle'
         });
 
         

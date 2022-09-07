@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         
         categoria: {
-            type: dataTypes.STRING(120),
+            type: dataTypes.STRING(100),
             allowNull: false
         }        
         
@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
     Categoria.associate = models => {
         Categoria.hasMany(models.Producto, {
             as: 'productos',
-            foreignKey: 'categoria_id'
+            foreignKey: 'fk_id_categoria'
         });
 
     };
