@@ -1,6 +1,6 @@
 /********************
 COLORES
-VERDE OSCURO: #567317 ////#b1a913
+VERDE OSCURO: #567317 //// #154200;
 VERDE CLARO: #86A614
 VERDE SUPER CLARO: #D5D97A
 MARRON CLARO: #BEAC94
@@ -39,7 +39,7 @@ header {
 
 #encabezado {
     width: 100%;
-    background-color: #deeea7;
+    background-color: #154200;;
     padding: 10px 0;
     box-shadow: -1px 10px 7px -4px rgba(0, 0, 0, 0.53);
     z-index: 10;
@@ -60,7 +60,7 @@ header {
 }
 
 #barraNavUl li a {
-    color: #86A614;
+    color: ##deeea7;
 }
 
 .burger-menu {
@@ -171,7 +171,7 @@ header {
 /*****************CELULAR FOOTER*************************/
 
 footer {
-    background-color: #b1a913;
+    background-color: #154200;
     color: white;
     font-size: 8px;
     text-align: center;

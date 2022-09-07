@@ -149,7 +149,9 @@ Autor: Joaquin Andreone
     }
 
     .form_login {
-        width: 50%;
+        box-shadow: 10px 12px 26px -2px rgb(0 0 0 / 48%);
+    margin: 50px auto;
+    border-radius: 15px;
     }
 
     .inputs input {

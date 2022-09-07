@@ -16,49 +16,15 @@ box-sizing: border-box;}
 header {
     display: flex;
 }
-/*
-#encabezado {
-    width: 100%;
-    background-color: #36480e;
-    padding: 10px 0;
-}
 
-#contenedorLogo {
-    margin: 0 auto;
-    width: 20%;
-}
-
-#logo {
-    width: 100%;
-    padding: 0 50px;
-    margin-top: 10px;
-    margin: 0 auto;
-}
-
-#barraNavUl {
-    display: none;
-}
-
-.burger-menu {
-    display: flex;
-    justify-content: center;
-}
-
-.fa-bars {
-    background-color: #D5D97A;
-    padding: 10px;
-    margin: 20px;
-    border-radius: 3px;
-    color: #ebebeb;
-}
 /***********************************************************/
 #carritoDeCompras{
-    width: 90%;
-    margin: auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    width: 77%;
+    margin: 50px auto;
+    border-radius: 15px;
     padding: 20px;
     background-color: #fef9f38a;
+    box-shadow: 10px 12px 26px -2px rgb(0 0 0 / 48%);
 }
 
 #favoritoscompras{
@@ -99,34 +65,37 @@ header {
 }
 
 #carritoTotal{
- display: flex;
-flex-wrap: wrap;
-justify-content: space-around ;
-align-items: center;
-margin-bottom: 25px;
+    margin-top: 45px;
+    display: flex;
+    justify-content: end;
+    width: 50%;
+    align-items: center;
+    margin-left: auto;
 }
 #carritoTotal h3{
-width: 50%;
-text-align: center;
+margin: auto;
+    text-align: center;
 }
 .precioTotalCarrito{
-width: 20%;
+margin: auto;
 text-align: center;
 }
 .precioTotalCarrito h4{
     font-size: 12px;
     text-align: left;
 }
-button{
-    width: 50%;
+.btnEstilo{
+    
     border-radius: 5px;
     border: none;
-    color: black;
-    background-color: #D5D97A;
+    color: white;  
     text-align: center;
+    width: 30%;
+    height: 30px;
+    background-color: #567317;
 }
-button:hover{
-    background-color: #787e11;
+.btnEstilo:hover{
+    background: #86a614;
     color: white;
 }
 
@@ -199,6 +168,7 @@ footer {
 **************************************************************************
 ************************************************************************/
 @media(min-width: 361px) {
+  
 #encabezado {
     display: flex;
     align-items: center;
@@ -240,9 +210,10 @@ ul {
 /*********************************************/
 
 #carritoTotal{
-flex-wrap: nowrap;
-width: 60%;
-align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 30px auto 15px auto;
+
 }
 .precioTotalCarrito {
     text-align: center;

@@ -20,21 +20,31 @@
 }
 
 .boton {
-    border-radius: 12px;
-    background-color: rgb(240, 255, 247);
-    margin: 10px auto;
+    border-radius: 50%;
+    background-color: #56731770;
+    margin: 15px auto;
+    max-width: 13%;
 }
 
-.botonComprar {
-    border-radius: 12px;
-    background-color: rgb(240, 255, 247);
-    margin: 10px auto;
+
+
+.btnEstilo{
+   margin-right: auto;
+   margin-left: auto;
+    border-radius: 5px;
+    border: none;
+    color: white;  
+    text-align: center;
+    width: 30%;
+    height: 30px;
+    background-color: #567317;
+}
+.btnEstilo:hover{
+    background: #86a614;
+    color: white;
+    transition-duration: 0.4s;
 }
 
-.botonComprar:hover {
-    background-color: rgb(246, 255, 238);
-    transition-duration: 2s;
-}
 
 .botones {
     border: none;
@@ -73,6 +83,7 @@ p {
 .boto {
     border-radius: 5px;
     border: none;
+    
 }
 
 .boton:hover {
@@ -105,8 +116,13 @@ p {
 /*********** LAPTOPS & LARGER TABLETS ************/
 
 @media(min-width: 720px) {
-    .main {}
-    .imagen {}
+    .boton {
+        border-radius: 50%;
+        background-color: #56731770;
+        margin: 15px auto;
+        max-width: 5%;
+    }
+    
     .imagen img {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         border-radius: 5px;
