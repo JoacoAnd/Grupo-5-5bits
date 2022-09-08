@@ -76,7 +76,7 @@ let usuarioController = {
       userApellido: req.body.apellido,
       userEmail: req.body.email,
       userPassword: passwordEncriptada,
-      userAvatar: userAvatar,
+      userAvatar: userAvatar
     });
 
     res.redirect("/login");
@@ -97,7 +97,15 @@ let usuarioController = {
   },
 
   editedprofile: (req,res) => {
-    db.Usario.update({},{})
+    db.Usario.update({
+      userNombre: req.body.nombre,
+      userApellido: req.body.apellido,
+      userEmail: req.body.email,
+      userPassword: passwordEncriptada,
+      userAvatar: userAvatar
+    });
+
+    res.redirect("/login");
   },
 
   logout: (req, res) => {
