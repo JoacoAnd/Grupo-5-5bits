@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const pathproductos = path.join(__dirname, '../../data/products.json');
-const dataproductos = JSON.parse(fs.readFileSync(pathproductos));
+
 const db = require('../../database/models/index');
 const Op = db.Sequelize.Op;
 
