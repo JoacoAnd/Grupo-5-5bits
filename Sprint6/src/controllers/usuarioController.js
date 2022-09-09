@@ -90,19 +90,28 @@ let usuarioController = {
   },
 
   editprofile: (req, res) => {
-    res.render("editarPerfil", {
-      titulo: "Editar perfil",
-      css: "estiloRegistro.css",
-    });
+    db.Usuario.findByPk(req.params.id)
+    .then(usuario =>{
+      res.render("editarPerfil", {
+        titulo: "Editar perfil",
+        css: "estiloRegistro.css",
+        usuario: usuario
+      });
+    })
   },
 
-  editedprofile: (req,res) => {
+  editedprofile: (req, res) => {
+    let passwordEncriptada = bcrypt.hashSync(req.body.clave, 10);
+
     db.Usario.update({
       userNombre: req.body.nombre,
       userApellido: req.body.apellido,
       userEmail: req.body.email,
       userPassword: passwordEncriptada,
-      userAvatar: userAvatar
+    }, {
+      where: {
+        id_usuario: req.params.id
+      }
     });
 
     res.redirect("/login");
