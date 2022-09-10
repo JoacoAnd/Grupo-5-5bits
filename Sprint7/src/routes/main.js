@@ -4,6 +4,7 @@ const mainController = require('../controllers/mainController');
 const usuarioController = require('../controllers/usuarioController');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const loginValidations = require("../middlewares/loginValidations");
 const multer = require('multer');
 const path = require('path');
 
@@ -19,6 +20,7 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({ storage: storage });
 
+
 // Obtenemos main 
 router.get('/', mainController.main);
 
@@ -29,7 +31,7 @@ router.post('/register', uploadFile.single('userprofilephotos'), usuarioControll
 
 // Login
 router.get('/login', guestMiddleware, usuarioController.login);
-router.post('/login', usuarioController.loginprocess);
+router.post('/login', loginValidations, usuarioController.loginprocess);
 
 // Profile
 router.get('/perfil', authMiddleware, usuarioController.profile);

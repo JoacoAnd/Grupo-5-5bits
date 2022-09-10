@@ -3,6 +3,7 @@ const path = require("path");
 const db = require("../../database/models/index");
 const Op = db.Sequelize.Op;
 const bcrypt = require("bcryptjs");
+const {validationResult} = require("express-validator");
 
 let usuarioController = {
   login: (req, res) => {
@@ -13,14 +14,26 @@ let usuarioController = {
   },
 
   loginprocess: (req, res) => {
+
+    loginValidationResult = validationResult(req);
+
+    if(loginValidationResult.errors.length>0) {
+      return res.render('login',{
+        errores: loginValidationResult.mapped(),
+        oldData: req.body,
+        titulo: "Login",
+        css: "estiloLogin.css"
+      })
+    }
+
     db.Usuario.findOne({
         where: {
-            userEmail: req.body.usuariologin
+            userEmail: req.body.usuarioLogin
         }
     }).then((usuario) => {
           if (
             bcrypt.compareSync(
-              req.body.contrasenialogin,
+              req.body.contraseniaLogin,
               usuario.userPassword
             )
           ) {
@@ -34,18 +47,18 @@ let usuarioController = {
             req.session.login = usuarioLogeado;
 
             if (req.body.recordarme) {
-              res.cookie("userEmail", req.body.usuariologin, {
+              res.cookie("userEmail", req.body.usuarioLogin, {
                 maxAge: 1000 * 60 * 60 * 24,
               });
             }
 
             return res.redirect("/");
           } else {
-            let info = req.body.usuariologin;
+            let info = req.body.usuarioLogin;
 
         res.render('login', {
             error: 'Clave o Email incorrecto',
-            infoemail: info,
+            oldData: req.body,
             titulo: 'Login',
             css: 'estiloLogin.css'
         })

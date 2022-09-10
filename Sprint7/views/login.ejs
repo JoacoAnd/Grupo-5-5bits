@@ -8,15 +8,33 @@
                     <h2>Login</h2>
                     <% if (typeof error !='undefined' ) { %>
                         <div>
-                            <p class="error"><%= error %> </p>
+                            <p class="error">
+                                <%= error %>
+                            </p>
                         </div>
 
-                    <% } %>
+                        <% } %>
                             <div class="inputs">
-                                <input type="text" name="usuariologin" id="usuariologin" minlength="3" required
-                                    placeholder="Email" value="<%= typeof infoemail != 'undefined' ? infoemail : '' %>" />  
-                                <input type="password" name="contrasenialogin" id="contrasenialogin" minlength="8"
-                                    required placeholder="Contraseña" />
+                                <input type="text" name="usuarioLogin" id="usuarioLogin" minlength="3" required
+                                    placeholder="Email" value="<%= locals.oldData ? oldData.usuarioLogin : null %>"
+                                    class="<%= locals.errores && errores.usuarioLogin ? 'st_error' : null %>" />
+
+                                <% if (locals.errores && errores.usuarioLogin) { %>
+                                    <div class="error">
+                                        <%= errores.usuarioLogin.msg %>
+                                    </div>
+                                <% } %>
+
+                                        <input type="password" name="contraseniaLogin" id="contraseniaLogin"
+                                            minlength="8" required placeholder="Contraseña"
+                                            class="<%= locals.errores && errores.contraseniaLogin ? 'st_error' : null %>" />
+
+                                   <% if (locals.errores && errores.contraseniaLogin) { %>
+                                            <div class="error">
+                                                <%= errores.contraseniaLogin.msg %>
+                                            </div>
+                                   <% } %>
+
                             </div>
 
                             <div class="recordarmediv">
@@ -27,7 +45,8 @@
                             <button class="enviar">Entrar</button>
                             <div class="registrate">
                                 <h2 class="registratelogin">No tienes un usuario?</h2>
-                                <a href="/register"><button class="botonregistratelogin" type="button">REGISTRATE!</button></a>
+                                <a href="/register"><button class="botonregistratelogin"
+                                        type="button">REGISTRATE!</button></a>
                             </div>
                 </form>
                 <div class="img-right">
