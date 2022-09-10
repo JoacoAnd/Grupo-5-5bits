@@ -1,0 +1,39 @@
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
+        <main>
+            <div id="login">
+                <div class="img-left">
+                </div>
+                <form class="form_login" method="post" action="/login">
+                    <h2>Login</h2>
+                    <% if (typeof error !='undefined' ) { %>
+                        <div>
+                            <p class="error"><%= error %> </p>
+                        </div>
+
+                    <% } %>
+                            <div class="inputs">
+                                <input type="text" name="usuariologin" id="usuariologin" minlength="3" required
+                                    placeholder="Email" value="<%= typeof infoemail != 'undefined' ? infoemail : '' %>" />  
+                                <input type="password" name="contrasenialogin" id="contrasenialogin" minlength="8"
+                                    required placeholder="Contraseña" />
+                            </div>
+
+                            <div class="recordarmediv">
+                                <input type="checkbox" name="recordarme" id="recordarme">
+                                <label for="recordarme" id="recordarmelabel">Recordar usuario</label>
+                            </div>
+
+                            <button class="enviar">Entrar</button>
+                            <div class="registrate">
+                                <h2 class="registratelogin">No tienes un usuario?</h2>
+                                <a href="/register"><button class="botonregistratelogin" type="button">REGISTRATE!</button></a>
+                            </div>
+                </form>
+                <div class="img-right">
+                </div>
+            </div>
+
+        </main>
+
+        <%- include ( './partials/footer.ejs' ); %>

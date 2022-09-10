@@ -1,0 +1,40 @@
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
+
+        <main class="container productosContenedor">
+
+            <form action="/products" method="get">
+                <div id="buscadorlistado">
+                    <input type="text", name="buscar", id="input-buscador">
+                    <button type="submit" id="button-buscador"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+
+            <div id="tienda" class="row justify-content-around">
+
+                <% for ( let producto of productos) { %>
+
+                    <a href="/products/<%= producto.id_producto %>" id="producto" class="col-md-3 col-sm-12 text-center">
+
+                    
+                        <img src="../images/<%= producto.imagen%>" alt="imagen producto" id="imgProducto" >
+                        
+                        <div>
+                            <h4 id="tituloProducto">
+                                <%= producto.nombre %>
+                            </h4>
+                            <p id="categoriaProducto">
+                                <%= producto.categoria.categoria %>
+                            </p>
+                            <p id="precioProducto">$
+                                <%= producto.precio %>
+                            </p>
+                        </div>
+                  
+
+                </a>
+                    <% } %>
+
+            </div>
+        </main>
+        <%- include ( './partials/footer.ejs' ); %>

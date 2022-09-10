@@ -1,0 +1,58 @@
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
+
+        <main>
+            <div class="img-left">
+            </div>
+            <div class="formulariosedit">
+                <form method="post" action="/products/<%= producto.id_producto %>?_method=PUT" id="producto" enctype="multipart/form-data" >
+
+                    <h2>Administración de productos</h2>
+                    <div class="inputs">
+                        <input type="text" name="nombre" id="nombre" minlength="5" maxlength="60" required
+                            placeholder="Nombre" value="<%=producto.nombre%>" />
+                        <input type="text" name="descripcion" id="descripcion" minlength="5" maxlength="60"
+                            placeholder="Descripción" value="<%=producto.descripcion%>" />
+
+                        <select name="categoria" id="categoria">
+                            <option value="">[Categoría]</option>
+                            <% for(let categoria of categorias) { %>
+                                <option value= "<%= categoria.id_categoria %>" 
+                                    <%=categoria.id_categoria==producto.fk_id_categoria?'selected':'' %>
+                                    ><%= categoria.categoria %> </option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <h3>Talles disponibles:</h3>
+                    <div class="check">
+                        <% for(let talle of talles) { %>
+                            <input type="checkbox" value="<%= talle.id_talle %>" name="talles"
+                            <%=tallesDelProducto.includes(talle.id_talle) ? 'checked' : '' %> />
+                            <%= talle.talle %>
+                                <% } %>
+                    </div>
+
+                    <div class="inputs">
+                        $ <input type="number" name="precio" id="precio" required placeholder="Precio"
+                            value="<%= producto.precio %>" />
+                        <label for="imagen">Imagen del producto:</label> 
+                        <img class="imagenProducto" src="/imagenes/<%=producto.imagen%>" >
+                        <input type="file" name="imagen" id="imagen" <% if(typeof producto.imagen =='undefined') {%> required <%}%>/>
+                        <% if(typeof producto.imagen !='undefined') {%> 
+                            <input type="hidden" name="imagenOriginal" value="<%= producto.imagen %>" >
+                        <%}%>
+                    </div>
+
+                    <button type="submit" class="guardar">Guardar</button>
+                </form>
+
+                <form action="/products/<%= producto.id_producto %>?_method=DELETE" method="post" class="deleteboton">
+                    <button class="guardar" style="background-color: red;">Eliminar</button>
+                </form>
+            </div>
+            <div class="img-right">
+            </div>
+        </main>
+
+
+        <%- include ( './partials/footer.ejs' ); %>

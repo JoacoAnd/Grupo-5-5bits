@@ -1,0 +1,169 @@
+/* ------LOGIN------- */
+/* 
+
+Hoja de estilo del formulario de login
+
+Autor: Joaquin Andreone
+
+*/
+
+#login {
+    display: flex;
+}
+
+
+.img-left {
+    background-image: url("/imagenes/3hombre500.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25%;
+    display: none;
+}
+
+.img-right {
+    background-image: url("/imagenes/2mujer500.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25%;
+    display: none;
+}
+
+.error{
+    color: red;
+    margin-top: 20px;
+}
+
+.form_login {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+#login h2 {
+    color: black;
+    font-weight: 600;
+}
+
+
+.inputs input {
+    width: 80%;
+    display: inline-block;
+    margin: auto;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    color: #1C1C1B;
+    font-size: 20px;
+    height: 40px;
+    text-align: center;
+}
+
+.inputs input:focus {
+    outline: unset;
+}
+
+.inputs input:focus::placeholder{
+    visibility: hidden;
+ }
+
+.recordarmediv {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: left;
+    margin-left: 15%;
+    position: relative;
+}
+
+.enviar {
+    background-color: #567317;
+    padding: 10px;
+    margin-top: 10px;
+    color: #F2F2F2;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 150ms;
+    border-radius: 10px;
+    border: none;
+    width: 130px;
+}
+
+.enviar:hover {
+    background: #86a614;
+}
+
+.registratelogin{
+    margin-top: 6%;
+    font-size: 22px;
+}
+
+.botonregistratelogin{
+    min-width: 150px;
+    margin-top: 6%;
+    margin-bottom: 10%;
+    border: none;
+    width: 45%;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: #A9A9A9;
+    transition: all 200ms;
+}
+
+.botonregistratelogin:hover{
+    background-color: #beac94;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* Estilo para Tablet */
+
+@media(min-width: 400px) {
+    .img-right {
+        display: block;
+    }
+
+    .olvidemicontrasenia{
+        text-align: left;
+        margin-left: 20%;
+    }
+    
+    .enviar{
+        width: 50%;
+        margin: 6px;
+    }
+}
+
+/* Estilo para desktop */
+
+@media(min-width: 769px) {
+
+    .img-left {
+        display: block;
+    }
+
+    .form_login {
+        box-shadow: 10px 12px 26px -2px rgb(0 0 0 / 48%);
+    margin: 50px auto;
+    border-radius: 15px;
+    }
+
+    .inputs input {
+        width: 80%;
+        margin-top: 28px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .inputs input{
+        width: 70%;
+        height: 50px;
+        font-size: 25px;
+    }
+}

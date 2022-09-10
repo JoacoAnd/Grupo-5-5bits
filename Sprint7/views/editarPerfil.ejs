@@ -1,0 +1,33 @@
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
+        <main>
+            <div id="registro">
+                <div class="img-left">
+                </div>
+                <form class="form_registro" method="post" action="/perfil/editar/<%= usuario.id_usuario %>" enctype="multipart/form-data">
+                    <h2>Editar perfil</h2>
+                    <div class="inputs">
+                        <input type="text" name="nombre" id="nombre" minlength="3" required placeholder="Nombre" value="<%= usuario.userNombre %>"/>
+                        <input type="text" name="apellido" id="apellido" minlength="3" required
+                            placeholder="Apellido/s" value="<%= usuario.userApellido %>"/>
+                        <input type="email" name="email" id="e-mail" minlength="10" required placeholder="E-mail" value="<%= usuario.userEmail %>"/>
+                        <input type="password" name="clave" id="clave" minlength="8" required
+                            placeholder="Contraseña nueva" />
+                        <input type="password" name="claveanterior" id="claveanterior" minlength="8" required
+                            placeholder="Contraseña anterior" />
+                        <div class="inputs">
+                            <h3>Imagen del usuario</h3>
+                            <img src="/images/usersProfilePhotos/<%= usuario.userAvatar %>" alt="userAvatar">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="enviar">Editar</button>
+
+                </form>
+                <div class="img-right">
+                </div>
+            </div>
+
+        </main>
+
+        <%- include ( './partials/footer.ejs' ); %>

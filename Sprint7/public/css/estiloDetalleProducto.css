@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.contenedorDetalleProducto {
+    max-width: 75%;
+    margin: 25px auto;
+    box-shadow: 13px 10px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.descripcionProducto {
+    font-size: 0.7rem;
+}
+
+.talleProducto {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.boton {
+    border-radius: 50%;
+    background-color: #56731770;
+    margin: 15px auto;
+    max-width: 13%;
+}
+
+
+
+.btnEstilo{
+   margin-right: auto;
+   margin-left: auto;
+    border-radius: 5px;
+    border: none;
+    color: white;  
+    text-align: center;
+    width: 30%;
+    height: 30px;
+    background-color: #567317;
+}
+.btnEstilo:hover{
+    background: #86a614;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+
+.botones {
+    border: none;
+}
+
+.botones:hover {
+    background-color: #36480e;
+    color: white;
+}
+
+
+/************** PHONE ************/
+
+.imagen img {
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.content-descrip {
+    margin-bottom: 15px;
+}
+
+.content-descrip a {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+.boto {
+    border-radius: 5px;
+    border: none;
+    
+}
+
+.boton:hover {
+    background-color: #36480e;
+    color: white;
+}
+
+
+/*********** TABLETS & LARGER PHONES ************/
+
+@media(min-width: 480px) {
+    .content-descrip {
+        font-size: 18px;
+        margin-top: 4px;
+    }
+    p {
+        margin-bottom: 10px;
+    }
+    .botones {
+        border-radius: 10px;
+        border: none;
+    }
+    .botones:hover {
+        background-color: #36480e;
+        color: white;
+    }
+}
+
+
+/*********** LAPTOPS & LARGER TABLETS ************/
+
+@media(min-width: 720px) {
+    .boton {
+        border-radius: 50%;
+        background-color: #56731770;
+        margin: 15px auto;
+        max-width: 5%;
+    }
+    
+    .imagen img {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+    .content-descrip {
+        margin-bottom: 45px;
+    }
+    .botones {
+        border-radius: 10px;
+        border: none;
+        width: 115px;
+        height: 20px;
+    }
+}
