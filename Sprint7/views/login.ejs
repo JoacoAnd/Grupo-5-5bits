@@ -15,7 +15,7 @@
 
                         <% } %>
                             <div class="inputs">
-                                <input type="text" name="usuarioLogin" id="usuarioLogin" minlength="3" required
+                                <input type="email" name="usuarioLogin" id="usuarioLogin" minlength="3" required
                                     placeholder="Email" value="<%= locals.oldData ? oldData.usuarioLogin : null %>"
                                     class="<%= locals.errores && errores.usuarioLogin ? 'st_error' : null %>" />
 
@@ -54,5 +54,6 @@
             </div>
 
         </main>
-
+        <script src="/js/login.js"></script>
+        
         <%- include ( './partials/footer.ejs' ); %>

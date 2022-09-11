@@ -3,7 +3,7 @@ const path = require("path");
 const db = require("../../database/models/index");
 const Op = db.Sequelize.Op;
 const bcrypt = require("bcryptjs");
-const {validationResult} = require("express-validator");
+const { validationResult } = require("express-validator");
 
 let usuarioController = {
   login: (req, res) => {
@@ -17,8 +17,8 @@ let usuarioController = {
 
     loginValidationResult = validationResult(req);
 
-    if(loginValidationResult.errors.length>0) {
-      return res.render('login',{
+    if (loginValidationResult.errors.length > 0) {
+      return res.render('login', {
         errores: loginValidationResult.mapped(),
         oldData: req.body,
         titulo: "Login",
@@ -27,46 +27,57 @@ let usuarioController = {
     }
 
     db.Usuario.findOne({
-        where: {
-            userEmail: req.body.usuarioLogin
-        }
+      where: {
+        userEmail: req.body.usuarioLogin
+      }
     }).then((usuario) => {
-          if (
-            bcrypt.compareSync(
-              req.body.contraseniaLogin,
-              usuario.userPassword
-            )
-          ) {
-            let usuarioLogeado = {
-              nombre: usuario.userNombre,
-              apellido: usuario.userApellido,
-              email: usuario.userEmail,
-              avatar: usuario.userAvatar,
-            };
+      if (
+        bcrypt.compareSync(
+          req.body.contraseniaLogin,
+          usuario.userPassword
+        )
+      ) {
+        let usuarioLogeado = {
+          nombre: usuario.userNombre,
+          apellido: usuario.userApellido,
+          email: usuario.userEmail,
+          avatar: usuario.userAvatar,
+        };
 
-            req.session.login = usuarioLogeado;
+        req.session.login = usuarioLogeado;
 
-            if (req.body.recordarme) {
-              res.cookie("userEmail", req.body.usuarioLogin, {
-                maxAge: 1000 * 60 * 60 * 24,
-              });
-            }
+        if (req.body.recordarme) {
+          res.cookie("userEmail", req.body.usuarioLogin, {
+            maxAge: 1000 * 60 * 60 * 24,
+          });
+        }
 
-            return res.redirect("/");
-          } else {
-            let info = req.body.usuarioLogin;
+        return res.redirect("/");
+      } else {
+
 
         res.render('login', {
-            error: 'Clave o Email incorrecto',
-            oldData: req.body,
-            titulo: 'Login',
-            css: 'estiloLogin.css'
+          error: 'Clave o Email incorrecto',
+          oldData: req.body,
+          titulo: 'Login',
+          css: 'estiloLogin.css'
         })
-  
-          } 
-        }
-);
-},
+
+      }
+    }
+
+    )
+      .catch( () => {
+        res.render('login', {
+          error: 'Clave o Email incorrecto',
+          oldData: req.body,
+          titulo: 'Login',
+          css: 'estiloLogin.css'
+        })
+      }
+      )
+      ;
+  },
 
   register: (req, res) => {
     res.render("register", {
@@ -104,13 +115,13 @@ let usuarioController = {
 
   editprofile: (req, res) => {
     db.Usuario.findByPk(req.params.id)
-    .then(usuario =>{
-      res.render("editarPerfil", {
-        titulo: "Editar perfil",
-        css: "estiloRegistro.css",
-        usuario: usuario
-      });
-    })
+      .then(usuario => {
+        res.render("editarPerfil", {
+          titulo: "Editar perfil",
+          css: "estiloRegistro.css",
+          usuario: usuario
+        });
+      })
   },
 
   editedprofile: (req, res) => {
