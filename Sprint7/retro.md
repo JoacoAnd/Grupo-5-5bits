@@ -101,3 +101,16 @@ Respetar las weekly programadas.
 
 - Dejar de hacer:
 
+## Retrospectiva del Sprint 6:
+
+- Comenzar a hacer:
+Revisar el código de lo que ya hemos hecho.
+Las consignas del sprint 7.
+
+- Continuar haciendo:
+Reuniones semanales.
+Dividir las tareas como hasta ahora.
+Colaborar todos en el equipo.
+
+- Hacer menos:
+Faltar a las weeklys.
