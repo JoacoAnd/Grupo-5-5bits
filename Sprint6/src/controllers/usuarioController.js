@@ -103,7 +103,7 @@ let usuarioController = {
   editedprofile: (req, res) => {
     let passwordEncriptada = bcrypt.hashSync(req.body.clave, 10);
 
-    db.Usario.update({
+    db.Usuario.update({
       userNombre: req.body.nombre,
       userApellido: req.body.apellido,
       userEmail: req.body.email,
