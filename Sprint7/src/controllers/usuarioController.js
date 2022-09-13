@@ -67,7 +67,7 @@ let usuarioController = {
     }
 
     )
-      .catch( () => {
+      .catch(() => {
         res.render('login', {
           error: 'Clave o Email incorrecto',
           oldData: req.body,
@@ -87,23 +87,36 @@ let usuarioController = {
   },
 
   registerProcess: (req, res) => {
-    let passwordEncriptada = bcrypt.hashSync(req.body.clave, 10);
+    let errors = validationResult(req);
 
-    if (req.file) {
-      var userAvatar = req.file.filename;
+    if (errors.isEmpty()) {
+      let passwordEncriptada = bcrypt.hashSync(req.body.clave, 10);
+
+      let userAvatar;
+      
+      if (req.file) {
+        userAvatar = req.file.filename;
+      } else {
+        userAvatar = "generic_avatar.jpg";
+      }
+
+      db.Usuario.create({
+        userNombre: req.body.nombre,
+        userApellido: req.body.apellido,
+        userEmail: req.body.email,
+        userPassword: passwordEncriptada,
+        userAvatar: userAvatar
+      });
+
+      res.redirect("/login");
     } else {
-      var userAvatar = "generic_avatar.jpg";
+      res.render("register", {
+        errors: errors.errors,
+        old: req.body,
+        titulo: "Registro",
+        css: "estiloRegistro.css",
+      })
     }
-
-    db.Usuario.create({
-      userNombre: req.body.nombre,
-      userApellido: req.body.apellido,
-      userEmail: req.body.email,
-      userPassword: passwordEncriptada,
-      userAvatar: userAvatar
-    });
-
-    res.redirect("/login");
   },
 
   profile: (req, res) => {

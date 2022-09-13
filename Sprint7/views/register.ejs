@@ -5,22 +5,27 @@
                 <div class="img-left">
                 </div>
                 <form class="form_registro" method="post" action="/register" enctype="multipart/form-data">
+                    <div>
+                        <% if (locals.errors && errors) {%>
+                            <% errors.forEach(err=> { %>
+                                <p><%= err.msg %> </p>
+                                <% }) %>
+                                    <% } %>
+                    </div>
                     <h2>Registrate</h2>
                     <div class="inputs">
-                        <input type="text" name="nombre" id="nombre" minlength="3" required placeholder="Nombre" />
-                        <input type="text" name="apellido" id="apellido" minlength="3" required
-                            placeholder="Apellido/s" />
-                        <input type="email" name="email" id="e-mail" minlength="10" required placeholder="E-mail" />
-                        <input type="password" name="clave" id="clave" minlength="8" required
-                            placeholder="Contraseña" />
-                        <input type="password" name="re-clave" id="re-clave" minlength="8" required
-                            placeholder="Confirmar contraseña" />
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%= locals.old && old.nombre ? old.nombre : ''  %>" />
+                        <input type="text" name="apellido" id="apellido" placeholder="Apellido/s" value="<%= locals.old && old.apellido ? old.apellido : ''  %>" />
+                        <input type="email" name="email" id="e-mail" placeholder="E-mail" value="<%= locals.old && old.email ? old.email : ''  %>"/>
+                        <input type="password" name="clave" id="clave" placeholder="Contraseña" value="<%= locals.old && old.clave ? old.clave : ''  %>"/>
+                        <input type="password" name="re-clave" id="re-clave" placeholder="Confirmar contraseña" />
                         <div class="divfotoperfil">
                             <label for="userprofilephotos" class="userp">
-                            Subir foto de perfil
-                            <i class="fas fa-camera"></i>
-                        <input type="file" name="userprofilephotos" accept="image/png, image/jpeg" id="userprofilephotos">
-                        </label>
+                                Subir foto de perfil
+                                <i class="fas fa-camera"></i>
+                                <input type="file" name="userprofilephotos" accept="image/png, image/jpeg"
+                                    id="userprofilephotos">
+                            </label>
                         </div>
                     </div>
 

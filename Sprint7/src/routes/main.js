@@ -5,6 +5,7 @@ const usuarioController = require('../controllers/usuarioController');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const loginValidations = require("../middlewares/loginValidations");
+const registerValidations = require("../middlewares/registerValidations");
 const multer = require('multer');
 const path = require('path');
 
@@ -27,7 +28,7 @@ router.get('/', mainController.main);
 // Register 
 router.get('/register', guestMiddleware, usuarioController.register);
 
-router.post('/register', uploadFile.single('userprofilephotos'), usuarioController.registerProcess);
+router.post('/register', uploadFile.single('userprofilephotos'), registerValidations, usuarioController.registerProcess);
 
 // Login
 router.get('/login', guestMiddleware, usuarioController.login);
