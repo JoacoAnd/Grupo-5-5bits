@@ -103,6 +103,18 @@ Autor: Julio Tuozzo
     background: #86a614;
 }
 
+/* Editar perfil */
+
+h3.imagenusuario{
+    margin-top: 2em;
+}
+
+div.inputs img.imagenanteriorusuario{
+    max-width: 50%;
+    margin-top: 1em;
+} 
+
+
 /* Estilo para Tablet */
 
 @media(min-width: 400px) {

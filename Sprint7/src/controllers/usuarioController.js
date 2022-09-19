@@ -140,11 +140,19 @@ let usuarioController = {
   editedprofile: (req, res) => {
     let passwordEncriptada = bcrypt.hashSync(req.body.clave, 10);
 
+    console.log(req.file);
+    
+    let updatePhoto;
+    if (req.file) {
+      updatePhoto = req.file.filename;
+    } 
+
     db.Usuario.update({
       userNombre: req.body.nombre,
       userApellido: req.body.apellido,
       userEmail: req.body.email,
       userPassword: passwordEncriptada,
+      userAvatar: updatePhoto
     }, {
       where: {
         id_usuario: req.params.id

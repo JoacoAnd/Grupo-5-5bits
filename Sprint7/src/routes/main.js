@@ -37,7 +37,8 @@ router.post('/login', loginValidations, usuarioController.loginprocess);
 // Profile
 router.get('/perfil', authMiddleware, usuarioController.profile);
 router.get('/perfil/editar/:id', usuarioController.editprofile);
-router.post('/perfil/editar/:id', multer().none(), usuarioController.editedprofile);
+router.post('/perfil/editar/:id', uploadFile.single('updateprofilephoto'), usuarioController.editedprofile);
+
 // Obtenemos carrito de compra
 router.get('/carrito', mainController.carrito);
 

@@ -16,8 +16,16 @@
                         <input type="password" name="claveanterior" id="claveanterior" minlength="8" required
                             placeholder="Contraseña anterior" />
                         <div class="inputs">
-                            <h3>Imagen del usuario</h3>
-                            <img src="/images/usersProfilePhotos/<%= usuario.userAvatar %>" alt="userAvatar">
+                            <h3 class="imagenusuario">Imagen del usuario</h3>
+                            <img class="imagenanteriorusuario" src="/images/usersProfilePhotos/<%= usuario.userAvatar %>" alt="userAvatar">
+                        </div>
+                        <div class="divfotoperfil">
+                            <label for="userprofilephotos" class="userp">
+                                Cambiar foto de perfil
+                                <i class="fas fa-camera"></i>
+                                <input type="file" name="updateprofilephoto" accept="image/png, image/jpeg"
+                                    id="userprofilephotos">
+                            </label>
                         </div>
                     </div>
 
