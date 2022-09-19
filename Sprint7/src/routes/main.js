@@ -4,6 +4,7 @@ const mainController = require('../controllers/mainController');
 const usuarioController = require('../controllers/usuarioController');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const updateProfileAuth = require("../middlewares/updateProfileAuth");
 const loginValidations = require("../middlewares/loginValidations");
 const registerValidations = require("../middlewares/registerValidations");
 const multer = require('multer');
@@ -36,7 +37,7 @@ router.post('/login', loginValidations, usuarioController.loginprocess);
 
 // Profile
 router.get('/perfil', authMiddleware, usuarioController.profile);
-router.get('/perfil/editar/:id', usuarioController.editprofile);
+router.get('/perfil/editar/:id', updateProfileAuth, usuarioController.editprofile);
 router.post('/perfil/editar/:id', uploadFile.single('updateprofilephoto'), usuarioController.editedprofile);
 
 // Obtenemos carrito de compra
