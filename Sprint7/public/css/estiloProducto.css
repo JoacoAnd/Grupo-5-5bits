@@ -75,6 +75,16 @@ label {
 .imagenProducto {
     width:40%;
 }
+
+.errorescreate{
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    font-size: 16px;
+    height: auto;
+}
+
 /* Estilo para Tablet */
 
 @media(min-width: 769px) {
