@@ -9,7 +9,8 @@ module.exports = (sequelize, dataTypes) => {
         
         nombre: {
             type: dataTypes.STRING(255),
-            allowNull: false
+            allowNull: false, 
+            validate: {min: 5}
         },
         descripcion: {
             type: dataTypes.TEXT,
