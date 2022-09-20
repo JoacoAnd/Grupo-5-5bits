@@ -8,21 +8,31 @@
                     <div>
                         <% if (locals.errors && errors) {%>
                             <% errors.forEach(err=> { %>
-                                <p><%= err.msg %> </p>
+                                <p>
+                                    <%= err.msg %>
+                                </p>
                                 <% }) %>
                                     <% } %>
                     </div>
                     <h2>Registrate</h2>
                     <div class="inputs">
-                        <input type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%= locals.old && old.nombre ? old.nombre : ''  %>" />
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre"
+                            value="<%= locals.old && old.nombre ? old.nombre : ''  %>" />
                         <p class="errorNombre"></p>
-                        <input type="text" name="apellido" id="apellido" placeholder="Apellido/s" value="<%= locals.old && old.apellido ? old.apellido : ''  %>" />
+
+                        <input type="text" name="apellido" id="apellido" placeholder="Apellido/s"
+                            value="<%= locals.old && old.apellido ? old.apellido : ''  %>" />
                         <p class="errorApellido"></p>
-                        <input type="email" name="email" id="e-mail" placeholder="E-mail" value="<%= locals.old && old.email ? old.email : ''  %>"/>
+
+                        <input type="email" name="email" id="email" placeholder="E-mail"
+                            value="<%= locals.old && old.email ? old.email : ''  %>" />
                         <p class="errorEmail"></p>
-                        <input type="password" name="clave" id="clave" placeholder="Contraseña" value="<%= locals.old && old.clave ? old.clave : ''  %>"/>
+
+                        <input type="password" name="clave" id="clave" placeholder="Contraseña"
+                            value="<%= locals.old && old.clave ? old.clave : ''  %>" />
                         <input type="password" name="re-clave" id="re-clave" placeholder="Confirmar contraseña" />
                         <p class="errorPassword"></p>
+
                         <div class="divfotoperfil">
                             <label for="userprofilephotos" class="userp">
                                 Subir foto de perfil
@@ -31,10 +41,12 @@
                                     id="userprofilephotos">
                             </label>
                             <p class="errorAvatar"></p>
+
                         </div>
-<div class="errores">
-    <ul></ul>
-</div>
+                        <div class="errores">
+                            <p>Errores front</p>
+                            <ul></ul>
+                        </div>
                     </div>
 
                     <div class="novedades">
