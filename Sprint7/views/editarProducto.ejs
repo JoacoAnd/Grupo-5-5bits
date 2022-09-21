@@ -11,10 +11,10 @@
                     <h2>Administración de productos</h2>
                     <div class="inputs">
                         <input type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%=producto.nombre%>" />
-                        <label for="nombre" style="color: red;" class="errorNombre"></label>
+                        <label for="nombre" style="color: red;" class="errorNombre errorescreate"></label>
                         <input type="text" name="descripcion" id="descripcion" 
                             placeholder="Descripción" value="<%=producto.descripcion%>" />
-                        <label for="descripcion" style="color: red;" class="errorDescripcion"></label>
+                        <label for="descripcion" style="color: red;" class="errorDescripcion errorescreate"></label>
 
                         <select name="categoria" id="categoria">
                             <option value="">[Categoría]</option>
@@ -38,12 +38,12 @@
                     <div class="inputs">
                         $ <input type="number" name="precio" id="precio" placeholder="Precio"
                             value="<%= producto.precio %>" />
-                        <label for="precio" style="color: red;" class="errorPrecio"></label>
+                        <label for="precio" style="color: red;" class="errorPrecio errorescreate"></label>
                         <label for="imagen">Imagen del producto:</label>
                         <img class="imagenProducto" src="/imagenes/<%=producto.imagen%>">
                         <input type="file" name="imagen" id="imagen" <% if(typeof producto.imagen=='undefined' ) {%>
                         required <%}%>/>
-                            <label for="imagen" style="color: red;" class="errorImagen"></label>
+                            <label for="imagen" style="color: red;" class="errorImagen errorescreate"></label>
                             <% if(typeof producto.imagen !='undefined' ) {%>
                                 <input type="hidden" name="imagenOriginal" value="<%= producto.imagen %>">
                                 <%}%>
