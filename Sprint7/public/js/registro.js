@@ -22,7 +22,7 @@ window.addEventListener('load', function () {
     let errorAvatar = document.querySelector(".errorAvatar");
 
 
-    enviar.addEventListener('click', function (e) {
+    formularioRegistro.addEventListener('submit', function (e) {
         e.preventDefault();
         let errores = {};
 
