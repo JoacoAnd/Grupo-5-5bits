@@ -8,6 +8,12 @@ Autor: Julio Tuozzo
 
 #registro {
     display: flex;
+    justify-content: space-between;
+}
+.erroresRegister{
+    color: red;
+    font-weight: 600;
+    
 }
 
 

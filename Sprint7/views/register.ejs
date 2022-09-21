@@ -18,20 +18,20 @@
                     <div class="inputs">
                         <input type="text" name="nombre" id="nombre" placeholder="Nombre"
                             value="<%= locals.old && old.nombre ? old.nombre : ''  %>" />
-                        <p class="errorNombre"></p>
+                        <p class="errorNombre erroresRegister"></p>
 
                         <input type="text" name="apellido" id="apellido" placeholder="Apellido/s"
                             value="<%= locals.old && old.apellido ? old.apellido : ''  %>" />
-                        <p class="errorApellido"></p>
+                        <p class="errorApellido erroresRegister"></p>
 
                         <input type="email" name="email" id="email" placeholder="E-mail"
                             value="<%= locals.old && old.email ? old.email : ''  %>" />
-                        <p class="errorEmail"></p>
+                        <p class="errorEmail erroresRegister"></p>
 
                         <input type="password" name="clave" id="clave" placeholder="Contraseña"
                             value="<%= locals.old && old.clave ? old.clave : ''  %>" />
                         <input type="password" name="re-clave" id="re-clave" placeholder="Confirmar contraseña" />
-                        <p class="errorPassword"></p>
+                        <p class="errorPassword erroresRegister"></p>
 
                         <div class="divfotoperfil">
                             <label for="userprofilephotos" class="userp">
@@ -40,7 +40,7 @@
                                 <input type="file" name="userprofilephotos" accept="image/png, image/jpeg"
                                     id="userprofilephotos">
                             </label>
-                            <p class="errorAvatar"></p>
+                            <p class="errorAvatar erroresRegister"></p>
 
                         </div>
                        

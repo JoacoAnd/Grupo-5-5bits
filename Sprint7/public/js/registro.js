@@ -2,6 +2,7 @@ window.addEventListener('load', function () {
 
     let formularioRegistro = document.querySelector(".form_registro");
     let enviar = document.querySelector(".enviar");
+
     let userName = document.querySelector('#nombre');
     let errorNombre = document.querySelector(".errorNombre");
 
@@ -9,7 +10,7 @@ window.addEventListener('load', function () {
     let errorApellido = document.querySelector(".errorApellido");
 
 
-    let userEmail = document.querySelector("#email").value;
+    let userEmail = document.querySelector("#email");
     let errorEmail = document.querySelector(".errorEmail");
 
     let userPassword = document.querySelector("#clave");
@@ -20,58 +21,56 @@ window.addEventListener('load', function () {
     let userAvatar = document.querySelector('#userprofilephotos');
     let errorAvatar = document.querySelector(".errorAvatar");
 
-    //formularioRegistro.addEventListener('submit', function (e) {
+
     enviar.addEventListener('click', function (e) {
         e.preventDefault();
         let errores = {};
 
         // ○ NOMBRE Y APELLIDO ■ Obligatorio. ■ Deberá tener al menos 2 caracteres.
         if (userName.value.length <= 2) {
-            errores.nombre='NOMBRE - Este campo es obligatorio, debes ingresar al menos 3 carácteres.';
-            console.log("error nombre")
+            errores.nombre = 'Este campo es obligatorio y debe ingresar al menos 3 carácteres.';
+            
         };
         if (userApellido.value.length <= 2) {
-            errores.apellido='APELLIDO - Este campo es obligatorio, debes ingresar al menos 3 carácteres.';
-            console.log("error apellido")
+            errores.apellido = 'Este campo es obligatorio y debe ingresar al menos 3 carácteres.';
+           
 
         };
         // ○ EMAIL ■ Obligatorio. ■ Debe ser valido
-        if (!userEmail.includes("@")) {
-            errores.email='EMAIL - Este campo debe contener un email valido.';
-            console.log("error email")
+        if (!userEmail.value.includes("@")) {
+            errores.email = 'Este campo debe contener un email valido.';
+         
         };
         // ○ CONTRASEÑA ■ Obligatorio. ■ Deberá tener al menos 8 caracteres.
-        if (userPassword !== userReClave) {
-            errores.password='CONTRASEÑAS - La contraseña no coincide.';
-            console.log("error contraseña no coincide")
+        if (!userPassword.value || !userReClave.value) {
+            errores.password = 'Debe ingresar una contraseña de almenos 8 caracteres';
+            
 
-        }else if(userPassword == "" || userReClave == ""){
-            errores.password='CONTRASEÑAS - Debe ingresar una contraseña';
-            console.log("error contraseña vacia")
-
-
+        } else if (userPassword.value !== userReClave.value) {
+            errores.password = 'La contraseña no coincide.';
+            console.log("error contraseña no coincide");
         }
         // ○ IMAGEN  ■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
         let imagenValidacion = userAvatar.files[0]
-
-        if (imagenValidacion && imagenValidacion.type != 'image/jpeg' && imagenValidacion.type != 'image/png' 
-        && imagenValidacion.type != 'image/jpg'){
-            errores.imagen = 'IMAGEN - El formato de archivo no es valido'
-            console.log("error imagen")
+        
+        if (imagenValidacion) {
+            if (imagenValidacion.type != 'image/jpeg' && imagenValidacion.type != 'image/png' && imagenValidacion.type != 'image/jpg') {
+                errores.imagen = 'El formato de archivo no es valido.'
+            }
 
         }
-        
+
+
+
         //Mostrar errores
         if (Object.keys(errores).length >= 1) {
-            errorNombre.innerText =  (errores.nombre) ? errores.nombre : '';
-            errorApellido.innerText =  (errores.apellido) ? errores.apellido : '';
+            errorNombre.innerText = (errores.nombre) ? errores.nombre : '';
+            errorApellido.innerText = (errores.apellido) ? errores.apellido : '';
             errorEmail.innerText = (errores.email) ? errores.email : '';
-            errorPassword.innerText = (errores.password) ? errores.Password : '';
+            errorPassword.innerText = (errores.password) ? errores.password : '';
             errorAvatar.innerText = (errores.imagen) ? errores.imagen : '';
         } else {
-            formCreate.submit();
+            formularioRegistro.submit();
         }
-        });
-
-
+    });
 });
