@@ -1,0 +1,31 @@
+#profile {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#data {
+    margin-top: 20px;
+}
+
+.avatar {
+    width: 100%;
+}
+
+/* Estilo para Tablet */
+
+@media(min-width: 400px) {
+    #profile {
+        flex-wrap: no-wrap;
+    }
+
+    .avatar {
+        width: 50%;
+        max-width: 400px;
+    }
+
+    #data {
+        margin-top: 90px;
+        margin-left: 40px;
+    }
+}

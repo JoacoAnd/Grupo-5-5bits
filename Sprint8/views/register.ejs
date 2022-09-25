@@ -1,0 +1,63 @@
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
+        <main>
+            <div id="registro">
+                <div class="img-left">
+                </div>
+                <form class="form_registro" method="post" action="/register" enctype="multipart/form-data">
+                    <div>
+                        <% if (locals.errors && errors) {%>
+                            <% errors.forEach(err=> { %>
+                                <p>
+                                    <%= err.msg %>
+                                </p>
+                                <% }) %>
+                                    <% } %>
+                    </div>
+                    <h2>Registrate</h2>
+                    <div class="inputs">
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre"
+                            value="<%= locals.old && old.nombre ? old.nombre : ''  %>" />
+                        <p class="errorNombre erroresRegister"></p>
+
+                        <input type="text" name="apellido" id="apellido" placeholder="Apellido/s"
+                            value="<%= locals.old && old.apellido ? old.apellido : ''  %>" />
+                        <p class="errorApellido erroresRegister"></p>
+
+                        <input type="email" name="email" id="email" placeholder="E-mail"
+                            value="<%= locals.old && old.email ? old.email : ''  %>" />
+                        <p class="errorEmail erroresRegister"></p>
+
+                        <input type="password" name="clave" id="clave" placeholder="Contraseña"
+                            value="<%= locals.old && old.clave ? old.clave : ''  %>" />
+                        <input type="password" name="re-clave" id="re-clave" placeholder="Confirmar contraseña" />
+                        <p class="errorPassword erroresRegister"></p>
+
+                        <div class="divfotoperfil">
+                            <label for="userprofilephotos" class="userp">
+                                Subir foto de perfil
+                                <i class="fas fa-camera"></i>
+                                <input type="file" name="userprofilephotos" accept="image/png, image/jpeg"
+                                    id="userprofilephotos">
+                            </label>
+                            <p class="errorAvatar erroresRegister"></p>
+
+                        </div>
+                       
+                    </div>
+
+                    <div class="novedades">
+                        <label for="novedades"><input type="checkbox" name="novedades" id="novedades" /> Deseo recibir
+                            ofertas y novedades en mi e-mail </label>
+                    </div>
+
+                    <button class="enviar">Enviar</button>
+
+                </form>
+                <div class="img-right">
+                </div>
+            </div>
+
+        </main>
+        <script src="/js/registro.js"></script>
+        <%- include ( './partials/footer.ejs' ); %>

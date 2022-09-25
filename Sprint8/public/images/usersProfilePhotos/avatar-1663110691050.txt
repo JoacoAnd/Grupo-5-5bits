@@ -1,0 +1,19 @@
+Paleta de colores:
+
+Negro: #0a1000
+Gris: #313838
+Gris claro: #9ca0a2
+Marron: #664a2b
+Blanco: #e0e2cd
+Rojo: #F21D1D
+Rosita: #ceb89e
+Amarillo: #F1C40F
+
+Font Family:
+
+Roboto, Arial
+
+Iconos: 
+
+<script src="https://kit.fontawesome.com/a6a211b9a4.js" crossorigin="anonymous"></script>
+
