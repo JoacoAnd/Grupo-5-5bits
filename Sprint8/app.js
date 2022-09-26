@@ -6,6 +6,7 @@ const puerto = 3000;
 const methodOverride = require('method-override');
 const rutasMain = require('./src/routes/main.js');
 const rutasProducto = require('./src/routes/products.js');
+const apiRutasProducto = require('./src/routes/api/products.js');
 const session = require('express-session');
 const userLogged = require('./src/middlewares/userloggedMiddleware');
 const cookies = require('cookie-parser');
@@ -31,6 +32,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use('/', rutasMain);
 app.use('/products', rutasProducto);
+app.use('/api/products', apiRutasProducto);
 
 // Ruta de page not found (404)
 
