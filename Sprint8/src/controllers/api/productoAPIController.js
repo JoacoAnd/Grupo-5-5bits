@@ -20,6 +20,23 @@ let productoAPIController = {
             res.json(respuesta);
         })
     },
+
+    'unProducto': (req, res) => {
+        db.Producto.findByPk(req.params.id,
+            {
+                include : ['talles']
+            })
+            .then(productos => {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        url: '/api/products/:id'
+                    },
+                    data: productos
+                }
+                res.json(respuesta);
+            });
+    },
 }
 
 module.exports = productoAPIController;
