@@ -5,12 +5,20 @@
             <div class="img-left">
             </div>
             <form method="post" enctype="multipart/form-data" action="/products" class="formcrearproducto" id="producto">
-
+            <div>
+                <% if (locals.errors && errors) {%>
+                    <% errors.forEach(err=> { %>
+                        <p>
+                            <%= err.msg %>
+                        </p>
+                        <% }) %>
+                            <% } %>
+            </div>
                 <h2>Administración de productos</h2>
                 <div class="inputs">
-                    <input type="text" name="nombre" id="nombre" minlength="5" maxlength="60" placeholder="Nombre" />
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
                     <label for="nombre" style="color: red;" class="errNombre errorescreate"></label>
-                    <input type="text" name="descripcion" id="descripcion" minlength="5" maxlength="60" placeholder="Descripción" />
+                    <input type="text" name="descripcion" id="descripcion" placeholder="Descripción" />
                     <label for="descripcion" style="color: red;" class="errDescripcion errorescreate"></label>
                     <select name="categoria" id="categoria">
                     <option value="">[Categoría]</option>
@@ -26,11 +34,10 @@
                         <%= talle.talle %>
                             <% } %>
                 </div>
-
                 <div class="inputs">
-                    $ <input type="number" name="precio" id="precio" required placeholder="Precio" />
+                    $ <input type="number" name="precio" id="precio" placeholder="Precio" />
                     <label for="precio" style="color: red;" class="errPrecio errorescreate"></label>
-                    <label for="imagen">Imagen del producto:</label> <input type="file" name="imagen" id="imagen" required />
+                    <label for="imagen">Imagen del producto:</label> <input type="file" name="imagen" id="imagen" />
                     <label for="imagen" style="color: red;" class="errImagen errorescreate"></label>
                 </div>
 

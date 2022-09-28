@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const pathproductos = path.join(__dirname, '../../data/products.json');
-
 const db = require('../../database/models/index');
 const Op = db.Sequelize.Op;
+const { validationResult } = require("express-validator");
 
 let productoController = {
 
@@ -62,6 +62,7 @@ let productoController = {
     },
 
     create: (req, res) => {
+
         db.Talle.findAll()
             .then(talles => {
                 db.Categoria.findAll()
@@ -74,28 +75,46 @@ let productoController = {
                         });
                     })
             })
-    },
+},
 
     store: (req, res) => {
-
+        let errors = validationResult(req);
         let talles = req.body.talles;
-
-        db.Producto.create({
-            nombre: req.body.nombre,
-            descripcion: req.body.descripcion,
-            fk_id_categoria: req.body.categoria,
-            precio: req.body.precio,
-            imagen: req.file.filename
-        }).then((producto) => {
-            for (let i = 0; i < talles.length; i++) {
-                db.ProductoTalle.create({
-                    fk_id_producto: producto.id_producto,
-                    fk_id_talle: talles[i]
-                })
-            }
-
-            res.redirect('/products')
-        });
+        
+        if (errors.isEmpty()){
+            db.Producto.create({
+                nombre: req.body.nombre,
+                descripcion: req.body.descripcion,
+                fk_id_categoria: req.body.categoria,
+                precio: req.body.precio,
+                imagen: req.file.filename
+            }).then((producto) => {
+                for (let i = 0; i < talles.length; i++) {
+                    db.ProductoTalle.create({
+                        fk_id_producto: producto.id_producto,
+                        fk_id_talle: talles[i]
+                    })
+                }
+    
+                res.redirect('/products')
+            });
+        } else {
+            db.Talle.findAll()
+            .then(talles => {
+                db.Categoria.findAll()
+                    .then(categorias => {
+                        res.render('create', {
+                            titulo: 'Crear producto',
+                            css: 'estiloProducto.css',
+                            errors: errors.errors,
+                            old: req.body,
+                            categorias: categorias,
+                            talles: talles
+                        });
+                    })
+            })
+        }
+        
     },
 
     edit: (req, res) => {
@@ -126,42 +145,38 @@ let productoController = {
     },
 
     edited: (req, res) => {
-
-        if (req.file) {
-            var imagen = req.file.filename;
-        }
-        else {
-            var imagen = req.body.imagenOriginal;
-        }
-
+        let errors = validationResult(req);
         let talles = req.body.talles;
 
-        db.Producto.update({
-            nombre: req.body.nombre,
-            descripcion: req.body.descripcion,
-            fk_id_categoria: req.body.categoria,
-            precio: req.body.precio,
-            imagen: imagen
-        }, {
-            where: {
-                id_producto: req.params.id
-            }
-        })
 
-        db.ProductoTalle.destroy({
-            where: {
-                fk_id_producto: req.params.id
-            }
-        });
-
-        for (let i = 0; i < talles.length; i++) {
-            db.ProductoTalle.create({
-                fk_id_producto: req.params.id,
-                fk_id_talle: talles[i]
+        if (errors.isEmpty()){
+            db.Producto.update({
+                nombre: req.body.nombre,
+                descripcion: req.body.descripcion,
+                fk_id_categoria: req.body.categoria,
+                precio: req.body.precio,
+                imagen: imagen
+            }, {
+                where: {
+                    id_producto: req.params.id
+                }
             })
-        }
-
-        res.redirect('/products/' + req.params.id)
+    
+            db.ProductoTalle.destroy({
+                where: {
+                    fk_id_producto: req.params.id
+                }
+            });
+    
+            for (let i = 0; i < talles.length; i++) {
+                db.ProductoTalle.create({
+                    fk_id_producto: req.params.id,
+                    fk_id_talle: talles[i]
+                })
+            }
+    
+            res.redirect('/products/' + req.params.id)
+            };
     },
 
     delete: (req, res) => {
