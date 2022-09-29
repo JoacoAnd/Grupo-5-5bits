@@ -19,6 +19,19 @@ let productoAPIController = {
         }
             res.json(respuesta);
         })
+
+      .catch(error =>
+        {let respuesta = {
+            meta: {
+                status : 404,
+                msg: 'Not Found' ,
+                url: 'api/products'
+            }
+        }
+
+        res.json(respuesta);
+
+      })
     },
 
     'unProducto': (req, res) => {
@@ -35,7 +48,20 @@ let productoAPIController = {
                     data: productos
                 }
                 res.json(respuesta);
-            });
+            })
+
+            .catch(error =>
+              {let respuesta = {
+                  meta: {
+                      status : 404,
+                      msg: 'Not Found' ,
+                      url: 'api/products'
+                  }
+              }
+
+              res.json(respuesta);
+
+            })
     },
 }
 
