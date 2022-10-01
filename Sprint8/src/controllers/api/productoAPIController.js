@@ -4,40 +4,47 @@ const Op = db.Sequelize.Op;
 
 let productoAPIController = {
 
-  'listado': (req, res) => {
-    db.Producto.findAll({
-        include: ['talles','categoria']
-    })
-    .then(productos => {
-        let respuesta = {
-            meta: {
-                status : 200,
-                total: productos.length,
-                url: 'api/products'
-            },
-            data: productos
-        }
-            res.json(respuesta);
+    'listado': (req, res) => {
+        db.Producto.findAll({
+            include: ['talles', 'categoria']
         })
+            .then(productos => {
 
-      .catch(error =>
-        {let respuesta = {
-            meta: {
-                status : 404,
-                msg: 'Not Found' ,
-                url: 'api/products'
-            }
-        }
+                for (let i = 0; i < productos.length; i++) {
+                    productos[i].dataValues.imagen= 'http://localhost:3000/images/' + productos[i].dataValues.imagen;
+                }
 
-        res.json(respuesta);
 
-      })
+                respuesta = {
+                    meta: {
+                        status: 200,
+                        total: productos.length,
+                        url: 'api/products'
+                    },
+                    data: productos
+                }
+
+                res.json(respuesta);
+            })
+
+            .catch(error => {
+                let respuesta = {
+                    meta: {
+                        status: 404,
+                        msg: 'Not Found',
+                        url: 'api/products'
+                    }
+                }
+
+                res.json(respuesta);
+
+            })
     },
 
     'unProducto': (req, res) => {
         db.Producto.findByPk(req.params.id,
             {
-                include : ['talles']
+                include: ['talles']
             })
             .then(productos => {
                 let respuesta = {
@@ -50,16 +57,16 @@ let productoAPIController = {
                 res.json(respuesta);
             })
 
-            .catch(error =>
-              {let respuesta = {
-                  meta: {
-                      status : 404,
-                      msg: 'Not Found' ,
-                      url: 'api/products'
-                  }
-              }
+            .catch(error => {
+                let respuesta = {
+                    meta: {
+                        status: 404,
+                        msg: 'Not Found',
+                        url: 'api/products'
+                    }
+                }
 
-              res.json(respuesta);
+                res.json(respuesta);
 
             })
     },
