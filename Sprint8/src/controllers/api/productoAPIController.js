@@ -6,7 +6,7 @@ let productoAPIController = {
 
   'listado': (req, res) => {
     db.Producto.findAll({
-        include: ['talles']
+        include: ['talles','categoria']
     })
     .then(productos => {
         let respuesta = {
