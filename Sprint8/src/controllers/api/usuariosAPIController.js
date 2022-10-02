@@ -4,7 +4,7 @@ const Op = db.Sequelize.Op;
 let usuariosAPIController = {
 
     'listado': (req, res) => {
-        db.Usuarios.findAll()
+        db.Usuario.findAll()
 
        
         .then(usuarios => {
@@ -41,7 +41,7 @@ let usuariosAPIController = {
     },
 
     'unUsuario': (req, res) => {
-        db.Usuarios.findByPk(req.params.id)
+        db.Usuario.findByPk(req.params.id)
             .then(usuarios => {
                 let respuesta = {
                     meta: {
