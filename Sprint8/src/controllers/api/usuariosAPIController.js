@@ -1,25 +1,26 @@
 const db = require('../../../database/models/index');
 const Op = db.Sequelize.Op;
 
-let productoAPIController = {
+let usuariosAPIController = {
 
     'listado': (req, res) => {
-        db.Producto.findAll({
-            include: ['talles', 'categoria']
-        })
-            .then(productos => {
+        db.Usuarios.findAll()
 
-                for (let i = 0; i < productos.length; i++) {
-                    productos[i].dataValues.imagen= 'http://localhost:3000/images/' + productos[i].dataValues.imagen;
+       
+        .then(usuarios => {
+
+                for (let i = 0; i < usuarios.length; i++) {
+                    usuarios[i].dataValues.imagen= 'http://localhost:3000/images/usersProfilePhotos/' + usuarios[i].dataValues.imagen;
+                    
                 }
 
                 respuesta = {
                     meta: {
                         status: 200,
-                        total: productos.length,
-                        url: 'api/products'
+                        total: usuarios.length,
+                        url: 'api/usuarios'
                     },
-                    data: productos
+                    data: usuarios
                 }
 
                 res.json(respuesta);
@@ -30,7 +31,7 @@ let productoAPIController = {
                     meta: {
                         status: 404,
                         msg: 'Not Found',
-                        url: 'api/products'
+                        url: 'api/usuarios'
                     }
                 }
 
@@ -39,18 +40,15 @@ let productoAPIController = {
             })
     },
 
-    'unProducto': (req, res) => {
-        db.Producto.findByPk(req.params.id,
-            {
-                include: ['talles']
-            })
-            .then(productos => {
+    'unUsuario': (req, res) => {
+        db.Usuarios.findByPk(req.params.id)
+            .then(usuarios => {
                 let respuesta = {
                     meta: {
                         status: 200,
-                        url: '/api/products/:id'
+                        url: '/api/usuarios/:id'
                     },
-                    data: productos
+                    data: usuarios
                 }
                 res.json(respuesta);
             })
@@ -60,7 +58,7 @@ let productoAPIController = {
                     meta: {
                         status: 404,
                         msg: 'Not Found',
-                        url: 'api/products'
+                        url: 'api/usuarios'
                     }
                 }
 
@@ -70,4 +68,4 @@ let productoAPIController = {
     },
 }
 
-module.exports = productoAPIController;
+module.exports = usuariosAPIController;
