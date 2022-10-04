@@ -7,9 +7,9 @@ let productoAPIController = {
     'listado': (req, res) => {
 
         db.Producto.findAll({
-            
+
             include: ['categoria'],
-            
+
             attributes: [sequelize.col('categoria.categoria'),
                 [sequelize.fn('count', 'id_producto'),'cuantasCategorias']],
             group: ["fk_id_categoria"]
@@ -17,13 +17,13 @@ let productoAPIController = {
 
             .then(function (categorias) {
                 //console.log(categorias);
-                console.log(categorias[0]);
+                //console.log(categorias[0]);
 
-                res.json(categorias);
+                //res.json(categorias);
             });
 
 
-        /*db.Producto.findAll({
+        db.Producto.findAll({
             include: ['talles', 'categoria']
         })
             .then(productos => {
@@ -55,7 +55,7 @@ let productoAPIController = {
 
                 res.json(respuesta);
 
-            })*/
+            })
     },
 
     'unProducto': (req, res) => {
