@@ -13,12 +13,19 @@ let productoAPIController = {
             /*attributes: ["categoria",
                 [sequelize.fn('count', 'id_producto'),'cuantasCategorias']],*/
 
+
+
+
             include: [{
-                association: "productos", 
+                association: "productos",
+
+
+
+
                 //attributes: []
                 //[sequelize.fn('count', 'id_producto'),'cuantasCategorias']]
             }],
-            
+
             //['categoria'],
 
             //attributes: ['Categoria.categoria',
@@ -31,18 +38,18 @@ let productoAPIController = {
                 //console.log(categorias[0]);
                 categorias = categorias.map(categoria => {
                     return {categoria: categoria.categoria,
-                            count: categoria.productos.length   
+                            count: categoria.productos.length
                            }
                 })
-                
+
                 //console.log(categorias);
 
-                res.json(categorias);
+                // ESTO ES LA RESPUESTA res.json(categorias);
 
             });
 
 
-/*        db.Producto.findAll({
+        db.Producto.findAll({
             include: ['talles', 'categoria']
         })
             .then(productos => {
@@ -74,7 +81,7 @@ let productoAPIController = {
 
                 res.json(respuesta);
 
-            })*/
+            })
     },
 
     'unProducto': (req, res) => {
