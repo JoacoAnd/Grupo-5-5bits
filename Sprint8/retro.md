@@ -114,3 +114,18 @@ Colaborar todos en el equipo.
 
 - Hacer menos:
 Faltar a las weeklys.
+
+## Retrospectiva del Sprint 7:
+
+- Comenzar a hacer:
+Pasar al Sprint 8 las sugerencias de la devolución del Sprint 7.
+Las consignas del Sprint 8.
+
+- Continuar haciendo:
+Reuniones semanales.
+División de tareas y control cruzado.
+Colaborar con los compañeros.
+Sugerencias para enriquecer el proyecto.
+
+- Hacer menos:
+Agregarnos tareas optativas que nos desvían de las obligatorias.

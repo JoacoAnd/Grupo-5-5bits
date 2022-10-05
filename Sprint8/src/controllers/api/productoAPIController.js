@@ -6,24 +6,43 @@ let productoAPIController = {
 
     'listado': (req, res) => {
 
-        db.Producto.findAll({
+        db.Categoria.findAll({
 
-            include: ['categoria'],
+            //include: ['productos'],
 
-            attributes: [sequelize.col('categoria.categoria'),
-                [sequelize.fn('count', 'id_producto'),'cuantasCategorias']],
-            group: ["fk_id_categoria"]
+            /*attributes: ["categoria",
+                [sequelize.fn('count', 'id_producto'),'cuantasCategorias']],*/
+
+            include: [{
+                association: "productos", 
+                //attributes: []
+                //[sequelize.fn('count', 'id_producto'),'cuantasCategorias']]
+            }],
+            
+            //['categoria'],
+
+            //attributes: ['Categoria.categoria',
+             // ],*/
+            //group: ["fk_id_categoria"]
         })
 
             .then(function (categorias) {
                 //console.log(categorias);
                 //console.log(categorias[0]);
+                categorias = categorias.map(categoria => {
+                    return {categoria: categoria.categoria,
+                            count: categoria.productos.length   
+                           }
+                })
+                
+                //console.log(categorias);
 
-                //res.json(categorias);
+                res.json(categorias);
+
             });
 
 
-        db.Producto.findAll({
+/*        db.Producto.findAll({
             include: ['talles', 'categoria']
         })
             .then(productos => {
@@ -55,7 +74,7 @@ let productoAPIController = {
 
                 res.json(respuesta);
 
-            })
+            })*/
     },
 
     'unProducto': (req, res) => {

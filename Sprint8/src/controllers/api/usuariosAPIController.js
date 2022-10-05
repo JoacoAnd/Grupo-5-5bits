@@ -10,7 +10,7 @@ let usuariosAPIController = {
         .then(usuarios => {
 
                 for (let i = 0; i < usuarios.length; i++) {
-                    usuarios[i].dataValues.imagen= 'http://localhost:3000/images/usersProfilePhotos/' + usuarios[i].dataValues.imagen;
+                    usuarios[i].dataValues.userAvatar= 'http://localhost:3000/images/usersProfilePhotos/' + usuarios[i].dataValues.userAvatar;
                     
                 }
 
