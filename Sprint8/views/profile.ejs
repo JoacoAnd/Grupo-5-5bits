@@ -7,11 +7,11 @@
             
             <img src="imagenes/usersProfilePhotos/<%= locals.userLogged.avatar %>" class="avatar">
             
-            
             <div id="data">
                 <p> Nombre: <%= locals.userLogged.nombre %> </p>
                 <p> Apellido: <%= locals.userLogged.apellido %> </p>
                 <p> E-mail: <%= locals.userLogged.email %> </p>
+                <button class="buttonlogout">Logout</button>
             </div>
         <% } else {%>
             <h1>Ud. no debiera estar en esta vista sin estar logueado. Algo anda mal.</h1>
@@ -19,4 +19,5 @@
             
         </div>
     </main>
+    <script src="/js/profile.js"></script>
         <%- include ( './partials/footer.ejs' ); %>
