@@ -42,6 +42,7 @@ let usuarioController = {
           apellido: usuario.userApellido,
           email: usuario.userEmail,
           avatar: usuario.userAvatar,
+          rol: usuario.userRol
         };
 
         req.session.login = usuarioLogeado;
@@ -54,8 +55,6 @@ let usuarioController = {
 
         return res.redirect("/");
       } else {
-
-
         res.render('login', {
           error: 'Clave o Email incorrecto',
           oldData: req.body,

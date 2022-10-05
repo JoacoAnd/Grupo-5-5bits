@@ -91,6 +91,28 @@ p {
     color: white;
 }
 
+/* Boton editar producto */
+
+div.editarproductobutton{
+    background-color: #E74C3C;
+    width: 50%;
+    text-align: center;
+    padding: 1em;
+    border-radius: 20px;
+    margin-top: 1em;
+}
+
+div.editarproductobutton a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 200ms;
+}
+
+div.editarproductobutton a:hover{
+    text-shadow: 1px 1px 1px black;
+}
+
 
 /*********** TABLETS & LARGER PHONES ************/
 

@@ -31,7 +31,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: true
         },
-
+        userRol: {
+            type: dataTypes.STRING,
+            allowNull: true,
+            defaultValue: "user"
+        }
     };
     let config = {
         timestamps: false,

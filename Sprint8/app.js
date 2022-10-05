@@ -10,6 +10,7 @@ const apiRutasProducto = require('./src/routes/api/products.js');
 const apiRutasUsuarios = require('./src/routes/api/usuarios.js');
 const session = require('express-session');
 const userLogged = require('./src/middlewares/userloggedMiddleware');
+const adminMiddleware = require('./src/middlewares/adminMiddleware');
 const cookies = require('cookie-parser');
 
 
@@ -21,6 +22,7 @@ app.use(session(
     saveUninitialized: false}));
 app.use(cookies());
 app.use(userLogged);
+app.use(adminMiddleware)
 app.set('view engine', 'ejs');
     //app.use('/', express.static(__dirname + '/public/'));
 app.use('/imagenes', express.static(__dirname + '/public/images'));

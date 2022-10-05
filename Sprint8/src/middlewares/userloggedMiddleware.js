@@ -1,26 +1,29 @@
-const path = require('path');
-const fs = require('fs');
-const userDataPath = path.join(__dirname, '../../data/userData.json');
-const userData = JSON.parse(fs.readFileSync(userDataPath));
+const db = require('../../database/models/index');
 
 function userLogged(req, res, next) {
     res.locals.isLogged = false;
-
+    /*
     let cookieUsuario = req.cookies.userEmail;
-    let findUserCookie = userData.find(usuario => {
-        return usuario.userEmail == cookieUsuario
-    });
 
-    if (findUserCookie) {
-
-        let usuarioLogeado = {
-            nombre: findUserCookie.userNombre,
-            apellido: findUserCookie.userApellido,
-            email: findUserCookie.userEmail,
-            avatar: findUserCookie.userAvatar
-        }
-        req.session.login = usuarioLogeado;
-    }
+    if (cookieUsuario && !res.locals.isLogged) {
+        db.Usuario.findOne({
+            where: {
+                userEmail: cookieUsuario
+            }
+        })
+            .then(usuario => {
+                if (usuario) {
+                    let usuarioLogeado = {
+                        nombre: usuario.userNombre,
+                        apellido: usuario.userApellido,
+                        email: usuario.userEmail,
+                        avatar: usuario.userAvatar,
+                        rol: usuario.userRol
+                    }
+                    req.session.login = usuarioLogeado;
+                }
+            })
+    }*/
 
     if (req.session.login) {
         res.locals.isLogged = true;

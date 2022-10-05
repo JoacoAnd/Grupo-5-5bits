@@ -1,10 +1,10 @@
-<%- include ( './partials/head'); %>
-    <%- include ( './partials/header'); %>
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
 
         <!-- HEADER -->
 
         <!-- MAIN -->
-        
+
         <div class="main container">
             <div class="contenedorDetalleProducto">
                 <div class="row  justify-content-center">
@@ -19,7 +19,9 @@
                             <p>$
                                 <%= producto.precio %>
                             </p>
-                            <p><strong><%= producto.categoria.categoria %></strong></p>
+                            <p><strong>
+                                    <%= producto.categoria.categoria %>
+                                </strong></p>
                         </div>
                         <div class="descripcion">
                             <h4>Detalle del producto:</h4>
@@ -27,6 +29,11 @@
                                 <%= producto.descripcion %>
                             </p>
                         </div>
+                        <% if (locals.admin) { %>
+                            <div class="editarproductobutton">
+                                <a href="/products/<%= producto.id_producto %>/edit">Editar producto</a>
+                            </div>
+                            <% } %>
                     </div>
                 </div>
                 <!--AGREGAR FORM PARA MANDAR DATA EN COMPRAR-->
@@ -35,8 +42,8 @@
                     <p>TALLES:</p>
                     <% for (talle of talles) { %>
                         <button class="btn boton col-2">
-                        <%= talle.talle %>
-                            </button>
+                            <%= talle.talle %>
+                        </button>
                         <% } %>
 
                             <button type="submit" class="btn col-6 btnEstilo">Comprar</button>
@@ -49,4 +56,4 @@
 
 
 
-        <%- include ( './partials/footer.ejs'); %>
+        <%- include ( './partials/footer.ejs' ); %>
