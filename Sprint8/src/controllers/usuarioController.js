@@ -15,7 +15,7 @@ let usuarioController = {
 
   loginprocess: (req, res) => {
 
-    loginValidationResult = validationResult(req);
+    let loginValidationResult = validationResult(req);
 
     if (loginValidationResult.errors.length > 0) {
       return res.render('login', {
@@ -48,7 +48,7 @@ let usuarioController = {
         req.session.login = usuarioLogeado;
 
         if (req.body.recordarme) {
-          res.cookie("userEmail", req.body.usuarioLogin, {
+          res.cookie("userCookie", usuarioLogeado, {
             maxAge: 1000 * 60 * 60 * 24,
           });
         }
@@ -162,7 +162,7 @@ let usuarioController = {
   },
 
   logout: (req, res) => {
-    res.clearCookie("userEmail");
+    res.clearCookie("userCookie");
     req.session.destroy();
     res.redirect("/");
   },
