@@ -2,6 +2,8 @@ const db = require('../../../database/models/index');
 const Op = db.Sequelize.Op;
 const sequelize = require('sequelize');
 
+let porCategorias = [];
+
 let productoAPIController = {
 
     'listado': (req, res) => {
@@ -14,13 +16,8 @@ let productoAPIController = {
                 [sequelize.fn('count', 'id_producto'),'cuantasCategorias']],*/
 
 
-
-
             include: [{
                 association: "productos",
-
-
-
 
                 //attributes: []
                 //[sequelize.fn('count', 'id_producto'),'cuantasCategorias']]
@@ -36,15 +33,14 @@ let productoAPIController = {
             .then(function (categorias) {
                 //console.log(categorias);
                 //console.log(categorias[0]);
-                categorias = categorias.map(categoria => {
+                porCategorias = categorias.map(categoria => {
                     return {categoria: categoria.categoria,
                             count: categoria.productos.length
                            }
                 })
 
-                //console.log(categorias);
-
-                // ESTO ES LA RESPUESTA res.json(categorias);
+                // console.log(categorias);
+                // res.json(categorias);
 
             });
 
@@ -62,6 +58,7 @@ let productoAPIController = {
                     meta: {
                         status: 200,
                         total: productos.length,
+                        totalPorCategoria: porCategorias,
                         url: 'api/products'
                     },
                     data: productos
