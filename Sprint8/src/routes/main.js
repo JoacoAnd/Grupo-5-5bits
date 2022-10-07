@@ -43,6 +43,7 @@ router.post('/perfil/editar/:id', uploadFile.single('updateprofilephoto'), usuar
 
 // Obtenemos carrito de compra
 router.get('/carrito', mainController.carrito);
+router.post('/agregarProducto/:id', mainController.agregarproducto);
 
 // Logout
 router.get('/logout', usuarioController.logout);

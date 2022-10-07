@@ -36,7 +36,7 @@
     color: white;  
     text-align: center;
     width: 30%;
-    height: 30px;
+    height: max-content;
     background-color: #567317;
 }
 .btnEstilo:hover{

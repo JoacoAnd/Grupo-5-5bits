@@ -1,52 +1,36 @@
-<%- include ( './partials/head'); %>
-    <%- include ( './partials/header'); %>
+<%- include ( './partials/head' ); %>
+    <%- include ( './partials/header' ); %>
         <section id="carritoDeCompras">
- 
+
             <div>
-                <article class="productoCarrito">                   
-                    <h4>NOMBRE DE PRODUCTO</h4>
-                    <h4>1785</h4>
-                    <div class="contadorCarrito">
-                       <button class="resta"><i class="fas fa-minus"></i></button> 
-                       <p class="cantidad mx-5">1</p>
-                      
-                        <button class="suma"><i class="fas fa-plus"></i></button>
-                        <button class="remover"><i class="fas fa-trash-alt"></i></button>
-                    </div>
-                </article>
-                <article class="productoCarrito">                   
-                    <h4>NOMBRE DE PRODUCTO</h4>
-                    <h4>1785</h4>
-                    <div class="contadorCarrito">
-                       <button class="resta"><i class="fas fa-minus"></i></button> 
-                       <p class="cantidad mx-5">1</p>
-                        <button class="suma"><i class="fas fa-plus"></i></button>
-                        <button class="remover"><i class="fas fa-trash-alt"></i></button>
-                    </div>
-                </article>
-                <article class="productoCarrito">                   
-                    <h4>NOMBRE DE PRODUCTO</h4>
-                    <h4>1785</h4>
-                    <div class="contadorCarrito">
-                       <button class="resta"><i class="fas fa-minus"></i></button> 
-                       <p class="cantidad mx-5">1</p>
-                        <button class="suma"><i class="fas fa-plus"></i></button>
-                        <button class="remover"><i class="fas fa-trash-alt"></i></button>
-                    </div>
-                </article>
+                <% if (carrito) { %>
+                    <% carrito.forEach(producto=> { %>
+                        <article class="productoCarrito">
+                            <h4><%= producto.nombre %></h4>
+                            <h4><%= producto.precio %></h4>
+                            <div class="contadorCarrito">
+                                <button class="resta"><i class="fas fa-minus"></i></button>
+                                <p class="cantidad mx-5">1</p>
+                                <button class="suma"><i class="fas fa-plus"></i></button>
+                                <button class="remover"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </article>
+                        <% }) %>
+                <% } else { %>
+                    <article class="productoCarrito">
+                        <h4>Carrito vacio</h4>
+                    </article>
+                    <% } %>
             </div>
 
             <div id="carritoTotal">
                 <h3>TOTAL</h3>
-
                 <div class="precioTotalCarrito">
-                    <h3 class="montoTotal">$00.00</h3>
-                  
+                    <h3>$<span class="montoTotal">0</span></h3>
                 </div>
 
                 <button class="btnEstilo">Comprar</button>
             </div>
-
         </section>
         <script src="/js/carrito.js"></script>
-        <%- include ( './partials/footer.ejs'); %>
+        <%- include ( './partials/footer.ejs' ); %>

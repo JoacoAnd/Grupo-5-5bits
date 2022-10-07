@@ -45,9 +45,11 @@
                             <%= talle.talle %>
                         </button>
                         <% } %>
-
-                            <button type="submit" class="btn col-6 btnEstilo">Comprar</button>
-
+                        <form action="/agregarProducto/<%= producto.id_producto %>" method="post">
+                            <input type="text" name="nombre" value="<%= producto.nombre %>" style="display: none;">
+                            <input type="number" name="precio" value="<%= producto.precio %>" style="display: none;">
+                            <button type="submit" class="btn col-6 btnEstilo">Agregar al carrito</button>
+                        </form>
                 </div>
             </div>
 
