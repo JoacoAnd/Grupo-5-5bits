@@ -141,6 +141,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+ALTER TABLE `usuarios` ADD `userRol`
+VARCHAR(5) NULL DEFAULT 'user';
+
 -- Volcando datos para la tabla toquio.usuarios: ~0 rows (aproximadamente)
 DELETE FROM `usuarios`;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
