@@ -26,6 +26,7 @@ const uploadFile = multer({ storage: storage });
 // Obtenemos main 
 router.get('/', mainController.main);
 
+
 // Register 
 router.get('/register', guestMiddleware, usuarioController.register);
 
