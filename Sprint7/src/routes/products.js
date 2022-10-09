@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require('path');
 const multer = require('multer');
 const productoController = require('../controllers/productoController');
+const productValidator = require("../middlewares/productValidation");
 
 // Multer
 
@@ -31,11 +32,11 @@ router.get('/create', productoController.create)
 router.get('/:id', productoController.detalleProducto);
 
 
-router.post('/', uploadFile.single('imagen') ,productoController.store);
+router.post('/', uploadFile.single('imagen'),productValidator, productoController.store);
 
 // Editar producto
 router.get('/:id/edit', productoController.edit);
-router.put('/:id', uploadFile.single('imagen') , productoController.edited)
+router.put('/:id', uploadFile.single('imagen'), productValidator, productoController.edited)
 
 // Borrar producto (accion)
 
