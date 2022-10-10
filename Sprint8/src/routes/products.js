@@ -5,6 +5,7 @@ const multer = require('multer');
 const productoController = require('../controllers/productoController');
 const adminRoutes = require("../middlewares/adminRoutesMiddleware");
 const productValidator = require("../middlewares/productValidation");
+const editProductValidator = require("../middlewares/editProduct");
 
 // Multer
 
@@ -31,12 +32,11 @@ router.get('/create', adminRoutes, productoController.create)
 // Producto especifico
 router.get('/:id', productoController.detalleProducto);
 
-
 router.post('/', uploadFile.single('imagen'), productValidator, productoController.store);
 
 // Editar producto
 router.get('/:id/edit', adminRoutes, productoController.edit);
-router.put('/:id', uploadFile.single('imagen'), productValidator, productoController.edited)
+router.put('/:id/edit', uploadFile.single('imagen'), editProductValidator, productoController.edited)
 
 // Borrar producto (accion)
 

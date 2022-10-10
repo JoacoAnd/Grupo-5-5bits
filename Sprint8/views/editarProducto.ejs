@@ -5,9 +5,17 @@
             <div class="img-left">
             </div>
             <div class="formulariosedit">
-                <form method="post" action="/products/<%= producto.id_producto %>?_method=PUT" id="producto"
+                <form method="post" action="/products/<%= producto.id_producto %>/edit?_method=PUT" id="producto"
                     enctype="multipart/form-data">
-
+                    <div>
+                        <% if (locals.errors && errors) {%>
+                            <% errors.forEach(err=> { %>
+                                <p>
+                                    <%= err.msg %>
+                                </p>
+                                <% }) %>
+                                    <% } %>
+                    </div>
                     <h2>Administración de productos</h2>
                     <div class="inputs">
                         <input type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%=producto.nombre%>" />
@@ -20,7 +28,7 @@
                             <option value="">[Categoría]</option>
                             <% for(let categoria of categorias) { %>
                                 <option value="<%= categoria.id_categoria %>"
-                                    <%=categoria.id_categoria==producto.fk_id_categoria?'selected':'' %>
+                                    <%=categoria.id_categoria==producto.fk_id_categoria || categoria.id_categoria== producto.categoria?'selected':'' %>
                                     ><%= categoria.categoria %>
                                 </option>
                                 <% } %>
@@ -60,5 +68,5 @@
             </div>
         </main>
 
-        <script src="/js/editProduct.js"></script>
+        <!-- <script src="/js/editProduct.js"></script> -->
         <%- include ( './partials/footer.ejs' ); %>

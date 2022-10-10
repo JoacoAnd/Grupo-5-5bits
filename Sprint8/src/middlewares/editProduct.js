@@ -1,6 +1,6 @@
 const { body } = require("express-validator");
 
-const productValidation = [
+const editProductValidation = [
   body("nombre")
     .notEmpty()
     .withMessage("Debes ingresar un nombre").bail()
@@ -14,7 +14,7 @@ const productValidation = [
 
     body("categoria")
     .notEmpty()
-    .withMessage("Debes  ingresar una categoria"),
+    .withMessage("Debes ingresar una categoria"),
 
   body("precio")
   .notEmpty()
@@ -22,19 +22,18 @@ const productValidation = [
 
   body('imagen')
   .custom((value, { req })=>{
-    //  console.log(req.file);
-      if (!req.file) {
-        throw new Error('Tenes que subir una imagen')
-      }
-
-      if(req.file.mimetype === 'image/png' || req.file.mimetype === 'image/jpeg' || req.file.mimetype === 'image/jpg'){
-          return '.png'; 
-      }else{
-          return false; 
+      if (req.file) {
+        if(req.file.mimetype === 'image/png' || req.file.mimetype === 'image/jpeg' || req.file.mimetype === 'image/jpg'){
+            return '.png'; 
+        }else{
+            return false; 
+        }
+      } else {
+        return true;
       }
       
   }).withMessage("Debes subir una imagen con uno de los siguientes formatos: png, jpg o jpeg")
 
 ];
 
-module.exports = productValidation;
+module.exports = editProductValidation;

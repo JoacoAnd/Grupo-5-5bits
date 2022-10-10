@@ -2,6 +2,7 @@
 
 const express = require('express');
 const app = express();
+const cors = require("cors");
 const puerto = 3000;
 const methodOverride = require('method-override');
 const rutasMain = require('./src/routes/main.js');
@@ -21,6 +22,7 @@ app.use(session(
     resave: false,
     saveUninitialized: false}));
 app.use(cookies());
+app.use(cors());
 app.use(userLogged);
 app.use(adminMiddleware)
 app.set('view engine', 'ejs');
