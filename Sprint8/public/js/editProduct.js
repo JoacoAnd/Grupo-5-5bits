@@ -4,7 +4,7 @@ window.addEventListener('load', function() {
     let inputNombre = document.querySelector('#nombre');
     let inputDescripcion = document.querySelector('#descripcion');
     let errorNombre = document.querySelector(".errorNombre");
-    let formCreate = document.querySelector(".formcrearproducto");
+    let formCreate = document.querySelector("#producto");
     let errorDescripcion = document.querySelector(".errorDescripcion");
     let inputPrecio = document.querySelector("#precio");
     let errorPrecio = document.querySelector(".errorPrecio");
@@ -26,7 +26,7 @@ window.addEventListener('load', function() {
         if(inputDescripcion.value.length < 1){
             errores.descripcion = 'Este campo es obligatorio';
 
-        } else if (inputDescripcion.value.length < 20){
+        } else if (inputDescripcion.value.length < 15){
             errores.descripcion = 'El campo tiene que tener mas de 20 caracteres';
         } 
 

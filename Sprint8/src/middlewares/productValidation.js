@@ -9,8 +9,8 @@ const productValidation = [
 
   body("descripcion")
     .notEmpty()
-    .isLength({ min: 20 })
-    .withMessage("Descripcion debe tener al menos 20 caracteres"),
+    .isLength({ min: 15 })
+    .withMessage("Descripcion debe tener al menos 15 caracteres"),
 
     body("categoria")
     .notEmpty()
@@ -22,7 +22,7 @@ const productValidation = [
 
   body('imagen')
   .custom((value, { req })=>{
-      console.log(req.file);
+    //  console.log(req.file);
       if (!req.file) {
         throw new Error('Tenes que subir una imagen')
       }

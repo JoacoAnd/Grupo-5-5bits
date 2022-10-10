@@ -95,7 +95,6 @@ let productoController = {
                         fk_id_talle: talles[i]
                     })
                 }
-    
                 res.redirect('/products')
             });
         } else {
@@ -174,7 +173,7 @@ let productoController = {
                     fk_id_talle: talles[i]
                 })
             }
-    
+            //res.redirect('/products')
             res.redirect('/products/' + req.params.id)
             };
     },

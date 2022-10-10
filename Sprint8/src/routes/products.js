@@ -4,7 +4,7 @@ const path = require('path');
 const multer = require('multer');
 const productoController = require('../controllers/productoController');
 const adminRoutes = require("../middlewares/adminRoutesMiddleware");
-const productValidator = require("../middlewares/productValidator");
+const productValidator = require("../middlewares/productValidation");
 
 // Multer
 
