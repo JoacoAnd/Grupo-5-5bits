@@ -17,16 +17,38 @@ button.buttonlogout{
     padding: .5em;
     border: none;
     border-radius: 16px;
-    width: 80%;
+    width: 60%;
     font-weight: 800;
     margin-top: 1em;
     color: white;
     transition: all 200ms;
 }
+main{
+    margin-bottom: 530px;
+}
 
 button.buttonlogout:hover{
     transform: scale(1.1);
     box-shadow: 1px 1px 10px grey;
+}
+.buttonedit{
+    background-color: #5eaa0e;
+    padding: 16px 5px 0 0;
+    border: none;
+    border-radius: 14px;
+    margin-top: 15px;
+    font-weight: 800;
+    color: white;
+    width: 60%;
+    text-align: center;
+    text-decoration: none;
+    transition: all 200ms;
+    
+}
+.buttonedit:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 1px 10px grey;
+    color: white;
 }
 
 /* Estilo para Tablet */

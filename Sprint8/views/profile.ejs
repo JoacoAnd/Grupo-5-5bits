@@ -1,17 +1,19 @@
 <%- include ( './partials/head' ); %>
     <%- include ( './partials/header' ); %>
 
-    <main>
+    <main class="container">
         <div id="profile">        
         <% if (locals.userLogged) { %>
             
             <img src="imagenes/usersProfilePhotos/<%= locals.userLogged.avatar %>" class="avatar">
             
-            <div id="data">
-                <p> Nombre: <%= locals.userLogged.nombre %> </p>
-                <p> Apellido: <%= locals.userLogged.apellido %> </p>
-                <p> E-mail: <%= locals.userLogged.email %> </p>
-                <button class="buttonlogout">Logout</button>
+            <div id="data" class="row">
+                <p class="col-12"> Nombre: <%= locals.userLogged.nombre %> </p>
+                <p class="col-12"> Apellido: <%= locals.userLogged.apellido %> </p>
+                <p class="col-12"> E-mail: <%= locals.userLogged.email %> </p>
+                <button class="buttonlogout col-5 ">Logout</button>
+                <a href="/perfil/editar/<%=locals.userLogged.id_usuario%>" class="buttonedit col-5 ">Editar Perfil</a>
+          
             </div>
         <% } else {%>
             <h1>Ud. no debiera estar en esta vista sin estar logueado. Algo anda mal.</h1>

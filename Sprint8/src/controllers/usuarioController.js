@@ -38,11 +38,12 @@ let usuarioController = {
         )
       ) {
         let usuarioLogeado = {
+          id_usuario: usuario.id_usuario,
           nombre: usuario.userNombre,
           apellido: usuario.userApellido,
           email: usuario.userEmail,
           avatar: usuario.userAvatar,
-          rol: usuario.userRol
+          rol: usuario.userRol         
         };
 
         req.session.login = usuarioLogeado;
@@ -156,8 +157,8 @@ let usuarioController = {
       where: {
         id_usuario: req.params.id
       }
-    });
-
+    })
+  
     res.redirect("/login");
   },
 

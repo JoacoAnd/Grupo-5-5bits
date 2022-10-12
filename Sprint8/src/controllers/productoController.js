@@ -226,15 +226,21 @@ let productoController = {
         db.Producto.destroy({
             where: { id_producto: req.params.id }
         })
+        .then(()=>{
+            db.ProductoTalle.destroy({
+                where: {
+                    fk_id_producto: req.params.id
+                }
+            })
+            .then(()=>{
+                res.redirect('/products');
+            })
+    
+          
+        })
+        }
 
-        db.ProductoTalle.destroy({
-            where: {
-                fk_id_producto: req.params.id
-            }
-        });
-
-        res.redirect('/products');
-    }
+   
 
 }
 
