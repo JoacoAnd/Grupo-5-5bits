@@ -9,8 +9,6 @@ function updateProfileAuth(req, res, next) {
 
     let updateID = req.params.id;
 
-    console.log(res.locals.userLogged);
-
     db.Usuario.findOne({
         where: {
             userEmail: req.session.login.email

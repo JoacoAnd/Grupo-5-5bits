@@ -139,8 +139,6 @@ let usuarioController = {
 
   editedprofile: (req, res) => {
     let passwordEncriptada = bcrypt.hashSync(req.body.clave, 10);
-
-    console.log(req.file);
     
     let updatePhoto;
     if (req.file) {
@@ -158,8 +156,28 @@ let usuarioController = {
         id_usuario: req.params.id
       }
     })
-  
-    res.redirect("/login");
+    .then( async () => {
+      await db.Usuario.findOne({
+        where: {
+          id_usuario: req.params.id
+        }
+      })
+      .then(usuario => {
+        res.clearCookie("userCookie");
+        let userUpdated = {
+          id_usuario: usuario.id_usuario,
+          nombre: usuario.userNombre,
+          apellido: usuario.userApellido,
+          email: usuario.userEmail,
+          avatar: usuario.userAvatar,
+          rol: usuario.userRol         
+        };
+
+        req.session.login = userUpdated;
+        res.redirect("/perfil")
+      })
+    });
+
   },
 
   logout: (req, res) => {

@@ -234,9 +234,7 @@ let productoController = {
             })
             .then(()=>{
                 res.redirect('/products');
-            })
-    
-          
+            })      
         })
         }
 
