@@ -43,6 +43,7 @@ let usuariosAPIController = {
     'unUsuario': (req, res) => {
         db.Usuario.findByPk(req.params.id)
             .then(usuarios => {
+                usuarios.dataValues.userAvatar= 'http://localhost:3000/images/usersProfilePhotos/' + usuarios.dataValues.userAvatar;
                 let respuesta = {
                     meta: {
                         status: 200,

@@ -160,8 +160,8 @@ let productoController = {
 
         let imagen = req.body.imagenOriginal;
 
-        if(req.file){
-            imagen = req.file.filename; 
+        if (req.file) {
+            imagen = req.file.filename;
         }
 
         if (errors.isEmpty()) {
@@ -192,7 +192,7 @@ let productoController = {
 
             res.redirect('/products/' + req.params.id)
         } else {
-            
+
             let producto = {
                 ...req.body,
                 id_producto: req.params.id,
@@ -222,25 +222,25 @@ let productoController = {
     },
 
     delete: (req, res) => {
-
-        db.Producto.destroy({
-            where: { id_producto: req.params.id }
+        db.ProductoTalle.destroy({
+            where: {
+                fk_id_producto: req.params.id
+            }
         })
-        .then(()=>{
-            db.ProductoTalle.destroy({
-                where: {
-                    fk_id_producto: req.params.id
-                }
-            })
-            .then(()=>{
-                res.redirect('/products');
-            })
-    
-          
-        })
-        }
 
-   
+            .then(() => {
+                db.Producto.destroy({
+                    where: { id_producto: req.params.id }
+                })
+                    .then(() => {
+                        res.redirect('/products');
+                    })
+
+
+            })
+    }
+
+
 
 }
 
