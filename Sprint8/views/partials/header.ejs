@@ -10,31 +10,32 @@
             <li>
                 <a href="/">Home</a>
             </li>
-            <% if (locals.admin) { %> 
+            <% if (locals.admin) { %>
                 <li>
                     <a href="/products/create">Crear producto</a>
                 </li>
-            <% } %> 
-            <li>
-                <a href="/products">Tienda</a>
-            </li>
-            <% if (locals.isLogged == false) { %>
-                <li>
-                    <a href="/register">Registro</a>
-                </li>
-                <li>
-                    <a href="/login">Login</a>
-                </li>
-            <% } else { %>
+                <% } %>
+                    <li>
+                        <a href="/products">Tienda</a>
+                    </li>
+                    <% if (locals.isLogged==false) { %>
+                        <li>
+                            <a href="/register">Registro</a>
+                        </li>
+                        <li>
+                            <a href="/login">Login</a>
+                        </li>
+                        <% } else { %>
 
-            <li>
-                <a href="/perfil">Hola,  <%= locals.userLogged.nombre %>! <i class="fas fa-caret-down"></i></a>
-            </li>
+                            <li>
+                                <a href="/perfil">Hola, <%= locals.userLogged.nombre %>! <i
+                                            class="fas fa-caret-down"></i></a>
+                            </li>
+                            <li>
+                                <a href="/carrito"> <i class="fas fa-shopping-bag"></i></a>
+                            </li>
+                            <% } %>
 
-            <% } %> 
-            <li>
-                <a href="/carrito"> <i class="fas fa-shopping-bag"></i></a>
-            </li>
         </ul>
     </nav>
 </header>
